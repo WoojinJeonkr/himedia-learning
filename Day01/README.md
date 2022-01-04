@@ -1,4 +1,3 @@
-# JavaBasics
-### Day01
-##### Lecture: 2021-12-28
-* contents : Examples of Java Basic Grammar
+### 1일차
+##### 배운 날짜: 2021-12-28
+* 예제를 통해 학습
