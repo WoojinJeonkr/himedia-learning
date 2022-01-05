@@ -1,0 +1,18 @@
+WEB Server, WEB Site, DB Server, File Server
+
+* 웹서버를 통해서 나에게까지 오는 경로
+(Request)
+유저 -> WEB Site(도메인 예: www.naver.com (www: 2차 도메인), 110.20.30.12) -> WEB Server (80포트)
+        www.naver.com/news와 news.naver.com의 차이가 명확하게 있음            Apache (정적인 파일들(ex.이미지, 음성 파일 등) 담당)
+        네임서버(DNS)                                                         Tomcat (동적인 파일들 담당)
+        http : 암호화 x
+        https : 암호화 (sha256), 인증서를 가지고 쓰임.
+        라우터 = 교차로
+                                                                                              (Response)
+     ->  DB Server (SQL(SELECT, INSERT, UPDATE, DELETE)이라는 문법을 사용하여 데이터를 가져옴) => WEB Server -> HTML -> 유저
+        Oracle
+        Mysql
+        MariaDB
+        PostgreSQL
+     ->  File Server
+
