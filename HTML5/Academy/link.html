@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>링크</title>
+    <style>
+        a:link {color:red;} /* 아직 링크를 누르지 않은 기본 상태 */
+        a:visited {color:blue;} /* 링크를 눌러본 적 있는 상태 */
+        a:hover {color:yellow;} /* 마우스를 올리는 상태 */
+        a:active {color:green;} /* 마우스를 누르고 있는 상태 */
+    </style>
+</head>
+<body>
+    <!--새창이나 새 탭에서 오픈-->
+    <h2><a href="http://www.naver.com" target= "_blank">blank</a></h2>
+    <!--현재 프레임에서 오픈(기본)-->
+    <h2><a href="http://www.naver.com" target= "_self">self</a></h2>
+    <!--iframe과 연관된 target-->
+    <!--부모 프레임에서 오픈-->
+    <h2><a href="http://www.naver.com" target= "_parent">parent</a></h2>
+    <!--가장 상위 프레임에서 오픈-->
+    <h2><a href="http://www.naver.com" target= "_top">top</a></h2>
+    <!--지정된 프레임에서 오픈-->
+    <h2><a href="http://www.naver.com" target= "_myframe">myframe</a></h2>
+</body>
+</html>
