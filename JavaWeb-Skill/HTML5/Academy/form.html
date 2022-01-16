@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+    <!--
+        action : 데이터가 전송될 URL
+        method : get - URL에 전송되는 데이터 포함, 보여져도 큰 문제가 없는 정보, post - URL에 전송되는 데이터 미포함, 숨겨져야 하는 정보
+    -->
+    <form action="/link2.html" method="get">
+        <input type="ID" name="u_id"/><br><!--텍스트 입력, 데이터 전송 시 구분 값, default로 아이디를 넣어두고 싶으면 name=아이디로 입력해두면 된다-->
+        <input type="password" name="u_pw"/><br><!--비밀번호 입력-->
+        <input type="radio" name="rdb" value="JAVA" checked>JAVA <!--여러 개의 옵션 중 하나만 선택하는 경우-->
+        <input type="radio" name="rdb" value="HTML">HTML
+        <input type="radio" name="rdb" value="JAVASCRIPT">JAVASCRIPT
+        <input type="radio" name="rdb" value="CSS" checked>CSS<br>
+
+        <input type="checkbox" name="chk" value="사자">사자 <!--다수의 옵션을 입력받기 위해-->
+        <input type="checkbox" name="chk" value="호랑이">호랑이
+        <input type="checkbox" name="chk" value="코끼리" checked>코끼리
+        <input type="checkbox" name="chk" value="기린" disabled>기린<br> <!--disabled: 선택 비활성화-->
+        <!--<input type="file" name="upfile">-->
+        <!--<input type="file" name="upfile" accept="image/*">-->
+        <!--<input type="file" name="upfile" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">-->
+        <input type="file" name="upfile" accept="application/vnd.ms.excel"><br>
+    
+        <select name="sel"><!--여러 개의 옵션 중 하나만 선택하는 경우-->
+            <option vlaue="">전체</option>
+            <option vlaue="독수리" selected>독수리</option>
+            <option vlaue="참새">참새</option>
+            <option vlaue="닭">닭</option>
+            <option vlaue="오리">오리</option>
+        </select><br>
+
+        <select name="sel[]" multiple="multiple"><!--여러 개의 옵션 중 여러 개 선택하는 경우-->
+            <option vlaue="독수리" selected>독수리</option>
+            <option vlaue="참새">참새</option>
+            <option vlaue="닭">닭</option>
+            <option vlaue="오리">오리</option>
+        </select><br>
+        <textarea name="txarea" rows="20" cois="50">초기화</textarea><br>
+        <input list="animals" name="animal">
+        <datalist id="animals">
+            <option value="호랑이">
+            <option value="황소">
+            <option value="코끼리">
+        </datalist><br>
+        <button type="button" onclick="alert('클릭')">클릭</button><br>
+        <input type="submit" value="전송">
+    </form>
+</body>
+</html>
