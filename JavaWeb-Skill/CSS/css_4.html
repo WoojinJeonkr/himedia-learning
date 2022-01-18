@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Color</title>
+    <style>
+        p{
+            font-size: 50px;
+        }
+        /*rgb()
+        R(0~255) G(0~255) B(0~255) 투명도(0~1, 소수점으로 표현)
+        */
+        .c_blue { color:blue;background-color: rgb(0,255,0,0.1);}
+        .c_green {color: rgb(0,255,0)} /*rgb는 투명도를 줄 때 사용되며 주로 사용되지 않음*/
+        .c_red {color: #ff0000} /*색 표현 시 주로 사용되는 표현*/
+    </style>
+</head>
+<body>
+    <p class="c_blue">블루</p>
+    <p class="c_green">그린</p>
+    <p class="c_red">레드</p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Link</title>
+    <style>
+        a {
+            background-color:mediumturquoise;
+            color:#222;
+            font-size:1.3em;
+            text-decoration:none;
+        }
+        /*
+        링크의 상태
+        link: 링크의 기본 상태
+        visited: 사용자가 한 번이라도 해당 링크를 통해 연결된 페이지를 방문한 상태
+        hover: 사용자의 마우스 커서가 링크 위에  올라간 상태
+        active: 마우스로 링크를 클릭하고 있는 상태
+        focus: 포커스를 가지고 있는 상태
+        */
+        a:hover{color:#118eff;text-decoration:underline;}
+        a:focus{color:red;}
+        a:active{color:yellow;}
+    </style>
+</head>
+<body>
+    <h1>링크 스타일</h1>
+    <p><a href="http://www.naver.com" target="_blank">네이버로</a></p>
+    <p><a href="http://www.daum.net" target="_blank">다음으로</a></p>
+</body>
+</html>
