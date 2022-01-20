@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Attribute</title>
+    <script type="text/javascript">
+        function change_link(){
+            var change_name = document.getElementById("change_name").value;
+            // var change_name = document.getElementById("change_name").getAttribut('value');
+            console.log(change_name);
+            document.getElementById("link_href").setAttribute("href",change_name);
+            // console.log(document.getElementById("link_href").getAttribute("href"));
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="change_name" id="change_name"> 
+    <p><a id="link_href" href="http://www.naver.com">링크</a></p>
+    <input type="button" onclick="change_link()" value="변경">
+</body>
+</html>
