@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>날짜 구하기</title>
+    <script>
+        let currentDate = new Date();
+        while(true){
+            if(currentDate.getDay() == 0){
+            console.log("네 날짜가 일요일입니다.");
+            document.write("<p>"
+                +currentDate.getFullYear()
+                +"-"+(currentDate.getMonth()+1)
+                +"-"+currentDate.getDate()
+                +"["+currentDate.getDay()+"]</p>");
+                break;
+            } else {
+                console.log("아니네요.["+currentDate.getDay()+"]");
+            }
+            // 뒤로 하루씩 이동
+            currentDate.setDate((currentDate.getDate())-1);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

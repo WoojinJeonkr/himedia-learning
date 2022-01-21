@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Array(배열)</title>
+    <script>
+        var arr1 = [1, true, "javascript"];
+        var arr2 = Array(1, true, "javascript");
+        var arr3 = new Array(1, true, "javascript");
+
+        arr1.push("Java");
+        arr1.push("Homepage");
+        document.write(arr1+"<br>");
+        document.write(arr2+"<br>");
+        document.write(arr3);
+
+        console.log("arr1.length: "+arr1.length);
+
+        // arr1 배열 출력 방법 1
+        for(i=0;i<arr1.length;i++){
+            console.log(arr1[i]);
+        }
+
+        // arr1 배열 출력 방법 2
+        for(var idx in arr1){
+            console.log(arr1[idx]);
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

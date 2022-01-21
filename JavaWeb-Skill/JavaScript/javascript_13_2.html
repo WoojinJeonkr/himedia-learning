@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>마우스 이벤트</title>
+    <script>
+        /*
+        이미지를 마우스를 클릭, over, out 할 때
+        이미지를 변경하는 프로그램
+        */
+    </script>
+</head>
+<body>
+    <img width="400" src="/img/images.png" id="change_img">
+</body>
+<script>
+    var btn=document.getElementById("change_img");
+    btn.addEventListener("click", clickBtn); // click event
+    btn.addEventListener("mouseover", mouseoverBtn); // mouseover event
+    btn.addEventListener("mouseout", mouseoutBtn); // mouseout event
+
+    function clickBtn(){
+        document.getElementById("change_img").src="/html/kid-g5557a4346_1920.jpg";
+    }
+
+    function mouseoverBtn(){
+        document.getElementById("change_img").src="/html/kid-g5557a4346_1920.jpg";
+    }
+
+    function mouseoutBtn(){
+        document.getElementById("change_img").src ="/img/mother-g0fd877093_1920.jpg";
+    }
+</script>
+</html>

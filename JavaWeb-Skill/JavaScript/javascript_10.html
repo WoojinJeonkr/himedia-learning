@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function</title>
+    <script>
+        function addNum(x,y,z){
+            console.log("x: "+x);
+            return x+y+z;
+        }
+        document.write("인수 3개 전달"+addNum(1,2,3)+"<br/>"); // 6
+        document.write("인수 2개 전달"+addNum(1,2)+"<br/>"); // NaN으로 출력
+        document.write("인수 1개 전달"+addNum(1)+"<br/>"); // NaN으로 출력
+        document.write("인수 0개 전달"+addNum()); // NaN으로 출력
+    </script>
+</head>
+<body>
+</body>
+</html>

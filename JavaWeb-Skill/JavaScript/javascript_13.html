@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>마우스 이벤트</title>
+</head>
+<body>
+    <h1>이벤트 등록</h1>
+    <p>아래 버튼에 마우스를 올리거나 클릭해보세요.</p>
+    <img src="/html/kid-g5557a4346_1920.jpg" width="300"><br/>
+    <button id="btn">버튼</button>
+    <p id="message"></p>
+</body>
+<script>
+    var btn=document.getElementById("btn");
+    btn.addEventListener("click", clickBtn); // click event
+    btn.addEventListener("mouseover", mouseoverBtn); // mouseover event
+    btn.addEventListener("mouseout", mouseoutBtn); // mouseout event]
+
+    function clickBtn(){
+        document.getElementById("message").innerHTML = "버튼클릭";
+    }
+
+    function mouseoverBtn(){
+        document.getElementById("message").innerHTML = "마우스오버";
+    }
+
+    function mouseoutBtn(){
+        document.getElementById("message").innerHTML = "마우스아웃";
+    }
+</script>
+</html>

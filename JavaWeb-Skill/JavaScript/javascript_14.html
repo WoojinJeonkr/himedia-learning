@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>pc인지 아이폰인지 안드로이드 폰인지 구별하기</title>
+    <script>
+        document.write("현재 사용 중인 브라우저의 버전 정보는"+navigator.appVersion+" 입니다.<br>");
+        document.write("현재 userAgent 정보는"+navigator.userAgent+" 입니다.");
+        if(navigator.userAgent.indexOf('Android')>0){ // ABC.DEF.indexof(a): ABC.DEF에서 a라는 단어가 몇 번째 키워드에 있는지 검색
+            alert("안드로이드 폰입니다."); 
+        } else if(navigator.userAgent.indexOf('iPhone')>0) {
+            alert("아이폰입니다.");
+        } else if(navigator.userAgent.indexOf('Windows')>0) {
+            alert("PC입니다.");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
