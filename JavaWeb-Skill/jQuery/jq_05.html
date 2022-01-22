@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+    crossorigin="anonymous"></script>
+    <!--
+        2초마다 순차적으로 나오는 5개의 이미지에 이미지 효과 적용하기
+    -->
+    <script>
+        let arr_img = new Array();
+        arr_img.push({arr_Title:'눈 산 위의 성', imgSrc:"/img/castle-g887ea443a_1920.jpg"})
+        arr_img.push({arr_Title:'엄마와 아기', imgSrc:"/img/mother-g0fd877093_1920.jpg"})
+        arr_img.push({arr_Title:'붉은 다람쥐', imgSrc:"/img/red-squirrel-6867103_1920.jpg"})
+        arr_img.push({arr_Title:'교통 신호등', imgSrc:"/img/traffic-lights-g312b44ac6_1920.jpg"})
+        arr_img.push({arr_Title:'스케치 도시', imgSrc:"/img/sketch-5622725_1920.jpg"})
+        console.log(arr_img);
+    </script>
+</head>
+<body>
+    <input type="button" onclick="startRolling()" value="2초마다 이미지 변경">
+    <input type="button" onclick="stopRolling()" value="멈춤"><br/>
+    <img id="arr_img" width="400">
+    <p id="img_title"></p>
+    <br>
+    <input type="text" name="insertTitle" id="insertTitle"
+        placeholder="제목"><br/>
+    <input type="text" name="insertSrc" id="insertSrc"
+        placeholder="이미지 경로">
+    <input type="button" id="insertBtn" value="추가">
+</body>
+    <script>
+        //--- 첫 이미지로 화면에 세팅
+        document.getElementById('arr_img').src=arr_img[0].imgSrc;
+        document.getElementById('arr_img').title = arr_img[0].arr_Title;
+        document.getElementById('img_title').innerHTML = arr_img[0].arr_Title;
+
+        let cnt = 1
+        function changeImg(){
+            document.getElementById('arr_img').src=arr_img[cnt].imgSrc;
+            document.getElementById('arr_img').title = arr_img[cnt].arr_Title;
+            document.getElementById('img_title').innerHTML = arr_img[cnt].arr_Title;
+            cnt++;
+            if(arr_img.length == cnt){
+                cnt = 0;
+            }
+        }
+
+        let timeoutId;
+        function startRolling(){
+            if(timeoutId == undefined){
+            timeoutId=setInterval(changeImg, 2000);
+        }
+        console.log("timeoutId:"+timeoutId);
+    }
+        function stopRolling(){
+            clearInterval(timeoutId);
+            timeoutId = undefined;
+            console.log("timeoutId:"+timeoutId);
+        }
+        // let timeoutId = setInterval(changeImg, 2000);
+        
+        var btn=document.getElementById("insertBtn");
+        btn.addEventListener("click", addImg);
+
+        function addImg(){
+        //--- 입력폼 체크
+        console.log("버튼 클릭");
+        if(document.getElementById("insertTitle").value == ""){
+            alert("제목을 입력해주세요.");
+            document.getElementById("insertTitle").focus();
+            return;
+        }
+        if(document.getElementById("insertSrc").value == ""){
+            alert("이미지 경로를 입력해주세요.");
+            document.getElementById("insertSrc").focus();
+            return;
+        }
+
+        // 이미지 배열의 값을 하나 저장
+        arr_img.push({arr_Title:document.getElementById("insertTitle").value,
+        imgSrc:document.getElementById("insertSrc").value})
+
+        // 입력폼 리셋
+        form_reset();
+        console.log(arr_img);
+    }
+
+        function form_reset(){
+            document.getElementById("insertTitle").value = "";
+            document.getElementById("insertSrc").value ="";
+        }
+    </script>
+</html>

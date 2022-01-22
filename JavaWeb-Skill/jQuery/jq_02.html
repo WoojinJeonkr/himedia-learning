@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Selector</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+    crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $('input').on('click', function(){
+                // $('p').css('border','1px solid red'); // p태그 전체 변경
+                // $('#p_id').css('border','1px solid red'); // 아이디 값 하나만 변경
+                // $('.p_class').css('border','1px solid red'); // 복수 개의 class 변경
+                // $('p[data="1"]').css('border','1px solid red'); // 일치하는 속성 값만 변경
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>선택자 종류</h1>
+    <input type="button" value="p선택">
+    <p>P태그입니다.</p>
+    <p id="p_id">P태그이며 아이디 p_id입니다.</p>
+    <p class="p_class" data="1">P태그이며 클래스 p_class입니다.</p>
+    <p class="p_class" data="2">P태그이며 클래스 p_class입니다.</p>
+</body>
+</html>
