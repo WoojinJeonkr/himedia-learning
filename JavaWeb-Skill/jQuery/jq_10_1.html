@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+    crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+            // 읽기
+            $('#getter').click(function(){ 
+                // 이미 존재하는 가로, 세로 값을 얻어오는 것이므로 $('#box').width(w).height(h);을 명시하지 않아도 작동됨
+                let size_summary = "가로는 "+$('#box').width()
+                +" 세로는 "+$('#box').height()
+                +" 넓이는 "+($('#box').height()*$('#box').width())
+                +"입니다.";
+                $('#text').html(size_summary);
+
+            });
+            // 셋팅
+            $('#setter').click(function(){
+                let w = $('#box').width();
+                let h = $('#box').height();
+
+                $('#box').width(w/2).height(h/2);
+                let size_summary = "가로는 "+$('#box').width()
+                +" 세로는 "+$('#box').height()
+                +" 넓이는 "+($('#box').height()*$('#box').width())
+                +"로 변경되었습니다.";
+                $('#text').html(size_summary);
+            });
+            // 입력
+            $('#insert').click(function(){
+                let w = $('#set_width').val();
+                let h =  $('#set_height').val();
+
+                // 새로운 가로, 세로 값을 입력하는 것이므로 $('#box').width(w).height(h);을 명시하지 않으면 작동되지 않음
+                $('#box').width(w).height(h);
+                let size_summary = "가로는 "+$('#box').width()
+                +" 세로는 "+$('#box').height()
+                +" 넓이는 "+($('#box').height()*$('#box').width())
+                +"로 변경되었습니다.";
+                $('#text').html(size_summary);
+            });
+            $('#insert2').click(function(){
+                let size = $("#set_size").val().split(",");
+                console.log(size);
+                $('#box').width(size[0]).height(size[1]);
+                let size_summary = "가로는 "+$('#box').width()
+                +" 세로는 "+$('#box').height()
+                +" 넓이는 "+($('#box').height()*$('#box').width())
+                +"로 변경되었습니다.";
+                $('#text').html(size_summary);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>넓이 높이 메소드</h1>
+    <p>버튼을 누르면 div의 크기를 읽고 설정할 수 있음</p>
+    <button id="getter">읽기</button>
+    <button id="setter">셋팅</button>
+    <h2>값을 두 개로 받을 경우</h2>
+    <span>가로: </span><input type="text" id="set_width"><br/>
+    <span>세로: </span><input type="text" id="set_height">
+    <button id="insert">입력</button> <br/>
+    <h2>하나의 입력 폼에 값을 두 개로 받을 경우</h2>
+    <span>가로, 세로: </span><input type="text" id="set_size">
+    <button id="insert2">입력2</button> <br/>
+    <div id="box" style="width:400px;height:200px;background-color: cadetblue;"></div>
+    <p id="text"></p>
+</body>
+</html>

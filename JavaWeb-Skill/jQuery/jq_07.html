@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+    crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+            $('button').on('click', function(){
+                // $("span").text("<span>");
+                // console.log($("li:has(span)").length);
+                //--- li 안에 span 태그가 있는 요소
+                // $("li:has(span)").text("<span>요소가 있습니다.");
+                //--- li 중 1번째 요소
+                // $("li:first").text("선택 요소");
+                //--- li 중 제일 마지막 요소
+                // $("li:last").text("선택 요소");
+                //--- li:eq(n): li 중 n번째 요소(n은 0부터)
+                // $("li:eq(1)").text("선택 요소");
+                //--- li 중 span 태그가 있는 것 중 1번째 요소
+                // $("li:has(span):eq(0)").text("<span>요소가 바뀝니다.");
+                //--- li 중 n번째 요소 이상 전부
+                // $("li:gt(1)").text("선택 요소");
+                //--- li 중 n번째 요소 이하 전부
+                // $("li:lt(1)").text("선택 요소");
+                //--- li 중 짝수번째 요소
+                // $("li:even").text("선택요소");
+                //--- li 중 홀수번째 요소
+                // $("li:odd").text("선택요소");
+                //--- li 중 span 태그를 가지고 있지 않은 요소
+                // $("li:not(:has(span))").text("선택요소");
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li>첫번째 아이템입니다.</li>
+        <li><span>두번째</span> 아이템입니다.</li>
+        <li>세번째 아이템입니다.</li>
+        <li><span>네번째</span> 아이템입니다.</li>
+    </ul>
+    <ul>
+        <li>다섯번째 아이템입니다.</li>
+        <li><span>여섯번째</span> 아이템입니다.</li>
+        <li>일곱번째 아이템입니다.</li>
+        <li><span>여덟번째</span> 아이템입니다.</li>
+    </ul>
+    <div>
+        <div>
+            <div>
+                <div>
+                    <ul>
+                        <li>아홉번째 아이템입니다.</li>
+                        <li><span>열번째</span> 아이템입니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button>필터링</button>
+</body>
+</html>

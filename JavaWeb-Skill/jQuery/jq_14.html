@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+    crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+            $('#before_btn').click(function(){
+                // $('table tr:eq(2)').before("<tr><td>새로운</td><td>새로운</td></tr>");
+                $('#table_id').find("tr").eq(2).before("<tr><td>새로운</td><td>새로운</td></tr>");
+            });
+            $('#after_btn').click(function(){
+                // $('table tr:eq(1)').after("<tr><td>새로운</td><td>새로운</td></tr>");
+                $('#table_id').find("tr").eq(1).after("<tr><td>새로운</td><td>새로운</td></tr>");
+            });
+        });
+    </script>
+</head>
+<body>
+    <table id="table_id">
+        <tr>
+            <td>첫번째</td>
+            <td>두번째</td>
+        </tr>
+        <tr>
+            <td>세번째</td>
+            <td>네번째</td>
+        </tr>
+        <tr>
+            <td>다섯번째</td>
+            <td>여섯번째</td>
+        </tr>
+    </table>
+    <button id="before_btn">앞에 행 추가</button>
+    <button id="after_btn">뒤에 행 추가</button>
+</body>
+</html>

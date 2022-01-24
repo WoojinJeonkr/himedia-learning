@@ -7,9 +7,12 @@
     integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
     crossorigin="anonymous"></script>
     <!--
-        2초마다 순차적으로 나오는 5개의 이미지에 이미지 효과 적용하기
+        입력 폼에서 입력받은 이미지 정보를
+        추가로 배열에 등록해서 함께 순차적으로 표시
+        이미지 이름도 등록하면 좋음
     -->
     <script>
+        //--- 이미지 데이터 저장
         let arr_img = new Array();
         arr_img.push({arr_Title:'눈 산 위의 성', imgSrc:"/img/castle-g887ea443a_1920.jpg"})
         arr_img.push({arr_Title:'엄마와 아기', imgSrc:"/img/mother-g0fd877093_1920.jpg"})
@@ -20,7 +23,7 @@
     </script>
 </head>
 <body>
-    <input type="button" onclick="startRolling()" value="2초마다 이미지 변경">
+    <input type="button" onclick="startRolling()" value="2초마다 이미지 변경"> <!--startRolling으로 작성 후 실행하면 넘어가지지 않음-->
     <input type="button" onclick="stopRolling()" value="멈춤"><br/>
     <img id="arr_img" width="400">
     <p id="img_title"></p>
@@ -34,27 +37,44 @@
     <script>
         //--- 첫 이미지로 화면에 세팅
         document.getElementById('arr_img').src=arr_img[0].imgSrc;
-        document.getElementById('arr_img').title = arr_img[0].arr_Title;
+        document.getElementById('arr_img').title = arr_img[0].arr_Title; //arr_Title 이 아닌 경우 사진 밑 문자열이 undefined로 출력
         document.getElementById('img_title').innerHTML = arr_img[0].arr_Title;
 
         let cnt = 1
         function changeImg(){
+            $("#arr_img").hide();
             document.getElementById('arr_img').src=arr_img[cnt].imgSrc;
             document.getElementById('arr_img').title = arr_img[cnt].arr_Title;
             document.getElementById('img_title').innerHTML = arr_img[cnt].arr_Title;
+            // $('#arr_img').fadeOut(2000).slideDown(2000);
             cnt++;
             if(arr_img.length == cnt){
                 cnt = 0;
             }
+            if(cnt%2 == 0){
+                $('#arr_img').slideDown(1500);
+            } else {
+                $('#arr_img').fadeIn(1500);
+            }
+            // $('#arr_img').fadeOut(2000, function(){
+            //     $('#arr_img').fadeIn(2000);
+            // });
+            // $('#arr_img[0]').toggle(2000, function(){
+            //     $('#arr_img[cnt]').toggle(2000);
+            // });
+            // $('#arr_img').slideUp(2000, function(){
+            //     $('#arr_img').slideDown(2000);
+            // });
         }
 
         let timeoutId;
         function startRolling(){
             if(timeoutId == undefined){
             timeoutId=setInterval(changeImg, 2000);
+            }
         }
         console.log("timeoutId:"+timeoutId);
-    }
+
         function stopRolling(){
             clearInterval(timeoutId);
             timeoutId = undefined;
@@ -92,5 +112,19 @@
             document.getElementById("insertTitle").value = "";
             document.getElementById("insertSrc").value ="";
         }
+
+        function mouseoverImg(){
+            clearInterval(timeoutId);
+        }
+
+        function mouseoutImg(){
+            timeoutId = setInterval(changeImg, 2000);
+        }
+
+        var img_btn = document.getElementById("arr_img");
+        img_btn.addEventListener("mouseover", mouseoverImg);
+        img_btn.addEventListener("mouseout", mouseoutImg);
     </script>
+    <script>
+</script>
 </html>

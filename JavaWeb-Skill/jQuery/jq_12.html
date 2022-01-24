@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+    crossorigin="anonymous"></script>
+    <title>append&prepend</title>
+    <script>
+        $(function(){
+            $("#appendBtn").click(function(){
+                $("#list").append("<li>뒤로 새로 추가된 아이템</li>");
+            });
+            $("#prependBtn").click(function(){
+                $("#list").prepend("<li>앞으로 새로 추가된 아이템</li>");
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul id="list">
+        <li>첫번째</li>
+        <li>두번째</li>
+        <li>세번째</li>
+    </ul>
+    <button id="appendBtn">가장 뒤에 아이템 추가</button>
+    <button id="prependBtn">가장 앞에 아이템 추가</button>
+</body>
+</html>
