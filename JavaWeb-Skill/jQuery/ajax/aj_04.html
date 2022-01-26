@@ -21,7 +21,7 @@
         $(function(){
             $('#requestBtn').click(function(){
                 $.ajax({
-                    url: 'http://192.168.0.12:5500/json/json01.txt',
+                    url: '/json/json01.txt',
                     data: {keyword:'value값'},
                     method: "get",
                     beforeSend:function(){
