@@ -1,5 +1,5 @@
-package object1;
-// 상속
+package Object;
+
 class Animal{
 	String name;
 	

@@ -1,4 +1,4 @@
-package object1;
+package Object;
 
 class calculator{
 	
@@ -16,7 +16,6 @@ class calculator{
 	}
 }
 public class Sample {
-
 	public static void main(String[] args) {
 		//--- static이 아닌 경우
 //		calculator cal = new calculator();
@@ -36,3 +35,4 @@ public class Sample {
 		System.out.println(cal2.add(30));
 		System.out.println(cal2.add(50));
 	}
+}
