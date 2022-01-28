@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>회원가입</title>
+	<style>
+		table{
+			width:100%;
+			border-top: 1px solid #444444;
+			border-collapse: collapse;
+		}
+		th, td{
+			border-bottom: 1px solid #444444;
+			padding: 10px;
+		}
+	</style>
+	<script>
+		function insert(){
+			var frm = document.form;
+			
+			if(frm.m_name.value == ""){
+				alert("이름을 입력해주세요.")
+				return;
+			}
+			
+			if(frm.m_id.value == ""){
+				alert("아이디를 입력해주세요.")
+				return;
+			}
+			
+			if(frm.m_pw.value == ""){
+				alert("비밀번호를 입력해주세요.")
+				return;
+			}
+			
+			if(frm.m_phone.value == ""){
+				alert("전화번호를 입력해주세요.")
+				return;
+			}
+			
+			if(frm.m_email.value == ""){
+				alert("이메일을 입력해주세요.")
+				return;
+			}
+			
+			if(confirm("회원가입하시겠습니까?")){
+				frm.submit();
+			}
+		}
+		function cancel(){
+			location="memberList.jsp";
+		}
+	</script>
+</head>
+<body>
+	<h2>회원가입</h2>
+	<form action="memberInsert.jsp" name="form" method="post">
+	<table>
+		<tr>
+			<td>이름</td>
+			<td><input type="text" name="m_name" placeholder="이름"></td>
+		</tr>
+		<tr>
+			<td>아이디</td>
+			<td><input type="text" name="m_id" placeholder="아이디"></td>
+		</tr>
+		<tr>
+			<td>비밀번호</td>
+			<td><input type="text" name="m_pw" placeholder="비밀번호"></td>
+		</tr>
+		<tr>
+			<td>전화번호</td>
+			<td><input type="text" name="m_phone" placeholder="전화번호"></td>
+		</tr>
+		<tr>
+			<td>이메일</td>
+			<td><input type="text" name="m_email" placeholder="이메일"></td>
+		</tr>
+	</table>
+	<input type="button" onclick="insert()" value="저장">
+	<input type="button" onclick="cancel()" value="취소">
+	</form>
+</body>
+</html>
