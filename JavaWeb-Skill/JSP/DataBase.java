@@ -9,14 +9,14 @@ public class DataBase {
 	public DataBase() {
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
-			System.out.println("靛扼捞滚 肺爹 己傍~~~");
+			System.out.println("霌滊澕鞚措矂 搿滊敥 靹标车~~~");
 			
-			String url = "jdbc:mariadb://localhost:3306/mars";
+			String url = "jdbc:mariadb://13.124.207.246:59061/mars";
 			String user = "mars";
 			String pw = "p@ss00";
 			
 			con=DriverManager.getConnection(url, user, pw);
-			System.out.println("MariaDB Connection 己傍~~~");
+			System.out.println("MariaDB Connection 靹标车~~~");
 		} catch(ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch(SQLException e) {
@@ -28,3 +28,4 @@ public class DataBase {
 		return con;
 	}
 }
+

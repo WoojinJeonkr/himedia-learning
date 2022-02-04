@@ -9,23 +9,23 @@ import javax.servlet.http.HttpServletResponse;
 
 /*
  Servlet
- µ¿ÀûÀÎ À¥ÆäÀÌÁö¸¦ ¸¸µé ¶§ »ç¿ëÇÏ´Â ÀÚ¹Ù ±â¹İÀÇ À¥ ÇÁ·Î±×·¡¹Ö
- À¯Àú ÀÔÀå¿¡¼­ À¥Àº ¾Æ·¡ 2°¡Áö·Î ³ª´¶´Ù.
+ ë™ì ì¸ ì›¹í˜ì´ì§€ë¥¼ ë§Œë“¤ ë•Œ ì‚¬ìš©í•˜ëŠ” ìë°” ê¸°ë°˜ì˜ ì›¹ í”„ë¡œê·¸ë˜ë°
+ ìœ ì € ì…ì¥ì—ì„œ ì›¹ì€ ì•„ë˜ 2ê°€ì§€ë¡œ ë‚˜ë‰œë‹¤.
  1) request
  2) response
  */
 public class FirstServlet extends HttpServlet {
 	
 	public void init() throws ServletException{
-		System.out.println("init ¸Ş¼­µå È£Ãâ");
+		System.out.println("init ë©”ì„œë“œ í˜¸ì¶œ");
 	}
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException{
-		System.out.println("doGet ¸Ş¼­µå È£Ãâ");
+		System.out.println("doGet ë©”ì„œë“œ í˜¸ì¶œ");
 	}
 	
 	public void destroy() {
-		System.out.println("destroy ¸Ş¼­µå È£Ãâ");
+		System.out.println("destroy ë©”ì„œë“œ í˜¸ì¶œ");
 	}
 }
