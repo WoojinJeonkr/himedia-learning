@@ -115,7 +115,7 @@ location = "memberList.jsp";
 	</table>
 	<input type="button" onclick="javascript:location='memberList.jsp'" value="목록">
 	<input type="button" onclick="javascript:location='memberModify.jsp?m_idx=<%=m_idx%>'" value="수정">
-	<input type="button" onclick="userDelete(<%=m_idx%>,'<%=m_name%>')" value="삭제">
+	<input type="button" onclick="userDelete('<%=m_idx%>','<%=m_name%>')" value="삭제">
 	
 	<!--<input type="button" onclick="location='memberList.jsp'" value="목록">
 	<input type="button" onclick="location='memberModify.jsp?m_idx=<%=m_idx%>'" value="수정">
