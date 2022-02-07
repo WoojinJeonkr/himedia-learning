@@ -13,7 +13,7 @@ public class inputServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	public void init(ServletConfig config) throws ServletException {
-		System.out.println("init ¸Ş¼­µå È£Ãâ");
+		System.out.println("init ë©”ì„œë“œ í˜¸ì¶œ");
 	}
 
 	public void destroy() {
@@ -24,20 +24,20 @@ public class inputServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String user_id = request.getParameter("user_id");
 		String user_pw = request.getParameter("user_pw");
-		System.out.println("¾ÆÀÌµğ:"+user_id);
-		System.out.println("ÆĞ½º¿öµå:"+user_pw);
+		System.out.println("ì•„ì´ë””:"+user_id);
+		System.out.println("íŒ¨ìŠ¤ì›Œë“œ:"+user_pw);
 		String subject_str = request.getParameter("subject");
-		System.out.println("¼±ÅÃÇÑ °ú¸ñ str:"+subject_str);
+		System.out.println("ì„ íƒí•œ ê³¼ëª© str:"+subject_str);
 		
 		String[] subject = request.getParameterValues("subject");
-		// for¹®
+		// forë¬¸
 		/*for(int i=0;i<subject.length;i++) {
-			System.out.println("¼±ÅÃÇÑ °ú¸ñ:"+subject[i]);
+			System.out.println("ì„ íƒí•œ ê³¼ëª©:"+subject[i]);
 		}*/
 		
-		// È®ÀåÇü for¹®
+		// í™•ì¥í˜• forë¬¸
 		for(String str:subject) {
-			System.out.println("¼±ÅÃÇÑ °ú¸ñ:"+str);
+			System.out.println("ì„ íƒí•œ ê³¼ëª©:"+str);
 		}
 	}
 

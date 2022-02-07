@@ -11,12 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/third")
 public class ThirdServlet extends HttpServlet{
-	// ÀÚ¹Ù °´Ã¼ Á÷·ÄÈ­ ÇÔ¼ö
+	// ìë°” ê°ì²´ ì§ë ¬í™” í•¨ìˆ˜
 	private static final long serialVersionUID = 5366607762573709312L;
 	
 //	public void init() throws ServletException{
 //		LocalDateTime now = LocalDateTime.now();
-//		System.out.println("("+now+") init ¸Ş¼­µå È£Ãâ");
+//		System.out.println("("+now+") init ë©”ì„œë“œ í˜¸ì¶œ");
 //	}
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -32,11 +32,11 @@ public class ThirdServlet extends HttpServlet{
 	private void doHandler(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException{
 		LocalDateTime now = LocalDateTime.now();
-		System.out.println("("+now+") doHandle ¸Ş¼­µå È£Ãâ");
+		System.out.println("("+now+") doHandle ë©”ì„œë“œ í˜¸ì¶œ");
 	}
 	
 //	public void destroy() {
 //		LocalDateTime now = LocalDateTime.now();
-//		System.out.println("("+now+") destroy ¸Ş¼­µå È£Ãâ");
+//		System.out.println("("+now+") destroy ë©”ì„œë“œ í˜¸ì¶œ");
 //	}
 }

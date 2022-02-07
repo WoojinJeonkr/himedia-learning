@@ -9,19 +9,19 @@ import javax.servlet.http.HttpServletResponse;
 
 public class FirstServlet extends HttpServlet {
 
-	// ÀÚ¹Ù °´Ã¼ Á÷·ÄÈ­ ½Äº°ÀÚ
+	// ìë°” ê°ì²´ ì§ë ¬í™” ì‹ë³„ì
 	private static final long serialVersionUID = 5473156142358251857L;
 
 	public void init() throws ServletException{
-		System.out.println("init ¸Ş¼­µå È£Ãâ");
+		System.out.println("init ë©”ì„œë“œ í˜¸ì¶œ");
 	}
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException{
-		System.out.println("doGet ¸Ş¼­µå È£Ãâ");
+		System.out.println("doGet ë©”ì„œë“œ í˜¸ì¶œ");
 	}
 	
 	public void destroy() {
-		System.out.println("destroy ¸Ş¼­µå È£Ãâ");
+		System.out.println("destroy ë©”ì„œë“œ í˜¸ì¶œ");
 	}
 }

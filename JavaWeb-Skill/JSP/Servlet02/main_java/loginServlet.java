@@ -14,7 +14,7 @@ public class loginServlet extends HttpServlet {
 	private static final long serialVersionUID = -8695505215255395148L;
 	
 	public void init() throws ServletException{
-		System.out.println("init ¸Ş¼­µå È£Ãâ");
+		System.out.println("init ë©”ì„œë“œ í˜¸ì¶œ");
 	}
 	
 //	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -23,8 +23,8 @@ public class loginServlet extends HttpServlet {
 //		String user_id = request.getParameter("user_id");
 //		String user_pw = request.getParameter("user_pw");
 //		
-//		System.out.println("¾ÆÀÌµğ:"+user_id);
-//		System.out.println("ÆĞ½º¿öµå:"+user_pw);
+//		System.out.println("ì•„ì´ë””:"+user_id);
+//		System.out.println("íŒ¨ìŠ¤ì›Œë“œ:"+user_pw);
 //	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -44,12 +44,12 @@ public class loginServlet extends HttpServlet {
 		String user_pw = request.getParameter("user_pw");
 		String address = request.getParameter("address");
 			
-		System.out.println("¾ÆÀÌµğ:"+user_id);
-		System.out.println("ÆĞ½º¿öµå:"+user_pw);
-		System.out.println("ÁÖ¼Ò:"+address);
+		System.out.println("ì•„ì´ë””:"+user_id);
+		System.out.println("íŒ¨ìŠ¤ì›Œë“œ:"+user_pw);
+		System.out.println("ì£¼ì†Œ:"+address);
 	}
 	
 	public void destroy() {
-		System.out.println("destroy ¸Ş¼­µå È£Ãâ");
+		System.out.println("destroy ë©”ì„œë“œ í˜¸ì¶œ");
 	}
 }

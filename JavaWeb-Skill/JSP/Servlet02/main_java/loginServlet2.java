@@ -24,9 +24,9 @@ public class loginServlet2 extends HttpServlet {
 		String user_pw = request.getParameter("user_pw");
 		String address = request.getParameter("address");
 		
-		System.out.println("¾ÆÀÌµğ:"+user_id);
-		System.out.println("ÆĞ½º¿öµå:"+user_pw);
-		System.out.println("ÁÖ¼Ò:"+address);
+		System.out.println("ì•„ì´ë””:"+user_id);
+		System.out.println("íŒ¨ìŠ¤ì›Œë“œ:"+user_pw);
+		System.out.println("ì£¼ì†Œ:"+address);
 		
 		String data = "<html>";
 		data += "<style>";
@@ -43,13 +43,13 @@ public class loginServlet2 extends HttpServlet {
 		data += "<body>";
 		data += "<table>";
 		data += "<tr>";
-		data += "<td>¾ÆÀÌµğ</td><td>"+user_id+"</td>";
+		data += "<td>ì•„ì´ë””</td><td>"+user_id+"</td>";
 		data += "</tr>";
 		data += "<tr>";
-		data += "<td>ÆĞ½º¿öµå</td><td>"+user_pw+"</td>";
+		data += "<td>íŒ¨ìŠ¤ì›Œë“œ</td><td>"+user_pw+"</td>";
 		data += "</tr>";
 		data += "<tr>";
-		data += "<td>ÁÖ¼Ò</td><td>"+address+"</td>";
+		data += "<td>ì£¼ì†Œ</td><td>"+address+"</td>";
 		data += "</tr>";
 		data += "</table>";
 		data += "</body>";

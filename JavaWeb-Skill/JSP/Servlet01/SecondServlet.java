@@ -10,22 +10,22 @@ import javax.servlet.http.HttpServletResponse;
 
 public class SecondServlet extends HttpServlet{
 	
-	// ÀÚ¹Ù °´Ã¼ Á÷·ÄÈ­ ½Äº°ÀÚ
+	// ìë°” ê°ì²´ ì§ë ¬í™” ì‹ë³„ì
 	private static final long serialVersionUID = 844969363907474930L;
 
 	public void init() throws ServletException{
 		LocalDateTime now = LocalDateTime.now();
-		System.out.println("("+now+") init ¸Ş¼­µå È£Ãâ");
+		System.out.println("("+now+") init ë©”ì„œë“œ í˜¸ì¶œ");
 	}
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException{
 		LocalDateTime now = LocalDateTime.now();
-		System.out.println("("+now+") doGet ¸Ş¼­µå È£Ãâ");
+		System.out.println("("+now+") doGet ë©”ì„œë“œ í˜¸ì¶œ");
 	}
 	
 	public void destroy() {
 		LocalDateTime now = LocalDateTime.now();
-		System.out.println("("+now+") destroy ¸Ş¼­µå È£Ãâ");
+		System.out.println("("+now+") destroy ë©”ì„œë“œ í˜¸ì¶œ");
 	}
 }
