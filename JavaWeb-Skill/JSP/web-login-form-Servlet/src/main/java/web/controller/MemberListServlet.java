@@ -27,7 +27,7 @@ public class MemberListServlet extends HttpServlet {
 		if(session.getAttribute("user_id") == null) {
 			response.sendRedirect("login.html");
 		} else {
-			//--- Member¶ó°í ÇÏ´Â Á¤º¸¸¦ ÀÌ¿ëÇÏ´Â ¿ÀºêÁ§Æ®(°´Ã¼)
+			//--- Memberë¼ê³  í•˜ëŠ” ì •ë³´ë¥¼ ì´ìš©í•˜ëŠ” ì˜¤ë¸Œì íŠ¸(ê°ì²´)
 			//--- Member Data Access Object
 			MemberDAO memberDAO = new MemberDAO();
 			List<MemberVO> list = memberDAO.member_list();
@@ -38,3 +38,4 @@ public class MemberListServlet extends HttpServlet {
 		}
 	}
 }
+

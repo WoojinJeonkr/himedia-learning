@@ -16,7 +16,7 @@ import web.vo.MemberVO;
 /**
  * @author hi
  * 
- * È¸¿ø°¡ÀÔ Á¤º¸¸¦ ÀúÀåÇÏ´Â Action
+ * íšŒì›ê°€ì… ì •ë³´ë¥¼ ì €ì¥í•˜ëŠ” Action
  */
 @WebServlet("/memberSave")
 public class MemberSaveServlet extends HttpServlet {
@@ -28,7 +28,7 @@ public class MemberSaveServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		MemberDAO memberDAO = new MemberDAO();
 		
-		//--- Parameter ³Ñ¾î¿Â È¸¿ø°¡ÀÔ Á¤º¸¸¦ MemberVO Å¬·¡½º¿¡ ÀúÀå
+		//--- Parameter ë„˜ì–´ì˜¨ íšŒì›ê°€ì… ì •ë³´ë¥¼ MemberVO í´ë˜ìŠ¤ì— ì €ì¥
 		MemberVO memberVO = new MemberVO();
 		memberVO.setM_id((String)request.getParameter("m_id"));
 		memberVO.setM_pw((String)request.getParameter("m_pw"));
@@ -36,14 +36,14 @@ public class MemberSaveServlet extends HttpServlet {
 		memberVO.setM_email((String)request.getParameter("m_email"));
 		memberVO.setM_phone((String)request.getParameter("m_phone"));
 		
-		//--- È¸¿ø°¡ÀÔ Á¤º¸¸¦ DB¿¡ ÀúÀå
+		//--- íšŒì›ê°€ì… ì •ë³´ë¥¼ DBì— ì €ì¥
 		memberDAO.member_save(memberVO);
 		
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		
 		out.println("<script>");
-		out.println("alert('"+memberVO.getM_name()+"´ÔÀÌ È¸¿ø°¡ÀÔµÇ¾ú½À´Ï´Ù.')");
+		out.println("alert('"+memberVO.getM_name()+"ë‹˜ì´ íšŒì›ê°€ì…ë˜ì—ˆìŠµë‹ˆë‹¤.')");
 		out.println("location= '"+request.getContextPath()+"'");
 		out.println("</script>");
 	}

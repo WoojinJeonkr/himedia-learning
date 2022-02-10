@@ -15,7 +15,7 @@ import web.vo.MemberVO;
 /**
  * @author hi
  * 
- * µî·ÏµÈ È¸¿øÁ¤º¸¸¦ °¡Á®¿À´Â Action
+ * ë“±ë¡ëœ íšŒì›ì •ë³´ë¥¼ ê°€ì ¸ì˜¤ëŠ” Action
  */
 @WebServlet("/memberView")
 public class MemberViewServlet extends HttpServlet {
@@ -31,7 +31,7 @@ public class MemberViewServlet extends HttpServlet {
 			response.sendRedirect("login.html");
 		} else {
 			int m_idx = Integer.parseInt(request.getParameter("m_idx"));
-			//--- Member¶ó°í ÇÏ´Â Á¤º¸¸¦ ÀÌ¿ëÇÏ´Â ¿ÀºêÁ§Æ®(°´Ã¼)
+			//--- Memberë¼ê³  í•˜ëŠ” ì •ë³´ë¥¼ ì´ìš©í•˜ëŠ” ì˜¤ë¸Œì íŠ¸(ê°ì²´)
 			//--- Member Data Access Object
 			MemberDAO memberDAO = new MemberDAO();
 			MemberVO memberVO = memberDAO.member_view(m_idx);

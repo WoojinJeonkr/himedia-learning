@@ -16,9 +16,9 @@ import web.vo.MemberVO;
 /**
  * @author user
  *
- * È¸¿ø Á¤º¸¸¦ È®ÀÎÇØ¼­ ¾ÆÀÌµğ¿Í ºñ¹Ğ¹øÈ£¸¦ »ç¿ëÇÏ´Â È¸¿øÀ» Ã£¾Æ
- * ·Î±×ÀÎ ±ÇÇÑÀ» ÁÖ´Â Action
- * ·Î±×ÀÎ ±ÇÇÑ session¿¡ ¾ÆÀÌµğ¿Í ÀÌ¸§À» ÀúÀåÇÏ´Â È¸¿øÀ¸·Î ÇÑ´Ù.
+ * íšŒì› ì •ë³´ë¥¼ í™•ì¸í•´ì„œ ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ë¥¼ ì‚¬ìš©í•˜ëŠ” íšŒì›ì„ ì°¾ì•„
+ * ë¡œê·¸ì¸ ê¶Œí•œì„ ì£¼ëŠ” Action
+ * ë¡œê·¸ì¸ ê¶Œí•œ sessionì— ì•„ì´ë””ì™€ ì´ë¦„ì„ ì €ì¥í•˜ëŠ” íšŒì›ìœ¼ë¡œ í•œë‹¤.
  */
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
@@ -27,32 +27,32 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// Session Á¤º¸¸¦ °¡Á®¿Â´Ù.
+		// Session ì •ë³´ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
 		HttpSession session = request.getSession();
 		
-		// login.html ÆÄÀÏ¿¡¼­ ³Ñ¾î¿Â ÆÄ¶ó¹ÌÅÍ¸¦ ÀúÀå
+		// login.html íŒŒì¼ì—ì„œ ë„˜ì–´ì˜¨ íŒŒë¼ë¯¸í„°ë¥¼ ì €ì¥
 		String user_id = request.getParameter("user_id");
 		String user_pw = request.getParameter("user_pw");
 		
-		// ·Î±×ÀÎ Ã³¸®¸¦ ÇÏ´Â ÇÔ¼ö »ı¼º
+		// ë¡œê·¸ì¸ ì²˜ë¦¬ë¥¼ í•˜ëŠ” í•¨ìˆ˜ ìƒì„±
 		LoginDAO loginDAO = new LoginDAO();
 		
-		// ·Î±×ÀÎ È®ÀÎ
+		// ë¡œê·¸ì¸ í™•ì¸
 		int m_idx = loginDAO.login(user_id, user_pw);
 		
-		// Á¤»óÀûÀÎ È¸¿øÁ¤º¸°¡ ÀÖÀ½
+		// ì •ìƒì ì¸ íšŒì›ì •ë³´ê°€ ìˆìŒ
 		if(m_idx > 0) {
 			MemberDAO memberDAO = new MemberDAO();
 			
-			//-- È¸¿øÁ¤º¸¸¦ °¡Á®¿È
+			//-- íšŒì›ì •ë³´ë¥¼ ê°€ì ¸ì˜´
 			MemberVO  memberVO 	= memberDAO.member_view(m_idx);
 			
-			//-- session¿¡ ·Î±×ÀÎÇÑ È¸¿øÁ¤º¸ Ç¥Çö
+			//-- sessionì— ë¡œê·¸ì¸í•œ íšŒì›ì •ë³´ í‘œí˜„
 			session.setAttribute("user_id", memberVO.getM_id());
 			session.setAttribute("user_name", memberVO.getM_name());
 			
 			response.sendRedirect("memberList");
-		// ±×·± ¾ÆÀÌµğ¿Í ºñ¹Ğ¹øÈ£¸¦ °¡Áø È¸¿øÀÌ ¾øÀ½.
+		// ê·¸ëŸ° ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ë¥¼ ê°€ì§„ íšŒì›ì´ ì—†ìŒ.
 		} else {
 			response.sendRedirect("login.html");
 		}

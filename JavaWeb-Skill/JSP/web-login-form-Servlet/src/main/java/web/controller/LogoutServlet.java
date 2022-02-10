@@ -23,7 +23,7 @@ public class LogoutServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		out.println("<script>");
-		out.println("alert('"+user_name+"´Ô ·Î±×¾Æ¿ô µÇ¾ú½À´Ï´Ù.')");
+		out.println("alert('"+user_name+"ë‹˜ ë¡œê·¸ì•„ì›ƒ ë˜ì—ˆìŠµë‹ˆë‹¤.')");
 		out.println("location= '"+request.getContextPath()+"'");
 		out.println("</script>");
 	}

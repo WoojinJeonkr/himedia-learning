@@ -33,29 +33,29 @@ public class Fileupload extends HttpServlet {
 		File currentDirPath = new File ("c:\\file_repo");
 		
 		DiskFileItemFactory factory = new DiskFileItemFactory();
-		factory.setRepository(currentDirPath); // ÆÄÀÏÀÌ ÀúÀåµÇ´Â µğ·ºÅä¸® °ü¹®
-		factory.setSizeThreshold(1024*1024); // ÆÄÀÏ ¿ë·® Á¦ÇÑ
+		factory.setRepository(currentDirPath); // íŒŒì¼ì´ ì €ì¥ë˜ëŠ” ë””ë ‰í† ë¦¬ ê´€ë¬¸
+		factory.setSizeThreshold(1024*1024); // íŒŒì¼ ìš©ëŸ‰ ì œí•œ
 		
 		ServletFileUpload upload = new ServletFileUpload(factory);
 		
 		try {
 			List items = upload.parseRequest(request);
 			
-			// Ã·ºÎÆÄÀÏ »Ó¸¸ ¾Æ´Ï¶ó Æû µ¥ÀÌÅÍ(text)µµ Àü¼ÛµÈ´Ù.
+			// ì²¨ë¶€íŒŒì¼ ë¿ë§Œ ì•„ë‹ˆë¼ í¼ ë°ì´í„°(text)ë„ ì „ì†¡ëœë‹¤.
 			for(int i=0;i<items.size();i++) {
 				FileItem fileitem = (FileItem) items.get(i);
 				
-				if(fileitem.isFormField()) { // ÀÏ¹İ ÆÄ¶ó¹ÌÅÍÀÎÁö ±¸ºĞ. ÀÏ¹İ ÆÄ¶ó¹ÌÅÍ¶ó¸é true 
-					// ÀÏ¹İ text ÆÄ¶ó¹ÌÅÍ
+				if(fileitem.isFormField()) { // ì¼ë°˜ íŒŒë¼ë¯¸í„°ì¸ì§€ êµ¬ë¶„. ì¼ë°˜ íŒŒë¼ë¯¸í„°ë¼ë©´ true 
+					// ì¼ë°˜ text íŒŒë¼ë¯¸í„°
 					System.out.println(fileitem.getFieldName()+"="+fileitem.getString("utf-8"));
 				} else {
-					// Ã·ºÎÆÄÀÏ ÆÄ¶ó¹ÌÅÍ
-					System.out.println("ÆÄ¶ó¹ÌÅÍ¸í:"+fileitem.getFieldName());
-					System.out.println("ÆÄÀÏ¸í:"+fileitem.getName());
-					System.out.println("ÆÄÀÏÅ©±â:"+fileitem.getSize()+"bytes");
-					System.out.println("Ã·ºÎÆÄÀÏÅ¸ÀÔ:"+fileitem.getContentType());
+					// ì²¨ë¶€íŒŒì¼ íŒŒë¼ë¯¸í„°
+					System.out.println("íŒŒë¼ë¯¸í„°ëª…:"+fileitem.getFieldName());
+					System.out.println("íŒŒì¼ëª…:"+fileitem.getName());
+					System.out.println("íŒŒì¼í¬ê¸°:"+fileitem.getSize()+"bytes");
+					System.out.println("ì²¨ë¶€íŒŒì¼íƒ€ì…:"+fileitem.getContentType());
 					
-					//--- IE ´ëºñÇØ¼­ Ã³¸®¿ë
+					//--- IE ëŒ€ë¹„í•´ì„œ ì²˜ë¦¬ìš©
 					System.out.println(fileitem.getName().lastIndexOf("\\"));
 					System.out.println(fileitem.getName()+"");
 					if(fileitem.getSize()>0) {
@@ -66,7 +66,7 @@ public class Fileupload extends HttpServlet {
 						String fileName = fileitem.getName().substring(idx+1);
 						System.out.println("filename:"+fileName);
 						File uploadFile = new File(currentDirPath+"\\"+fileName);
-						fileitem.write(uploadFile); // µğ·ºÅä¸®¿¡ ÀúÀå
+						fileitem.write(uploadFile); // ë””ë ‰í† ë¦¬ì— ì €ì¥
 					}
 				}
 			}
