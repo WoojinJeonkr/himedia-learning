@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+<!--<%String contextPath = request.getContextPath();%>-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +15,7 @@
 	<div class="container">
 		<div class="section">
 			<!--<h2>회원목록(<%=session.getAttribute("user_name")%>)</h2> -->
-			<h2>회원목록(${sessionScope.user_name}님 환영합니다.)<a href="logout">로그아웃</a></h2>
+			<h2>회원목록(${sessionScope.user_name}님 환영합니다.)<a href="logout" style="float:right">로그아웃</a></h2>
 			<table class="bluetop">
 				<tr>
 					<td>No</td>
@@ -29,12 +30,12 @@
 				<c:forEach var="member" items="${member_list}" varStatus="status">
 				<tr>
 					<td>${member.m_idx}</td>
-					<td>${member.m_name}</td>
+					<td><a href = "${contextPath}/memberView?m_idx=${member.m_idx}">${member.m_name}</a></td>
 					<td>${member.m_id}</td>
 					<td>${member.m_pw}</td>
 					<td>${member.m_email}</td>
 					<td>${member.m_phone}</td>
-					<td>${member.m_mdfydate}</td>
+					<td><fmt:formatDate value="${member.m_mdfydate}" pattern="yyyy-MM-dd"/></td>
 					<td><fmt:formatDate value="${member.m_rgstdate}" pattern="yyyy-MM-dd"/></td>
 				</tr>
 				</c:forEach>

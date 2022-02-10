@@ -134,4 +134,75 @@ public class MemberDAO {
 		}
 		return memberVO;
 	}
+	
+	/**
+	 * 회원정보 저장
+	 * @param MemberVO
+	 */
+	public void member_save(MemberVO memberVO) {
+		Connection con = null; // database 연결을 위한 객체
+		PreparedStatement pstmt = null; // SQL 문을 서버로 보내기 위한 객체
+		try {
+			//-- connection 처리
+			con = dataFactory.getConnection();
+			
+			//-- 사용할 쿼리
+			String query = "INSERT INTO member(m_id, m_pw, m_name, m_email, m_phone) VALUES(?,?,?,?,?)";
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, memberVO.getM_id());
+			pstmt.setString(2, memberVO.getM_pw());
+			pstmt.setString(3, memberVO.getM_name());
+			pstmt.setString(4, memberVO.getM_email());
+			pstmt.setString(5, memberVO.getM_phone());
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
+	 * 사용이 가능한 아이디인지 확인
+	 * @param check_id
+	 * @return
+	 */
+	public String check_id(String check_id) {
+		String result = "false";
+		Connection con = null;           // database 연결을 위한 객체
+		PreparedStatement pstmt  = null; // SQL 문을 서버로 보내기 위한 객체
+		ResultSet rs   = null;           // SQL을 실행하고 결과를 받기 위한 객체
+		try{
+			//--- database 연결
+			con = dataFactory.getConnection();
+			
+			//--- 사용할 쿼리
+			String query = "SELECT m_idx FROM member WHERE m_id = ?";
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, check_id);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = "true";
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				pstmt.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
 }
