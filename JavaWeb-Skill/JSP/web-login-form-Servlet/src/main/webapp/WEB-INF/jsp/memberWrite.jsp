@@ -13,7 +13,33 @@
 	<script>
 		//--- 초기화 
 		$(function(){
+			
+			//--- 파일 업로드
+			$('.upload').on('change', function(){
+				if($(this)[0].files[0] != null){
+					var formData = new FormData();
+					formData.append("file",$(this)[0].files[0]); // 파일 정보를 formData 객체에 저장
+					
+					$.ajax({
+						url:"${contextPath}/fileupload",
+						type: "post",
+						data: formData,
+						dataType: "json",
+						processData: false,
+						contentType: false,
+						berforeSend : function(){
+							
+						},
+						success : function(json){
+							$('#m_file').val(json.filename);
+						}
+					})
+				}
+			});
+			//--- 파일 업로드
+			
 			$("#btn_save").click(function(){
+				
 				if($('#m_name').val() == ''){
 					alert('이름을 입력해주세요.');
 					$('#m_name').focus();
@@ -75,7 +101,7 @@
 		            },
 		            
 					success:function(data){
-		                //성공적으로 URL 전송하고난 내용
+		                //성공적으로 URL 전송한 뒤의 내용
 		                if(data == "false"){
 		                	//alert("아이디를 사용할수 있습니다.");
 		                	if(confirm("아이디를 사용하시겠습니까?")){
@@ -106,31 +132,36 @@
 			<table class="bluetop">
 				<form action="${contextPath}/memberSave" method="post" id="frmMember">
 				<input type="hidden" name="idcheck" id="idcheck" value="0"/>
-				<tr>
-					<th>이름</th>
-					<td><input type="text" name="m_name" id="m_name"></td>
-				</tr>
-				<tr>
-					<th>아이디</th>
-					<td><input type="text" name="m_id" id="m_id">
-					<button type="button" class="btn_style_edit" id="btn_idcheck">중복가입확인</button></td>
-				</tr>
-				<tr>
-					<th>비밀번호</th>
-					<td><input type="password" name="m_pw" id="m_pw"></td>
-				</tr>
-				<tr>
-					<th>비밀번호 확인</th>
-					<td><input type="password" name="m_pwconfirm" id="m_pwconfirm"></td>
-				</tr>
-				<tr>
-					<th>이메일</th>
-					<td><input type="text" name="m_email" id="m_email"></td>
-				</tr>
-				<tr>
-					<th>핸드폰</th>
-					<td><input type="text" name="m_phone" id="m_phone"></td>
-				</tr>
+				<input type="hidden" name="m_file" id="m_file"/>
+					<tr>
+						<th>이름</th>
+						<td><input type="text" name="m_name" id="m_name"></td>
+					</tr>
+					<tr>
+						<th>아이디</th>
+						<td><input type="text" name="m_id" id="m_id">
+						<button type="button" class="btn_style_edit" id="btn_idcheck">중복가입확인</button></td>
+					</tr>
+					<tr>
+						<th>비밀번호</th>
+						<td><input type="password" name="m_pw" id="m_pw"></td>
+					</tr>
+					<tr>
+						<th>비밀번호 확인</th>
+						<td><input type="password" name="m_pwconfirm" id="m_pwconfirm"></td>
+					</tr>
+					<tr>
+						<th>이메일</th>
+						<td><input type="text" name="m_email" id="m_email"></td>
+					</tr>
+					<tr>
+						<th>핸드폰</th>
+						<td><input type="text" name="m_phone" id="m_phone"></td>
+					</tr>
+					<tr>
+						<th>사진</th>
+						<td><input type="file" class="upload"></td>
+					</tr>
 				</form>
 			</table>
 			<div class="btns">
