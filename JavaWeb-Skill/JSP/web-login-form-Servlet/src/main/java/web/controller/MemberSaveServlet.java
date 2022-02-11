@@ -35,6 +35,7 @@ public class MemberSaveServlet extends HttpServlet {
 		memberVO.setM_name((String)request.getParameter("m_name"));
 		memberVO.setM_email((String)request.getParameter("m_email"));
 		memberVO.setM_phone((String)request.getParameter("m_phone"));
+		memberVO.setM_file((String)request.getParameter("m_file"));
 		
 		//--- 회원가입 정보를 DB에 저장
 		memberDAO.member_save(memberVO);
