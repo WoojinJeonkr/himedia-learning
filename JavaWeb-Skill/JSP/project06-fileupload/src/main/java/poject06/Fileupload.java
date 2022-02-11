@@ -2,6 +2,8 @@ package poject06;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -16,7 +18,7 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 @WebServlet("/upload")
-public class Fileupload extends HttpServlet {
+public class FileUpLoad extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -62,18 +64,37 @@ public class Fileupload extends HttpServlet {
 						int idx = fileitem.getName().lastIndexOf("\\");
 						if(idx == -1) {
 							idx = fileitem.getName().lastIndexOf("\\");
-						}
+							fileitem.getName().indexOf("\\");
+							}
 						String fileName = fileitem.getName().substring(idx+1);
 						System.out.println("filename:"+fileName);
 						File uploadFile = new File(currentDirPath+"\\"+fileName);
+						
+						//--- 추가 문장
+						if(uploadFile.exists()){ // 파일 저장 위치에 해당 이름의 첨부파일이 있다면
+							int fileName_idx = fileName.lastIndexOf(".");
+							
+							SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmmss");
+							Calendar c = Calendar.getInstance();
+							String StrToday = sdf.format(c.getTime());
+							//--- 등록되지 않은 파일명 생성
+							String new_fileName  = fileName.substring(0, fileName_idx)+"_"+StrToday+
+									fileName.substring(fileName_idx); // 확장자
+							
+							File uploadFile_new  = new File(currentDirPath+"\\"+new_fileName);
+							fileitem.write(uploadFile_new); // 디렉토리에 저장
+							
+						} else {
 						fileitem.write(uploadFile); // 디렉토리에 저장
+						}
 					}
 				}
 			}
-			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		response.sendRedirect(request.getContextPath()+"/result");
 	}
 }
