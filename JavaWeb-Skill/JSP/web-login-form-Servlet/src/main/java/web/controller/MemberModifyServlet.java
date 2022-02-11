@@ -17,7 +17,7 @@ import web.vo.MemberVO;
 /**
  * @author hi
  * 
- * 회원가입 정보를 저장하는 Action
+ * 회원가입 정보를 수정하는 Action
  */
 @WebServlet("/memberMdfy")
 public class MemberModifyServlet extends HttpServlet {
