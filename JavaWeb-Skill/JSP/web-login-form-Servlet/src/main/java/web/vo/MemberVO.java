@@ -5,19 +5,27 @@ import java.sql.Timestamp;
 /**
  * 
  * @author hi
- * memberÀÇ value object
- * º¯¼ö¿Í °ªÀ¸·Î ÀÌ·ç¾îÁø µ¥ÀÌÅÍ °´Ã¼
+ * memberì˜ value object
+ * ë³€ìˆ˜ì™€ ê°’ìœ¼ë¡œ ì´ë£¨ì–´ì§„ ë°ì´í„° ê°ì²´
  */
 public class MemberVO {
 
-	private int m_idx; // ½ÃÄö½º
-	private String m_name; // ÀÌ¸§
-	private String m_id; // ¾ÆÀÌµğ
-	private String m_pw; // ºñ¹Ğ¹øÈ£
-	private String m_email;// ÀÌ¸ŞÀÏ
-	private String m_phone; // ÈŞ´ëÆù
-	private Timestamp m_mdfydate; // ¼öÁ¤ÀÏ
-	private Timestamp m_rgstdate; //µî·ÏÀÏ
+	private int m_idx; // ì‹œí€€ìŠ¤
+	private String m_name; // ì´ë¦„
+	private String m_id; // ì•„ì´ë””
+	private String m_pw; // ë¹„ë°€ë²ˆí˜¸
+	private String m_email;// ì´ë©”ì¼
+	private String m_phone; // íœ´ëŒ€í°
+	private Timestamp m_mdfydate; // ìˆ˜ì •ì¼
+	private Timestamp m_rgstdate; //ë“±ë¡ì¼
+	private String m_file;// ì²¨ë¶€íŒŒì¼ëª…
+	
+	public String getM_file() {
+		return m_file;
+	}
+	public void setM_file(String m_file) {
+		this.m_file = m_file;
+	}
 	public int getM_idx() {
 		return m_idx;
 	}

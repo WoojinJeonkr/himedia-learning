@@ -27,12 +27,13 @@
   border-right: 0;
 }
 
+button {cursor:pointer;}
 /*button*/
 .btns {float:right;padding-top:5px;}
 .btn_style_submit{width:100px; border:0; border-radius:8px; background:#5B88E7; color:#fff; height:36px; font-size:14px; display:inline-block; text-align:center; line-height:36px;}
 .btn_style_cancel{width:100px; border:0; border-radius:8px; background:#000; color:#fff; height:36px; font-size:14px; display:inline-block; text-align:center; line-height:36px;}
 .btn_style_write{width:100px; border:0; border-radius:8px; background:#B266FF; color:#fff; height:36px; font-size:14px; display:inline-block; text-align:center; line-height:36px;}
-.btn_style_back{width:100px; border:0; border-radius:8px; background:#FF6666; color:#fff; height:36px; font-size:14px; display:inline-block; text-align:center; line-height:36px;}
-.btn_style_view{width:100px; border:0; border-radius:8px; background:#FFB266; color:#fff; height:36px; font-size:14px; display:inline-block; text-align:center; line-height:36px;}
+.btn_style_back{width:100px; border:0; border-radius:8px; background:#FFCC99; color:#fff; height:36px; font-size:14px; display:inline-block; text-align:center; line-height:36px;}
+.btn_style_view{width:100px; border:0; border-radius:8px; background:#6ABF29; color:#fff; height:36px; font-size:14px; display:inline-block; text-align:center; line-height:36px;}
 .btn_style_edit{width:100px; border:0; border-radius:8px; background:#0BB5C2; color:#fff; height:36px; font-size:14px; display:inline-block; text-align:center; line-height:36px;}
 .btn_style_delete{width:100px; border:0; border-radius:8px; background:#FF6666; color:#fff; height:36px; font-size:14px; display:inline-block; text-align:center; line-height:36px;}

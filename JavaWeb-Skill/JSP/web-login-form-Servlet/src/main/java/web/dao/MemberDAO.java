@@ -18,7 +18,7 @@ import web.vo.MemberVO;
  * @author hi
  * Member Database Access Object
  * 
- * ÀÚ¹ÙÀ¥À» ´Ù·ç´Â ±â¼ú p.239
+ * ìë°”ì›¹ì„ ë‹¤ë£¨ëŠ” ê¸°ìˆ  p.239
  * <Resource name="jdbc/mariadb"
     		  auth="Container"
     		  type="javax.sql.DataSource"
@@ -45,19 +45,19 @@ public class MemberDAO {
 	}
 	
 	/**
-	 * generic Ç¥±â¹ı
-	 * ³»°¡ ¿øÇÏ´Â °´Ã¼¸¦ ¸®½ºÆ®¿¡ ´ãÀ¸·Á°í È®Á¤Áş±â À§ÇØ »ç¿ë
-	 * È¸¿øÀÇ ¸ñ·ÏÀ» °¡Á®¿À´Â ÇÔ¼ö
+	 * generic í‘œê¸°ë²•
+	 * ë‚´ê°€ ì›í•˜ëŠ” ê°ì²´ë¥¼ ë¦¬ìŠ¤íŠ¸ì— ë‹´ìœ¼ë ¤ê³  í™•ì •ì§“ê¸° ìœ„í•´ ì‚¬ìš©
+	 * íšŒì›ì˜ ëª©ë¡ì„ ê°€ì ¸ì˜¤ëŠ” í•¨ìˆ˜
 	 * @return
 	 */
 	public List<MemberVO> member_list(){
 		List<MemberVO> list = new ArrayList<MemberVO>();
-		Connection con = null; // database ¿¬°áÀ» À§ÇÑ °´Ã¼
-		PreparedStatement pstmt = null; // SQL ¹®À» ¼­¹ö·Î º¸³»±â À§ÇÑ °´Ã¼
-		ResultSet rs = null; // SQLÀ» ½ÇÇàÇÏ°í °á°ú¸¦ ¾ò±â À§ÇÑ °´Ã¼
+		Connection con = null; // database ì—°ê²°ì„ ìœ„í•œ ê°ì²´
+		PreparedStatement pstmt = null; // SQL ë¬¸ì„ ì„œë²„ë¡œ ë³´ë‚´ê¸° ìœ„í•œ ê°ì²´
+		ResultSet rs = null; // SQLì„ ì‹¤í–‰í•˜ê³  ê²°ê³¼ë¥¼ ì–»ê¸° ìœ„í•œ ê°ì²´
 		try {
 			con = dataFactory.getConnection();
-			//---------- member¸¦ selectÇØ¼­ MemberVO °´Ã¼¿¡ µ¥ÀÌÅÍ¸¦ ´ãÀº ÈÄ List¿¡ ÇÏ³ª¾¿ Ãß°¡ÇÑ´Ù.
+			//---------- memberë¥¼ selectí•´ì„œ MemberVO ê°ì²´ì— ë°ì´í„°ë¥¼ ë‹´ì€ í›„ Listì— í•˜ë‚˜ì”© ì¶”ê°€í•œë‹¤.
 			String query = "select * from member";
 			pstmt = con.prepareStatement(query);
 			rs = pstmt.executeQuery();
@@ -91,25 +91,25 @@ public class MemberDAO {
 	}
 	
 	/**
-	 * È¸¿ø ½ÃÄö½º¿¡ ÇØ´çÇÏ´Â È¸¿ø Á¤º¸¸¦ ÇÏ³ª °¡Á®¿À´Â ÇÔ¼ö
+	 * íšŒì› ì‹œí€€ìŠ¤ì— í•´ë‹¹í•˜ëŠ” íšŒì› ì •ë³´ë¥¼ í•˜ë‚˜ ê°€ì ¸ì˜¤ëŠ” í•¨ìˆ˜
 	 * @return
 	 */
 	public MemberVO member_view(int m_idx){
-		Connection con = null; // database ¿¬°áÀ» À§ÇÑ °´Ã¼
-		PreparedStatement pstmt = null; // SQL ¹®À» ¼­¹ö·Î º¸³»±â À§ÇÑ °´Ã¼
-		ResultSet rs = null; // SQLÀ» ½ÇÇàÇÏ°í °á°ú¸¦ ¾ò±â À§ÇÑ °´Ã¼
+		Connection con = null; // database ì—°ê²°ì„ ìœ„í•œ ê°ì²´
+		PreparedStatement pstmt = null; // SQL ë¬¸ì„ ì„œë²„ë¡œ ë³´ë‚´ê¸° ìœ„í•œ ê°ì²´
+		ResultSet rs = null; // SQLì„ ì‹¤í–‰í•˜ê³  ê²°ê³¼ë¥¼ ì–»ê¸° ìœ„í•œ ê°ì²´
 		
 		MemberVO memberVO = new MemberVO();
 		
 		try {
-			//-- connection Ã³¸®
+			//-- connection ì²˜ë¦¬
 			con = dataFactory.getConnection();
 			
-			//-- »ç¿ëÇÒ Äõ¸®
+			//-- ì‚¬ìš©í•  ì¿¼ë¦¬
 			String query = "select * from member where m_idx=?";
 			pstmt = con.prepareStatement(query);
 			pstmt.setInt(1, m_idx);
-			rs = pstmt.executeQuery(); // Äõ¸®¸¦ ¼öÇàÇÏ°í °á°ú¸¦ ResultSet¿¡ ÀúÀå
+			rs = pstmt.executeQuery(); // ì¿¼ë¦¬ë¥¼ ìˆ˜í–‰í•˜ê³  ê²°ê³¼ë¥¼ ResultSetì— ì €ì¥
 			
 			if(rs.next()) {
 				memberVO.setM_idx(rs.getInt("m_idx"));
@@ -117,6 +117,7 @@ public class MemberDAO {
 				memberVO.setM_name(rs.getString("m_name"));
 				memberVO.setM_email(rs.getString("m_email"));
 				memberVO.setM_phone(rs.getString("m_phone"));
+				memberVO.setM_file(rs.getString("m_file"));
 				memberVO.setM_mdfydate(rs.getTimestamp("m_mdfydate"));
 				memberVO.setM_rgstdate(rs.getTimestamp("m_rgstdate"));
 			}
@@ -136,24 +137,25 @@ public class MemberDAO {
 	}
 	
 	/**
-	 * È¸¿øÁ¤º¸ ÀúÀå
+	 * íšŒì›ì •ë³´ ì €ì¥
 	 * @param MemberVO
 	 */
 	public void member_save(MemberVO memberVO) {
-		Connection con = null; // database ¿¬°áÀ» À§ÇÑ °´Ã¼
-		PreparedStatement pstmt = null; // SQL ¹®À» ¼­¹ö·Î º¸³»±â À§ÇÑ °´Ã¼
+		Connection con = null; // database ì—°ê²°ì„ ìœ„í•œ ê°ì²´
+		PreparedStatement pstmt = null; // SQL ë¬¸ì„ ì„œë²„ë¡œ ë³´ë‚´ê¸° ìœ„í•œ ê°ì²´
 		try {
-			//-- connection Ã³¸®
+			//-- connection ì²˜ë¦¬
 			con = dataFactory.getConnection();
 			
-			//-- »ç¿ëÇÒ Äõ¸®
-			String query = "INSERT INTO member(m_id, m_pw, m_name, m_email, m_phone) VALUES(?,?,?,?,?)";
+			//-- ì‚¬ìš©í•  ì¿¼ë¦¬
+			String query = "INSERT INTO member(m_id, m_pw, m_name, m_email, m_phone, m_file) VALUES(?,?,?,?,?,?)";
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, memberVO.getM_id());
 			pstmt.setString(2, memberVO.getM_pw());
 			pstmt.setString(3, memberVO.getM_name());
 			pstmt.setString(4, memberVO.getM_email());
 			pstmt.setString(5, memberVO.getM_phone());
+			pstmt.setString(6, memberVO.getM_file());
 			pstmt.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -169,20 +171,20 @@ public class MemberDAO {
 	}
 	
 	/**
-	 * »ç¿ëÀÌ °¡´ÉÇÑ ¾ÆÀÌµğÀÎÁö È®ÀÎ
+	 * ì‚¬ìš©ì´ ê°€ëŠ¥í•œ ì•„ì´ë””ì¸ì§€ í™•ì¸
 	 * @param check_id
 	 * @return
 	 */
 	public String check_id(String check_id) {
 		String result = "false";
-		Connection con = null;           // database ¿¬°áÀ» À§ÇÑ °´Ã¼
-		PreparedStatement pstmt  = null; // SQL ¹®À» ¼­¹ö·Î º¸³»±â À§ÇÑ °´Ã¼
-		ResultSet rs   = null;           // SQLÀ» ½ÇÇàÇÏ°í °á°ú¸¦ ¹Ş±â À§ÇÑ °´Ã¼
+		Connection con = null;           // database ì—°ê²°ì„ ìœ„í•œ ê°ì²´
+		PreparedStatement pstmt  = null; // SQL ë¬¸ì„ ì„œë²„ë¡œ ë³´ë‚´ê¸° ìœ„í•œ ê°ì²´
+		ResultSet rs   = null;           // SQLì„ ì‹¤í–‰í•˜ê³  ê²°ê³¼ë¥¼ ë°›ê¸° ìœ„í•œ ê°ì²´
 		try{
-			//--- database ¿¬°á
+			//--- database ì—°ê²°
 			con = dataFactory.getConnection();
 			
-			//--- »ç¿ëÇÒ Äõ¸®
+			//--- ì‚¬ìš©í•  ì¿¼ë¦¬
 			String query = "SELECT m_idx FROM member WHERE m_id = ?";
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, check_id);
@@ -204,5 +206,77 @@ public class MemberDAO {
 			}
 		}
 		return result;
+	}
+	
+	/**
+	 * íšŒì›ì •ë³´ ìˆ˜ì •
+	 * @param memberVO
+	 */
+	public void member_update(MemberVO memberVO) {
+		Connection con = null; // database ì—°ê²°ì„ ìœ„í•œ ê°ì²´
+		PreparedStatement pstmt = null; // SQL ë¬¸ì„ ì„œë²„ë¡œ ë³´ë‚´ê¸° ìœ„í•œ ê°ì²´
+		try {
+			//-- connection ì²˜ë¦¬
+			con = dataFactory.getConnection();
+			
+			if(memberVO.getM_pw() == null || memberVO.getM_pw().equals("")) {
+				//-- ë¹„ë°€ë²ˆí˜¸ ìˆ˜ì •ì— ì‚¬ìš©í•  ì¿¼ë¦¬
+				String query = "UPDATE member SET m_name =?, m_phone =?, m_email =?, m_mdfydate = now() where m_idx=?";
+				pstmt = con.prepareStatement(query);
+				pstmt.setString(1, memberVO.getM_name());
+				pstmt.setString(2, memberVO.getM_phone());
+				pstmt.setString(3, memberVO.getM_email());
+				pstmt.setInt(4, memberVO.getM_idx());
+				pstmt.executeUpdate();
+			} else {
+				//-- ë¹„ë°€ë²ˆí˜¸ ìˆ˜ì •ì— ì‚¬ìš©í•  ì¿¼ë¦¬
+				String query = "UPDATE member SET m_pw =?, m_name =?, m_phone =?, m_email =?, m_mdfydate = now() where m_idx=?";
+				pstmt = con.prepareStatement(query);
+				pstmt.setString(1, memberVO.getM_pw());
+				pstmt.setString(2, memberVO.getM_name());
+				pstmt.setString(3, memberVO.getM_phone());
+				pstmt.setString(4, memberVO.getM_email());
+				pstmt.setInt(5, memberVO.getM_idx());
+				pstmt.executeUpdate();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
+	 * íšŒì›ì •ë³´ ì‚­ì œ
+	 * @param memberVO
+	 */
+	public void member_delete(int m_idx) {
+		Connection con = null; // database ì—°ê²°ì„ ìœ„í•œ ê°ì²´
+		PreparedStatement pstmt = null; // SQL ë¬¸ì„ ì„œë²„ë¡œ ë³´ë‚´ê¸° ìœ„í•œ ê°ì²´
+		try {
+			//-- connection ì²˜ë¦¬
+			con = dataFactory.getConnection();
+			
+			//-- ì‚¬ìš©í•  ì¿¼ë¦¬
+			String query = "DELETE FROM member WHERE m_idx = ?";
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, m_idx);
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }
