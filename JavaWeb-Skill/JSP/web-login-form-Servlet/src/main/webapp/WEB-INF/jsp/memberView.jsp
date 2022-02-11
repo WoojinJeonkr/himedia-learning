@@ -9,6 +9,13 @@
 	<meta charset="UTF-8">
 	<title>회원정보</title>
 	<link rel="stylesheet" type="text/css" href="${contextPath}/css/style.css">
+	<script>
+	function member_del(value, idx) {
+		if(confirm(value+"님을 삭제하시겠습니까?")) {
+			location.href= "${contextPath}/memberDelete?m_idx="+idx;
+		}
+	}
+	</script>
 </head>
 <body>
 	<div class="container">
@@ -24,16 +31,16 @@
 					<td>${member_view.m_id}</td>
 				</tr>
 				<tr>
-					<th>비밀번호</th>
-					<td>${member_view.m_pw}</td>
-				</tr>
-				<tr>
 					<th>이메일</th>
 					<td>${member_view.m_email}</td>
 				</tr>
 				<tr>
 					<th>핸드폰</th>
 					<td>${member_view.m_phone}</td>
+				</tr>
+				<tr>
+					<th>사진</th>
+					<td>${member_view.m_file}</td>
 				</tr>
 				<tr>
 					<th>수정일</th>
@@ -46,8 +53,14 @@
 					<td><fmt:formatDate value="${member_view.m_rgstdate}" pattern="yyyy-MM-dd"/></td>
 				</tr>
 			</table>
-			<div class="btns">
+			<div class="btns" style="float:left">
+				<button class="btn_style_edit" onclick="location.href='${contextPath}/memberMdfy?m_idx=${member_view.m_idx}'">회원정보 수정</button>
+			</div>
+			<div class="btns" style="position: absolute; left: 50%; transform: translateX(-50%);">
 				<button class="btn_style_view" onclick="location.href='${contextPath}/memberList'">회원목록</button>
+			</div>
+			<div class="btns" style="float:right">
+				<button class="btn_style_delete" onclick="member_del('${member_view.m_name}', '${member_view.m_idx}')">삭제</button>
 			</div>
 		</div>
 	</div>
