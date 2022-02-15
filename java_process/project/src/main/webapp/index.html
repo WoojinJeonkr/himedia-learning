@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>게시판</title>
+	</head>
+	<body>
+	<h1>게시판</h1>
+	<form action="login.jsp">
+	아이디 : <input type="text" name="id"><br>
+	패스워드 : <input type="text" name="pw"><br>
+	<button style=background:yellow;color:red;width:120px;>회원로그인 요청</button>
+	</form>
+	<br>
+	<hr color='gray'>
+	<form action="create.jsp">
+		<h2>게시판 생성</h2>
+			번호: <input type="text" name="idx"><br>
+			제목: <input type="text" name="title"><br>
+			작성자: <input type="text" name="name"><br>
+			내용: <textarea name="text"></textarea><br>
+		<button>게시판 생성</button>
+	</form>
+	<br>
+	<hr color='blue'>
+	<form action="update.jsp">
+		<h2>게시판 수정</h2>
+			번호: <input type="text" name="idx"><br>
+			내용: <textarea name="text"></textarea><br>
+		<button>게시판 수정</button>
+	</form>
+	<br>
+	<hr color='blue'>
+	<form action="one.jsp">
+		<h2>글 검색</h2>
+		번호: <input type="text" name="idx"><br>
+		<button>회원정보 검색 요청</button>
+	</form>
+	<br>
+	<hr color='blue'>
+	<form action="delete.jsp">
+		<h2>게시판 삭제</h2>
+			번호: <input type="text" name="idx"><br>
+		<button>게시판 삭제</button>
+	</form>
+	<hr color="blue">
+		<h2>전체 목록 검색</h2>
+	<a href="list.jsp">
+		<button style="color: yellow; background: red;">전체 회원 목록</button>
+	</a>
+	</body>
+</html>
+
+
