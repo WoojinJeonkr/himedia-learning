@@ -30,7 +30,7 @@ public class BoardDAO {
 		System.out.println("1. 드라이버/커넥터 설정 성공");
 		
 		// 2. db 연결 : 1) ip+port, 2) user+pw, 3)db명(big)
-		String url="jdbc:mysql://localhost:3366/big?useUnicode=true&characterEncoding=utf8";
+		String url="jdbc:mysql://localhost:3306/big?useUnicode=true&characterEncoding=utf8";
 		String user="root";
 		String pass = "1234";
 		
@@ -39,7 +39,7 @@ public class BoardDAO {
 		System.out.println("2. db 연결 성공");
 		
 		// 3. sql문을 생성
-		String sql = "insert into Board values(?, ?, ?, ?, now(), ?)";
+		String sql = "insert into Board values(?, ?, ?, ?, now())";
 		
 		PreparedStatement ps = con.prepareStatement(sql);
 		System.out.println("3. SQL 객체 생성 성공.");
@@ -47,54 +47,51 @@ public class BoardDAO {
 		ps.setString(2, title2);
 		ps.setString(3, name2);
 		ps.setString(4, text2);
-		ps.setString(5, id);
 		
 		// 4. 생성한 sql문을 mysql로 보낸다
 		ps.executeUpdate();
 		System.out.println("4. SQL문 전송 성공.");
 	}
 	
-	public boolean login(BoardVO vo) throws Exception {
-		System.out.println("회원 로그인 처리 요청됨.");
-		System.out.println("dao에서 전달받은 값:" + vo);
-		String id2 = vo.getId();
-//		String pw2 = vo.getP
-//		System.out.println("전달받은 id는 " + id2 + " " +pw2);
-		
-		//db프로그램 순서
-		//1. connector라이브러리 설정
-		Class.forName("com.mysql.jdbc.Driver");
-		System.out.println("1. 드라이버/커넥터 설정 성공");
-		
-		//2. db 연결 : 1) ip+port, 2) user+pw, 3)db명(big)
-		String url = "jdbc:mysql://localhost:3366/big";
-		String user = "root";
-		String pass = "1234";
-		
-		Connection con = DriverManager.getConnection(url, user, pass);
-		
-		System.out.println("2. db연결 성공");
-		
-		//3. sql문을 생성
-		String sql = "select * from board where id = ?";
-
-		PreparedStatement ps = con.prepareStatement(sql);
-		System.out.println("3. SQL객체 생성 성공.");
-		ps.setString(1, id2);
-		
-		//4. 생성한 sql문을 mysql로 보낸다.
-		ResultSet rs = ps.executeQuery();
-		//System.out.println("결과값 있는지 체크 결과는 >>" + rs.next());
-		System.out.println("4. SQL문 전송 성공.");
-		boolean result = false; // 없음
-		if(rs.next()) {
-			System.out.println("검색 결과가 있습니다.");
-			result = true;
-		}else {
-			System.out.println("검색 결과가 없습니다.");
-		}
-		return true;
-	}
+//	public boolean login(BoardVO vo) throws Exception {
+//		System.out.println("회원 로그인 처리 요청됨.");
+//		System.out.println("dao에서 전달받은 값:" + vo);
+//		String id2 = vo.getId();
+//		
+//		//db프로그램 순서
+//		//1. connector라이브러리 설정
+//		Class.forName("com.mysql.jdbc.Driver");
+//		System.out.println("1. 드라이버/커넥터 설정 성공");
+//		
+//		//2. db 연결 : 1) ip+port, 2) user+pw, 3)db명(big)
+//		String url = "jdbc:mysql://localhost:3306/big";
+//		String user = "root";
+//		String pass = "1234";
+//		
+//		Connection con = DriverManager.getConnection(url, user, pass);
+//		
+//		System.out.println("2. db연결 성공");
+//		
+//		//3. sql문을 생성
+//		String sql = "select * from board where id = ?";
+//
+//		PreparedStatement ps = con.prepareStatement(sql);
+//		System.out.println("3. SQL객체 생성 성공.");
+//		ps.setString(1, id2);
+//		
+//		//4. 생성한 sql문을 mysql로 보낸다.
+//		ResultSet rs = ps.executeQuery();
+//		//System.out.println("결과값 있는지 체크 결과는 >>" + rs.next());
+//		System.out.println("4. SQL문 전송 성공.");
+//		boolean result = false; // 없음
+//		if(rs.next()) {
+//			System.out.println("검색 결과가 있습니다.");
+//			result = true;
+//		}else {
+//			System.out.println("검색 결과가 없습니다.");
+//		}
+//		return true;
+//	}
 	
 	// 단일 검색
 		public BoardVO readOne(BoardVO vo) throws Exception {
@@ -112,7 +109,7 @@ public class BoardDAO {
 			System.out.println("1. 드라이버/커넥터 설정 성공");
 
 			// 2. db 연결 : 1) ip+port, 2) user+pw, 3) db명(big)
-			String url = "jdbc:mysql://localhost:3366/big";
+			String url = "jdbc:mysql://localhost:3306/big";
 			String user = "root";
 			String pass = "1234";
 
@@ -160,7 +157,7 @@ public class BoardDAO {
 			System.out.println("1. 드라이버/커넥터 설정 성공");
 
 			// 2. db 연결 : 1) ip+port, 2) user+pw, 3)db명(big)
-			String url = "jdbc:mysql://localhost:3366/big";
+			String url = "jdbc:mysql://localhost:3306/big";
 			String user = "root";
 			String pass = "1234";
 
@@ -217,7 +214,7 @@ public class BoardDAO {
 		System.out.println("1. 드라이버/커넥터 설정 성공");
 		
 		// 2. db 연결 : 1) ip+port, 2) user+pw, 3)db명(big)
-		String url="jdbc:mysql://localhost:3366/big?useUnicode=true&characterEncoding=utf8";
+		String url="jdbc:mysql://localhost:3306/big?useUnicode=true&characterEncoding=utf8";
 		String user = "root";
 		String pass = "1234";
 		
@@ -253,7 +250,7 @@ public class BoardDAO {
 		System.out.println("1. 드라이버/커넥터 설정 성공");
 		
 		// 2. db 연결 : 1) ip+port, 2) user+pw, 3) db명(big)
-		String url="jdbc:mysql://localhost:3366/big?useUnicode=true&characterEncoding=utf8";
+		String url="jdbc:mysql://localhost:3306/big?useUnicode=true&characterEncoding=utf8";
 		String user = "root";
 		String pass = "1234";
 		
