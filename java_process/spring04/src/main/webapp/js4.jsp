@@ -49,6 +49,7 @@
 <input type="radio" class = "r">독서
 <input type="radio" class = "r">노래
 <hr>
+<!-- ui-corner-all : 모서리 반경을 요소의 모든 4 모서리에 적용 -->
 <button id="button" class="ui-state-default ui-corner-all">Run Effect</button>
  
  
