@@ -7,11 +7,11 @@
 <title>Insert title here</title>
 <style>
 	body {
-		background: lime;
+		background: pink;
 	}
 </style>
 </head>
 <body>
-회원수정 결과 처리가 완료됨
+회원가입 처리 결과는 완료됨.!!!
 </body>
 </html>

@@ -2,53 +2,49 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-   <head>
+	<head>
       <meta charset="UTF-8">
       <title>Insert title here</title>
-      <!-- stylesheet와 관련된 css 타입을 사용하겠다. 주소는 resources/css/out.css-->
-      <link rel="stylesheet" type="text/css" href="resources/css/out.css">
-      <!-- out.js에 연결할 때 -->
-      <script type="text/javascript" src="resources/js/out.js"></script>
-      <!-- jquery cdn으로 연결한 경우 -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-      <!-- out.js를 사용할 때 -->
-      <script type="text/javascript">
-      	call()
-      	/* $: body 부분을 의미함 */
-      	// Document object Model(DOM, Document의 객체들을 읽어주는 모델) tree
-      	// document.ready(); = $(function(){});
-      	$(function() {
-      		// JQUERY: 자주 쓰는 자바스크립트 기능을
-      		// 라이브러리로 만들어놓은 것.
-      		// 복잡한 문법을 단순화시켜줌.
-			// alert('html이 ram에 모두 로딩되었음.');
-			alert("${user}가 id인 ${name}님 환영합니다.");
-		});
-      </script>
+      <link rel="stylesheet" type="text/css" href="resources/css/out.css" >
+   	 <script type="text/javascript" src="resources/js/out.js"></script>
+   	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   	 <script type="text/javascript">
+   	 	call()
+   	 	
+   	 	//Document Object Model(DOM) tree
+   	 	//document.ready()
+   	 	$(function() { 
+   	 		//JQUERY: 자주 쓰는 자바스크립트 기능을
+   	 		// 라이브러리로 만들어놓은 것.
+   	 		// 복잡한 문법을 단순화 시켜줌.
+			//alert('html이 ram에 모두 로딩되었음.')
+			alert("${user}님 환영합니다.")
+		})
+   	 </script>
    </head>
    <body>
-   환영합니다.....<br>
-   <hr>
-   <form action="create">
-	   아이디   : <input type="text" name="id"><br>
-	   패스워드   : <input type="text" name="pw"><br>
-	   이름 : <input type="text" name="name"><br>
-	   전화번호 : <input type="text" name="tel"><br>
-	 <button>회원가입 요청</button>
+   	환영합니다.....<br>
+   	<hr>
+   	<form action="create">
+   		아이디   : <input type="text" name="id"><br>
+   		패스워드   : <input type="text" name="pw"><br>
+   		이름 : <input type="text" name="name"><br>
+   		전화번호 : <input type="text" name="tel"><br>
+   		<button>회원가입 요청</button>
    </form>
    <br>
    <hr color="blue">
    <form action="check.hi">
-	   아이디 : <input type="text" name="id" style=background:lime;><br>
-	   패스워드   : <input type="text" name="pw"  style=background:lime;><br>
-	 <button style=background:yellow;color:red;width:100px;>로그인 요청</button>
+   아이디 : <input type="text" name="id" style=background:lime;><br>
+   패스워드   : <input type="text" name="pw"  style=background:lime;><br>
+   <button style=background:yellow;color:red;width:100px;>로그인 요청</button>
    </form>
    <br>
    <hr color="blue">
    <form action="up">
    <input type="text" name="id" ><br>
    전화번호 : <input type="text" name="tel"><br>
-   <button>회원정보 수정</button>
+   <button>회원정보 수정 </button>
    </form>
    <br>
    <hr color="blue">
@@ -73,3 +69,8 @@
    </a>
    </body>
 </html>
+
+
+
+
+

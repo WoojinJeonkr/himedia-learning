@@ -1,12 +1,12 @@
 package com.hi.mvc03;
 
 public class MemberVO {
-	
-	// 데이터들을 전달할 때
-	// 데이터들을 넣어줄 가방 역할의 클래스가 필요
-	// 변수를 만들어서 값만 넣었다 뺐다만 함.
-	// Value Object
-	// Data Transfer Object(DTO)
+
+	//데이터들을 전달할 때
+	//데이터들을 넣어줄 "가방역할"의 클래스가 필요
+	//변수를 만들어서 값만 넣었다 뺐다만 함.
+	//Value Object
+	//Data Transfer Object(DTO)
 	private String id;
 	private String pw;
 	private String name;
@@ -41,4 +41,5 @@ public class MemberVO {
 	public String toString() {
 		return "MemberVO [id=" + id + ", pw=" + pw + ", name=" + name + ", tel=" + tel + "]";
 	}
+
 }

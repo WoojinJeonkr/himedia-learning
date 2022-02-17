@@ -30,7 +30,7 @@ public class MemberDAO {
 		// db프로그램 순서
 		// 1. connector라이브러리 설정
 		Class.forName("com.mysql.jdbc.Driver");
-		System.out.println("1. 드라이버/커넥터 설정 성공 ");
+		System.out.println("1. 드라이버/커넥터 설정 성공");
 
 		// 2. db 연결 : 1) ip+port, 2) user+pw, 3)db명(big)
 		String url = "jdbc:mysql://localhost:3366/big";
@@ -39,13 +39,13 @@ public class MemberDAO {
 
 		Connection con = DriverManager.getConnection(url, user, pass);
 
-		System.out.println("2. db연결 성공 ");
+		System.out.println("2. db연결 성공");
 
 		// 3. sql문을 생성
 		String sql = "insert into member values (?, ?, ?, ?)";
 
 		PreparedStatement ps = con.prepareStatement(sql);
-		System.out.println("3. SQL객체 생성 성공. ");
+		System.out.println("3. SQL객체 생성 성공.");
 		ps.setString(1, id2);
 		ps.setString(2, pw2);
 		ps.setString(3, name2);
@@ -53,7 +53,7 @@ public class MemberDAO {
 
 		// 4. 생성한 sql문을 mysql로 보낸다.
 		ps.executeUpdate();
-		System.out.println("4. SQL문 전송 성공. ");
+		System.out.println("4. SQL문 전송 성공.");
 	}
 
 	public boolean login(MemberVO vo) throws Exception {
@@ -66,7 +66,7 @@ public class MemberDAO {
 		// db프로그램 순서
 		// 1. connector라이브러리 설정
 		Class.forName("com.mysql.jdbc.Driver");
-		System.out.println("1. 드라이버/커넥터 설정 성공 ");
+		System.out.println("1. 드라이버/커넥터 설정 성공");
 
 		// 2. db 연결 : 1) ip+port, 2) user+pw, 3)db명(big)
 		String url = "jdbc:mysql://localhost:3366/big";
@@ -75,20 +75,20 @@ public class MemberDAO {
 
 		Connection con = DriverManager.getConnection(url, user, pass);
 
-		System.out.println("2. db연결 성공 ");
+		System.out.println("2. db연결 성공");
 
 		// 3. sql문을 생성
 		String sql = "select * from member where id = ? and pw = ?";
 
 		PreparedStatement ps = con.prepareStatement(sql);
-		System.out.println("3. SQL객체 생성 성공. ");
+		System.out.println("3. SQL객체 생성 성공.");
 		ps.setString(1, id2);
 		ps.setString(2, pw2);
 
 		// 4. 생성한 sql문을 mysql로 보낸다.
 		ResultSet rs = ps.executeQuery();
 		// System.out.println("결과값 있는지 체크 결과는 >>" + rs.next());
-		System.out.println("4. SQL문 전송 성공. ");
+		System.out.println("4. SQL문 전송 성공.");
 		boolean result = false; // 없음.
 		if (rs.next()) {
 			System.out.println("검색 결과 있음.");
@@ -108,7 +108,7 @@ public class MemberDAO {
 		// db프로그램 순서
 		// 1. connector라이브러리 설정
 		Class.forName("com.mysql.jdbc.Driver");
-		System.out.println("1. 드라이버/커넥터 설정 성공 ");
+		System.out.println("1. 드라이버/커넥터 설정 성공");
 
 		// 2. db 연결 : 1) ip+port, 2) user+pw, 3)db명(big)
 		String url = "jdbc:mysql://localhost:3366/big";
@@ -117,19 +117,19 @@ public class MemberDAO {
 
 		Connection con = DriverManager.getConnection(url, user, pass);
 
-		System.out.println("2. db연결 성공 ");
+		System.out.println("2. db연결 성공");
 
 		// 3. sql문을 생성
 		String sql = "select * from member where id = ?";
 
 		PreparedStatement ps = con.prepareStatement(sql);
-		System.out.println("3. SQL객체 생성 성공. ");
+		System.out.println("3. SQL객체 생성 성공.");
 		ps.setString(1, id2);
 
 		// 4. 생성한 sql문을 mysql로 보낸다.
 		ResultSet rs = ps.executeQuery();
 		// System.out.println("결과값 있는지 체크 결과는 >>" + rs.next());
-		System.out.println("4. SQL문 전송 성공. ");
+		System.out.println("4. SQL문 전송 성공.");
 		MemberVO vo2 = new MemberVO();
 		if (rs.next()) {
 			String id = rs.getString("id");
@@ -144,6 +144,7 @@ public class MemberDAO {
 			System.out.println("검색 결과 없음.");
 		}
 		return vo2;
+
 	}
 
 	public ArrayList<MemberVO> readAll() throws Exception {
@@ -152,7 +153,7 @@ public class MemberDAO {
 		// db프로그램 순서
 		// 1. connector라이브러리 설정
 		Class.forName("com.mysql.jdbc.Driver");
-		System.out.println("1. 드라이버/커넥터 설정 성공 ");
+		System.out.println("1. 드라이버/커넥터 설정 성공");
 
 		// 2. db 연결 : 1) ip+port, 2) user+pw, 3)db명(big)
 		String url = "jdbc:mysql://localhost:3366/big";
@@ -161,23 +162,23 @@ public class MemberDAO {
 
 		Connection con = DriverManager.getConnection(url, user, pass);
 
-		System.out.println("2. db연결 성공 ");
+		System.out.println("2. db연결 성공");
 
 		// 3. sql문을 생성
 		String sql = "select * from member";
 
 		PreparedStatement ps = con.prepareStatement(sql);
-		System.out.println("3. SQL객체 생성 성공. ");
+		System.out.println("3. SQL객체 생성 성공.");
 
 		// 4. 생성한 sql문을 mysql로 보낸다.
 		ResultSet rs = ps.executeQuery();
 		// System.out.println("결과값 있는지 체크 결과는 >>" + rs.next());
-		System.out.println("4. SQL문 전송 성공. ");
+		System.out.println("4. SQL문 전송 성공.");
 		// 가방들을 모을 저장공간을 만들어야 함.
 		// 배열은 적합하지 않음.
 		// MemberVO[] list = new MemberVO[10]();
 		// 가변적인 저장공간이 필요.
-		ArrayList<MemberVO> list = new ArrayList<>();
+		ArrayList<MemberVO> list = new ArrayList<MemberVO>();
 		while (rs.next()) {
 			MemberVO vo2 = new MemberVO();
 			String id = rs.getString("id");
@@ -210,7 +211,7 @@ public class MemberDAO {
 		// db프로그램 순서
 		// 1. connector라이브러리 설정
 		Class.forName("com.mysql.jdbc.Driver");
-		System.out.println("1. 드라이버/커넥터 설정 성공 ");
+		System.out.println("1. 드라이버/커넥터 설정 성공");
 
 		// 2. db 연결 : 1) ip+port, 2) user+pw, 3)db명(big)
 		String url = "jdbc:mysql://localhost:3366/big";
@@ -219,19 +220,19 @@ public class MemberDAO {
 
 		Connection con = DriverManager.getConnection(url, user, pass);
 
-		System.out.println("2. db연결 성공 ");
+		System.out.println("2. db연결 성공");
 
 		// 3. sql문을 생성
 		String sql = "update member set tel = ? where id = ?";
 
 		PreparedStatement ps = con.prepareStatement(sql);
-		System.out.println("3. SQL객체 생성 성공. ");
+		System.out.println("3. SQL객체 생성 성공.");
 		ps.setString(1, tel2);
 		ps.setString(2, id2);
 
 		// 4. 생성한 sql문을 mysql로 보낸다.
 		ps.executeUpdate();
-		System.out.println("4. SQL문 전송 성공. ");
+		System.out.println("4. SQL문 전송 성공.");
 	}
 
 	public void delete(MemberVO vo) throws Exception {
@@ -250,7 +251,7 @@ public class MemberDAO {
 		// db프로그램 순서
 		// 1. connector라이브러리 설정
 		Class.forName("com.mysql.jdbc.Driver");
-		System.out.println("1. 드라이버/커넥터 설정 성공 ");
+		System.out.println("1. 드라이버/커넥터 설정 성공");
 
 		// 2. db 연결 : 1) ip+port, 2) user+pw, 3)db명(big)
 		String url = "jdbc:mysql://localhost:3366/big";
@@ -259,17 +260,17 @@ public class MemberDAO {
 
 		Connection con = DriverManager.getConnection(url, user, pass);
 
-		System.out.println("2. db연결 성공 ");
+		System.out.println("2. db연결 성공");
 
 		// 3. sql문을 생성
 		String sql = "delete from member where id = ?";
 
 		PreparedStatement ps = con.prepareStatement(sql);
-		System.out.println("3. SQL객체 생성 성공. ");
+		System.out.println("3. SQL객체 생성 성공.");
 		ps.setString(1, id2);
 
 		// 4. 생성한 sql문을 mysql로 보낸다.
 		ps.executeUpdate();
-		System.out.println("4. SQL문 전송 성공. ");
+		System.out.println("4. SQL문 전송 성공.");
 	}
 }

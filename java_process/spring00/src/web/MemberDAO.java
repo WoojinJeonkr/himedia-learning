@@ -33,7 +33,7 @@ public class MemberDAO {
 		System.out.println("1. 드라이버/커넥터 설정 성공 ");
 		
 		//2. db 연결 : 1) ip+port, 2) user+pw, 3)db명(big)
-		String url = "jdbc:mysql://localhost:3306/big";
+		String url = "jdbc:mysql://localhost:3366/big";
 		String user = "root";
 		String pass = "1234";
 		
@@ -68,7 +68,7 @@ public class MemberDAO {
 		System.out.println("1. 드라이버/커넥터 설정 성공 ");
 		
 		//2. db 연결 : 1) ip+port, 2) user+pw, 3)db명(big)
-		String url = "jdbc:mysql://localhost:3306/big";
+		String url = "jdbc:mysql://localhost:3366/big";
 		String user = "root";
 		String pass = "1234";
 		
@@ -109,7 +109,7 @@ public class MemberDAO {
 		System.out.println("1. 드라이버/커넥터 설정 성공 ");
 		
 		//2. db 연결 : 1) ip+port, 2) user+pw, 3)db명(big)
-		String url = "jdbc:mysql://localhost:3306/big";
+		String url = "jdbc:mysql://localhost:3366/big";
 		String user = "root";
 		String pass = "1234";
 		
@@ -153,7 +153,7 @@ public class MemberDAO {
 		System.out.println("1. 드라이버/커넥터 설정 성공 ");
 		
 		//2. db 연결 : 1) ip+port, 2) user+pw, 3)db명(big)
-		String url = "jdbc:mysql://localhost:3306/big";
+		String url = "jdbc:mysql://localhost:3366/big";
 		String user = "root";
 		String pass = "1234";
 		
@@ -210,7 +210,7 @@ public class MemberDAO {
 		System.out.println("1. 드라이버/커넥터 설정 성공 ");
 		
 		//2. db 연결 : 1) ip+port, 2) user+pw, 3)db명(big)
-		String url = "jdbc:mysql://localhost:3306/big";
+		String url = "jdbc:mysql://localhost:3366/big";
 		String user = "root";
 		String pass = "1234";
 		
@@ -251,7 +251,7 @@ public class MemberDAO {
 		System.out.println("1. 드라이버/커넥터 설정 성공 ");
 		
 		//2. db 연결 : 1) ip+port, 2) user+pw, 3)db명(big)
-		String url = "jdbc:mysql://localhost:3306/big";
+		String url = "jdbc:mysql://localhost:3366/big";
 		String user = "root";
 		String pass = "1234";
 		
