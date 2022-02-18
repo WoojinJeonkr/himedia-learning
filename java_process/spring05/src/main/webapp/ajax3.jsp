@@ -12,10 +12,10 @@ $(function() { // dom(document object model) tree
 	$('#b1').click(function() {
 		$.ajax({
 			/* url: "https://rss.hankooki.com/daily/dh_world.xml", */
-			url: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.chosun.com%2Farc%2Foutboundfeeds%2Frss%2Fcategory%2Fentertainments%2F%3FoutputType%3Dxml&api_key=53xap3e91hcpwib0ac7gnkd4b1lfqcnoepwd8boo",
+			url: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.chosun.com%2Farc%2Foutboundfeeds%2Frss%2Fcategory%2Fentertainments%2F%3FoutputType%3Dxml&api_key=발급받은 api 키",
 			data : {
 				url: "https://www.chosun.com/arc/outboundfeeds/rss/category/entertainments/?outputType=xml",
-				api_key : "53xap3e91hcpwib0ac7gnkd4b1lfqcnoepwd8boo",
+				api_key : "발급받은 api 키",
 				count : 20
 			},
 			success: function(result) {
