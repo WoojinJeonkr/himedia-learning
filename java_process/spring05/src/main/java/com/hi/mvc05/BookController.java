@@ -1,7 +1,11 @@
 package com.hi.mvc05;
 
+import java.util.List;
 import java.util.Random;
 
+import org.mybatis.spring.SqlSessionTemplate;
+import org.omg.CORBA.PUBLIC_MEMBER;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +15,9 @@ public class BookController {
 	//@
 	//hera@naver.com (at -에)
 	//Annotation (표시, 어노테이션)
+	
+	@Autowired
+	BookDAO dao;
 	
 	@RequestMapping("money.do")
 	public void ajax3(double money, int choice, Model model) {
@@ -60,5 +67,18 @@ public class BookController {
 	public void insert(BookVO vo, BookDAO dao) throws Exception {
 		System.out.println("북마크 제어 요청됨.");
 		dao.create(vo);
+	}
+	
+	@RequestMapping("all1")
+	public void all(Model model) {
+		List<BookVO> list = dao.all();
+		model.addAttribute("list", list);
+	}
+	
+	@RequestMapping("one1")
+	public void one(BookVO vo, Model model) {
+		BookVO one = dao.read(vo);
+		model.addAttribute("one", one);
+		
 	}
 }

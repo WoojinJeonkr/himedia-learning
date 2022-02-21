@@ -7,9 +7,11 @@
 <title>rss</title>
 <script type="text/javascript" src="resources/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
+// data를 명시하지 않고 url로 rss를 실행시키면 신문사 연결 실패가 나온다
 $(function() { // dom(document object model) tree
 	$('#b1').click(function() {
 		$.ajax({
+			/* url: "https://rss.hankooki.com/daily/dh_world.xml", */
 			url: "resources/file/MOCK_DATA.json",
 			success: function(result) {
 				alert("곧 데이터가 출력됩니다.");
