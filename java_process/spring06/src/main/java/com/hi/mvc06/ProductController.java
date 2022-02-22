@@ -34,7 +34,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping("update")
-	public String upadate(ProductVO vo) {
+	public String update(ProductVO vo) {
 		int result = dao.update(vo);
 		if(result == 0) {
 			return "error";

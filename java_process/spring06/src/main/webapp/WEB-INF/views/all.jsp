@@ -7,9 +7,10 @@
 <head>
 <meta charset="UTF-8">
 <title>상품 정보 전체 검색</title>
-<style>
+<style type="text/css">
 	td {
 		width: 150px;
+		height: 50px;
 		text-align: center;
 	}
 	.left {
@@ -18,12 +19,6 @@
 	
 	.right {
 		background: lightblue;
-	}
-	hr {
-		height: 30px;
-		width: 300px;
-		background: red;
-		margin: 10px;
 	}
 	img {
 		width: 100px;
@@ -43,7 +38,7 @@
 	<tr>
 		<td class="right">${one.id}</td>
 		<td class="right">
-			<a href=one?id=${one.id}>
+			<a href="one?id=${one.id}">
 			${one.name}</a></td>
 		<td class="right">${one.price}</td>
 		<td class="right">

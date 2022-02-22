@@ -25,24 +25,24 @@
 </style>
 </head>
 <body bgcolor="azure">
-제품 정보 검색 결과입니다.<br>
+상품 정보 검색 결과입니다.<br>
 <hr color="yellow">
 <table border=1>
 	<tr>
-		<td class="left">제품 번호</td>
+		<td class="left">상품 번호</td>
 		<!-- one.getId() -->
 		<td class="right">${one.id}</td>
 	</tr>
 	<tr>
-		<td class="left">제품 이름</td>
+		<td class="left">상품 이름</td>
 		<td class="right">${one.name}</td>
 	</tr>
 	<tr>
-		<td class="left">제품 설명</td>
+		<td class="left">상품 설명</td>
 		<td class="right">${one.content}</td>
 	</tr>
 	<tr>
-		<td class="left">제품 가격</td>
+		<td class="left">상품 가격</td>
 		<td class="right">${one.price}</td>
 	</tr>
 	<tr>
