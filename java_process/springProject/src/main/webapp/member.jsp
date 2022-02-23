@@ -72,10 +72,10 @@
 			<% } else { %>
 			<span style="color:red; font-size: 20px; font-weight: bold;">
 			${userName}님!!! 환영합니다. 아이디가 ${userId}로 로그인 되었습니다.</span>
-			<% } %>
 			<a href="logout">
-			<button style="width: 200px; height: 50px; class="btn btn-success">로그아웃</button>
+			<button style="width: 200px; height: 50px;" class="btn btn-warning">로그아웃</button>
 			</a>
+			<% } %>
 		</div>
 	</div>
 </body>

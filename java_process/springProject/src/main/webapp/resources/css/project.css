@@ -8,6 +8,14 @@ input{
 	width: 150px;
 	height: 30px;
 }
+input.hover{
+	background: yellow;
+}
+textarea{
+	background: yellow;
+	color:green;
+	font-weight: bold;
+}
 h3{
 	background: white;
 	color: red;
@@ -80,6 +88,7 @@ a:visited{ /* 마우스를 클릭하고 나서 */
 	border-bottom: 10px double white;
 	box-shadow: 10px 10px lightslategrey;
 	border-radius: 80px 10px;
+	text-align: center;
 }
 #center{
 	font-size: 25px;

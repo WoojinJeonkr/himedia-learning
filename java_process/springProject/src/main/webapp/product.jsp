@@ -22,8 +22,8 @@
 	$(function() {
 		// alert('test...')
 		$.ajax({
-			url: "list",
-			success: function(result){
+			url: "list", // views/list.jsp가 결과!
+			success: function(result){ // 결과가 담겨진 table 부분
 				$('#d1').html(result)
 			},
 			error: function(){
@@ -45,13 +45,6 @@
 		<h3>상품 목록</h3>
 		<div id="d1"></div>
 		</div>
-		<div id="top2">
-		<jsp:include page="top2.jsp"></jsp:include>
-	</div>
-	<div id="center">
-		상품목록 구현 
-	</div>
-</div>
 	</div>
 </body>
 </html>
