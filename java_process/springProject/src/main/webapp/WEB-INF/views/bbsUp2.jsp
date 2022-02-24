@@ -24,9 +24,11 @@
 			<jsp:include page="../../top2.jsp"></jsp:include>
 		</div>
 		<div id="center">
-			<div id="dialog" title="Basic dialog">
-				<p>회원가입이 완료되었습니다.</p>
-			</div>
+			<br>
+			<p>수정이 완료되었습니다.</p>
+			<br> <a href="bbs.jsp">
+				<button class="btn btn-info">목록으로</button>
+			</a>
 		</div>
 	</div>
 </body>
