@@ -95,19 +95,19 @@
 			<table style="width: 500px;">
 				<tr>
 					<td class="left">번호</td>
-					<td class="right">${one.b_id}</td>
+					<td class="right">${one.id}</td>
 				</tr>
 				<tr>
 					<td class="left">제목</td>
-					<td class="right">${one.b_title}</td>
+					<td class="right">${one.title}</td>
 				</tr>
 				<tr>
 					<td class="left">내용</td>
-					<td class="right" style="height: 100px;">${one.b_content}</td>
+					<td class="right" style="height: 100px;">${one.content}</td>
 				</tr>
 				<tr>
 					<td class="left">작성자</td>
-					<td class="right">${one.b_writer}</td>
+					<td class="right">${one.writer}</td>
 				</tr>
 			</table>
 			<hr color=green>
