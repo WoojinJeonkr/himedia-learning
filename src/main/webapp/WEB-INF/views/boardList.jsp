@@ -19,6 +19,8 @@
       <td class="left">작성자</td>
       <td class="left">등록일</td>
    </tr>
+   <!-- 검색되는 테이블 id 설정 -->
+   <tbody id="searchresult">
    <c:forEach items="${list}" var="one">
    <tr>
       <td class="right">${one.b_id}</td>
@@ -27,5 +29,6 @@
       <td class="right">${one.b_date}</td>    
    </tr>
    </c:forEach>
+   </tbody>
 </table>
 </center>

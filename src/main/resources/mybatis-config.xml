@@ -4,10 +4,18 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
+		<typeAlias type="com.hi.mvcProject.MemberVO" alias="MemberVO"></typeAlias>
 		<typeAlias type="com.hi.mvcProject.BoardVO" alias="BoardVO"></typeAlias>
+		<typeAlias type="com.hi.mvcProject.ProductListVO" alias="ProductListVO"></typeAlias>
+		<typeAlias type="com.hi.mvcProject.ServiceCenterVO" alias="ServiceCenterVO"></typeAlias>
+		<typeAlias type="com.hi.mvcProject.ServiceCenterfaqVO" alias="ServiceCenterfaqVO"></typeAlias>
 	</typeAliases>
 	
 	<mappers>
+		<mapper resource="mapper/member.xml" />
 		<mapper resource="mapper/board.xml" />
+		<mapper resource="mapper/productList.xml" />
+		<mapper resource="mapper/serviceCenter.xml" />
+		<mapper resource="mapper/serviceCenterfaq.xml" />
 	</mappers>
 </configuration>

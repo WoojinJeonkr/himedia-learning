@@ -16,18 +16,30 @@
 <!-- Latest compiled JavaScript -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	
 <script type="text/javascript">
-   $(function(){
-      $.ajax({
-         url: "boardList", // views/boardList.jsp가 결과!
-         success: function(result){ //결과가 담겨진 table부분코드
-            $('#d2').html(result)
-         },
-         error: function(){
-            alert('실패.')
-         }
-      })
-   })
+	$(function(){
+		$.ajax({
+			url: "boardList", // views/boardList.jsp가 결과!
+			success: function(result){ //결과가 담겨진 table부분코드
+				$('#d2').html(result)
+			},
+			error: function(){
+				alert('실패.')
+			}
+		})
+	})
+</script>
+<!-- searching -->
+<script>
+	$(document).ready(function(){
+	  $("#search").on("keyup", function() {
+	    var value = $(this).val().toLowerCase();
+	    $("#searchresult tr").filter(function() {
+	      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+	    });
+	  });
+	});
 </script>
 <style>
 	td{
@@ -39,7 +51,7 @@
 <body>
 <div id='total'>
 	<div id='top'>
-	     <jsp:include page="top.jsp"></jsp:include>
+	     <jsp:include page="bookTop.jsp"></jsp:include>
 	</div>
 	<div id='center'>
    	<!-- 비회원인 경우 -->
@@ -50,7 +62,7 @@
 	   <hr color="red">
 	   <div id="d2"></div>
 	   <!-- 관리자인 경우 -->
-   <% } else if(session.getAttribute("userId").equals("admin")){ %>
+	<% } else if(session.getAttribute("userId").equals("admin")){ %>
 		<span style="color: blue; float: right;">${userId}님 로그인되었습니다. 좋은 하루 되세요.</span><br>
 		<hr color="green">
 		<div id="d2"></div>
@@ -58,13 +70,18 @@
 			<button style="width:100px; height:50px; float: right;" class="btn btn-info">글쓰기</button>
 		</a>
 	<!-- 일반 회원인 경우 -->
-   <% } else if(session.getAttribute("userId") != null) { %>
-	   <span style="color: red; float: left;">관리자만 작성이 가능한 페이지입니다.</span>
-	   <span style="color: blue; float: right;">${userId}님 로그인되었습니다. 좋은 하루 되세요.</span><br>
-	   <hr color="blue">
-	   <div id="d2"></div>
-	 <% } %>
-   </div>
+	<% } else if(session.getAttribute("userId") != null) { %>
+		<span style="color: red; float: left;">관리자만 작성이 가능한 페이지입니다.</span>
+		<span style="color: blue; float: right;">${userId}님 로그인되었습니다. 좋은 하루 되세요.</span><br>
+		<hr color="blue">
+		<div id="d2"></div>
+	<% } %>
+	
+	<!-- 검색어 입력 창 -->
+	<div class="col-xs-2">
+		<input style="position:absolute; margin-left:1070px;" id="search" type="text" placeholder="검색어를 입력해주세요.">
+	</div>
+	</div>
 </div>
 </body>
 </html>
