@@ -1,6 +1,8 @@
 package com.hi.mvcProject;
 
-public class ProductListVO {
+import java.security.Timestamp;
+
+public class ProductlistVO {
 
 	private int p_idx;
 	private String p_category;

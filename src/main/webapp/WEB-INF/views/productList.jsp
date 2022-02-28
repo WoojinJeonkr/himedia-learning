@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품 목록</title>
+<title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="resources/css/project.css">
 </head>
 <script type="text/javascript" src="resources/js/jquery-3.4.1.js"></script>
@@ -30,7 +30,7 @@
 </style>
 <body>
  <div id = "top">
-		<jsp:include page="../../bookTop.jsp"></jsp:include>
+		<jsp:include page="../../top.jsp"></jsp:include>
 </div>
 <table border="1"> 
  <tr>

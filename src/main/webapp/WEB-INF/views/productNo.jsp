@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Error</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<p>문제가 발생하였습니다.</p>

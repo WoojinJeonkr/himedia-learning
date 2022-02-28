@@ -1,11 +1,12 @@
 package com.hi.mvcProject;
 
-public class ServiceCenterfaqVO {
+public class ServicecenterfaqVO {
 	
-	private int faqIdx;
-	private String faqTitle;
-	private String faqQuestion;
 	
+	@Override
+	public String toString() {
+		return "faqVO [faqIdx=" + faqIdx + ", faqTitle=" + faqTitle + ", faqQuestion=" + faqQuestion + "]";
+	}
 	public int getFaqIdx() {
 		return faqIdx;
 	}
@@ -24,9 +25,8 @@ public class ServiceCenterfaqVO {
 	public void setFaqQuestion(String faqQuestion) {
 		this.faqQuestion = faqQuestion;
 	}
-	
-	@Override
-	public String toString() {
-		return "faqVO [faqIdx=" + faqIdx + ", faqTitle=" + faqTitle + ", faqQuestion=" + faqQuestion + "]";
-	}
+	private int faqIdx;
+	private String faqTitle;
+	private String faqQuestion;
+
 }

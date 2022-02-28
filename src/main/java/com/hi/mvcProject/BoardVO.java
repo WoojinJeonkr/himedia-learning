@@ -9,7 +9,20 @@ public class BoardVO {
 	private String b_content;
 	private String b_writer;
 	private Timestamp b_date;
+	private int prev, next;
 	
+	public int getPrev() {
+		return prev;
+	}
+	public void setPrev(int prev) {
+		this.prev = prev;
+	}
+	public int getNext() {
+		return next;
+	}
+	public void setNext(int next) {
+		this.next = next;
+	}
 	public int getB_id() {
 		return b_id;
 	}
@@ -44,6 +57,6 @@ public class BoardVO {
 	@Override
 	public String toString() {
 		return "BoardVO [b_id=" + b_id + ", b_title=" + b_title + ", b_content=" + b_content + ", b_writer=" + b_writer
-				+ ", b_date=" + b_date + "]";
+				+ ", b_date=" + b_date + ", prev=" + prev + ", next=" + next + "]";
 	}
 }

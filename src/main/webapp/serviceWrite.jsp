@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>고객센터:글쓰기</title>
 <style>
 
@@ -23,14 +23,14 @@ th, td {
 <body>
 <div id="total">
 		<div id="top">
-			<jsp:include page="bookTop.jsp"></jsp:include>
+			<jsp:include page="top.jsp"></jsp:include>
 		</div>
 		<div id="top2">
-			<jsp:include page="serviceTop.jsp"></jsp:include>
+			<jsp:include page="top2.jsp"></jsp:include>
 		</div>
 		<div id="center">
-			<div class="well">
-			<h3>글쓰기</h3></div>
+			<div class="well"><h3>글쓰기</h3></div>
+
 			<div id="d1">
 				<hr>
 				<form action="serviceWrite">
@@ -46,6 +46,7 @@ th, td {
 							<td class="left">내용</td>
 							<td class="right"><input type="text" name="serviceQuestion" style="width:300px; height:300px"></td>
 						</tr>
+
 					</table>
 					<button>등록</button>
 				</form>

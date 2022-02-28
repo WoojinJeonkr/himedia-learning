@@ -41,12 +41,6 @@
 	})
 </script>
 <style>
-table {
-	width: 500px;
-	height: 100px;
-	margin: auto;
-	position: relative;
-}
 .left {
 	background: ivory;
 	text-align: center;
@@ -60,7 +54,7 @@ table {
 <body>
 	<div id="total">
 		<div id="top">
-			<jsp:include page="../../bookTop.jsp"></jsp:include>
+			<jsp:include page="../../top.jsp"></jsp:include>
 		</div>
 		<div id="center">
 			<span style="font-size: 25px;">공지사항</span>	
@@ -79,17 +73,17 @@ table {
 				<button id="delete" style="width: 200px; height: 50px;"
 					class="btn btn-success">삭제하기</button>
 				<a href="board.jsp">
-					<button style="width: 100px; height: 50px; font-size: 10px; position: absolute; float:right;" class="btn btn-info">전체 목록으로</button><br>
+					<button style="width: 100px; height: 50px; font-size: 10px; float:right;" class="btn btn-info">전체 목록으로</button><br>
 				</a>
 			<!-- 일반 회원인 경우 -->
 			<% } else if(session.getAttribute("userId") != null) { %>
 				<span style="color: blue; float: right;">${userId}님 로그인되었습니다. 좋은 하루 되세요.</span><br>
 				<a href="board.jsp">
-					<button style="width: 100px; height: 50px; font-size: 10px; position: absolute; float:right;" class="btn btn-info">전체 목록으로</button><br>
+					<button style="width: 100px; height: 50px; font-size: 10px; float:right;" class="btn btn-info">전체 목록으로</button><br>
 				</a>
 			<% } %>
 			<hr color=red>
-			<table border=1>
+			<table border=1 class="table table-striped table-bordered" >
 				<tr>
 					<td class="left">번호</td>
 					<td class="right">${one.b_id}</td>
@@ -111,10 +105,6 @@ table {
 					<td class="right">${one.b_date}</td>
 				</tr>
 			</table>
-			<ul class="pager">
-  				<li class="previous"><a href="boardOne?b_id=${(integer)b_id-1}">이전</a></li>
-  				<li class="next"><a href="boardOne?b_id=${(integer)b_id+1}">다음</a></li>
-			</ul>
 		</div>
 	</div>
 </body>

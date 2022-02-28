@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class ProductListService {
 
 	@Autowired
-	ProductListDAO productlistDAO;
+	ProductlistDAO productlistDAO;
 	
 	public Map<String, Object> getProductList(int currentPage, int rowPerPage){
 		
@@ -31,7 +31,7 @@ public class ProductListService {
 													  //2*rowPerPage
 		
 		//dao 호출 
-		List<ProductListVO> list = productlistDAO.all(page);
+		List<ProductlistVO> list = productlistDAO.all(page);
 		
 		Map<String,Object> map = new HashMap<String, Object>();
 		map.put("lastPage", lastPage); 

@@ -1,6 +1,7 @@
 package com.hi.mvcProject;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -12,22 +13,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class ProductListController {
+public class ProductlistController {
 
 	@Autowired
 	ProductListService productListService; 
 	
 	@Autowired
-	ProductListDAO dao;
+	ProductlistDAO dao;
 	
 	@RequestMapping("productAdd")
-	public void plus(ProductListVO vo, Model model, HttpSession session) {
+	public void plus(ProductlistVO vo, Model model, HttpSession session) {
 		System.out.println("add vo"+vo);
-		ArrayList<ProductListVO> list = null; 
+		ArrayList<ProductlistVO> list = null; 
 		if(session.getAttribute("basket")!=null) {
-			list = (ArrayList<ProductListVO>)session.getAttribute("basket"); 
+			list = (ArrayList<ProductlistVO>)session.getAttribute("basket"); 
 		}else {
-			list = new ArrayList<ProductListVO>();
+			list = new ArrayList<ProductlistVO>();
 		}
 		list.add(vo); 
 		session.setAttribute("basket", list);
@@ -35,9 +36,9 @@ public class ProductListController {
 	}
 	
 	@RequestMapping("productOne")
-	public void one(ProductListVO vo, Model model) {
+	public void one(ProductlistVO vo, Model model) {
 		System.out.println("ProductlistController vo2:"+vo);
-		ProductListVO vo2 = dao.one(vo);
+		ProductlistVO vo2 = dao.one(vo);
 		model.addAttribute("one", vo2);
 	}
 
@@ -58,8 +59,8 @@ public class ProductListController {
 		
 	}
 	
-	@RequestMapping("productInsert")
-	public void insert(ProductListVO vo, Model model)  {
+	@RequestMapping("productIn")
+	public void insert(ProductlistVO vo, Model model)  {
 		int result = dao.insert(vo); //성공하면 1 실패하면0 
 		//model.addAttribute("result",result);
 		//if(result == 1) {
@@ -69,35 +70,35 @@ public class ProductListController {
 		//}
 	}
 	
-	@RequestMapping("productInsert2")
-	public void insert2(ProductListVO vo, Model model) {
+	@RequestMapping("productInsert")
+	public void insert2(ProductlistVO vo, Model model) {
 	
 	}
 
-	@RequestMapping("productDelete")
-	public void delete(ProductListVO vo, Model model) {
+	@RequestMapping("productDel")
+	public void delete(ProductlistVO vo, Model model) {
 		System.out.println("Del ProductlistVO vo"+vo);
-		int result = dao.delete(vo);
+		int result = dao.del(vo);
 		model.addAttribute("result", result);
 	}
 	
-	@RequestMapping("basketDelete")
-	public void delete2(ProductListVO vo, Model model) {
-		System.out.println("basketDelete vo"+vo);
+	@RequestMapping("basketDel")
+	public void delete2(ProductlistVO vo, Model model) {
+		System.out.println("basketDel vo"+vo);
 		
 	}
 
-	@RequestMapping("productUpdate")
-	public void update(ProductListVO vo, Model model) {
+	@RequestMapping("productUp")
+	public void update(ProductlistVO vo, Model model) {
 		System.out.println("======Controller productUp vo========"+vo);
-		ProductListVO vo2 = dao.one(vo); 
+		ProductlistVO vo2 = dao.one(vo); 
 		model.addAttribute("one", vo2); 
 	}
 	
-	@RequestMapping("productUpdate2")
-	public String update2(ProductListVO vo, Model model) {
+	@RequestMapping("productUpdate")
+	public String update2(ProductlistVO vo, Model model) {
 		System.out.println("======Controller productUpdate vo========"+vo);
-		int result = dao.update(vo); 
+		int result = dao.up(vo); 
 		if(result == 1) {
 			return "productUpdate";
 		}else {

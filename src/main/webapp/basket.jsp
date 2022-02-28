@@ -1,4 +1,4 @@
-<%@page import="com.hi.mvcProject.ProductListVO"%>
+<%@page import="com.hi.mvcProject.ProductlistVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -41,13 +41,13 @@ $('#del').click(function() {
 <body>
 <div id = "total">
 	<div id = "top">
-		<jsp:include page="bookTop.jsp"></jsp:include>
+		<jsp:include page="top.jsp"></jsp:include>
 	</div>
 	<div id = "center">
 		<h3>장바구니 목록</h3>
 		<hr>
 		<%
-			ArrayList<ProductListVO> list = (ArrayList<ProductListVO>) session.getAttribute("basket");
+			ArrayList<ProductlistVO> list = (ArrayList<ProductlistVO>) session.getAttribute("basket");
 			if(list != null){
 		%>
 		
@@ -61,7 +61,7 @@ $('#del').click(function() {
 			      <td>상품가격</td>
 			   </tr>
    <%
-   		for(ProductListVO one: list) {
+   		for(ProductlistVO one: list) {
   		i++;
    %>
    <tr>

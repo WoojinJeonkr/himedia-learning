@@ -35,7 +35,7 @@ $(function () {
 $('#deleteBtn').click(function() {
 	if(confirm("정말로 삭제하시겠습니까?")){
 		$.ajax({
-			url: "productDelete",
+			url: "productDel",
 			data: {
 				p_idx: ${one.p_idx}	
 			},
@@ -57,16 +57,16 @@ $('#deleteBtn').click(function() {
 </head>
 <body>
 	<div id = "top">
-		<jsp:include page="../../bookTop.jsp"></jsp:include>
+		<jsp:include page="../../top.jsp"></jsp:include>
 	</div>
 	<a href="productList.jsp">
-			<button>리스트 목록으로 </button>
+			리스트 목록으로 
 	</a>
 <table border="1">
 	<tr>
    		<td colspan = "2">
    			<button id="add">
-   				<img src="resources/img/defaultbook2.jpg" width="100" height = "80"><p>그림 클릭 시 장바구니 담기</p>
+   				<img src="resources/img/defaultbook.jpg" width="100" height = "80"><p>그림 클릭 시 장바구니 담기</p>
    			</button>
    		</td>
    	</tr>
@@ -120,15 +120,9 @@ $('#deleteBtn').click(function() {
    </tr>
 </table>
 <div id = "total">
-	<% if (session.getAttribute("userId").equals("admin")){ %>
-		<a href="productInsert"><button>생성</button></a>
-		<a href="productUpdate?p_idx=${one.p_idx}"><button id="updateBtn" style="width: 50px;">수정</button></a>
-		<button id="deleteBtn" style="width: 50px;">삭제</button>
-	<%}else {%>
-		<a href="productInsert"><button style="display:none;">생성</button></a>
-		<a href="productUpdate?p_idx=${one.p_idx}"><button style="display:none;">수정</button></a>
-		<button id="deleteBtn" style="display:none;">삭제</button>
-	<%}%>
+<a href="productInsert"><button style="width: 50px;">생성</button></a>
+<a href="productUp?p_idx=${one.p_idx}"><button id="updateBtn" style="width: 50px;">수정</button></a>
+<button id="deleteBtn" style="width: 50px;">삭제</button>
 </div>
 </body>
 </html>

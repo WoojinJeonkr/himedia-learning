@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원가입 오류</title>
+<title>Insert title here</title>
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
@@ -13,12 +13,14 @@
 
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<link 	rel="stylesheet" type="text/css" href="resources/css/project.css" >
+<link 	rel="stylesheet" 
+		type="text/css" 
+		href="resources/css/project.css" >
 </head>
 <body>
 <div id="total">
 	<div id="top">
-		<jsp:include page="../../bookTop.jsp"></jsp:include>
+		<jsp:include page="../../memberTop.jsp"></jsp:include>
 	</div>
 	<div id="center">
 	<br>
