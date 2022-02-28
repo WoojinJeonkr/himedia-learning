@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>주식 정보 저장 여부 출력</title>
+<title>Insert title here</title>
 </head>
 <body>
 주식 정보가 저장되었습니다.

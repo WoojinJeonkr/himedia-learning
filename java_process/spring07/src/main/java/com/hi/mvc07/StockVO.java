@@ -6,6 +6,7 @@ public class StockVO {
 	private int today;
 	private int yesterday;
 	private int high;
+	
 	public String getCode() {
 		return code;
 	}
