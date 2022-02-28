@@ -8,15 +8,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-
-public class ServiceCenterfaqController {
+public class ServicecenterfaqController {
 
 	@Autowired
-	ServiceCenterfaqDAO dao;
+	ServicecenterfaqDAO dao;
 	
-	@RequestMapping("servicefaqList")
+	@RequestMapping("faqList")
 	public void list(Model model) {
-		List<ServiceCenterfaqVO> list=dao.all();
+		List<ServicecenterfaqVO> list=dao.all();
 		model.addAttribute("list", list);
 	}
 	

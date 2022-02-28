@@ -3,8 +3,8 @@ package com.hi.mvcProject;
 
 public class ProductPage {
 
-	private int rowPerPage; //페이지당 들어갈 행의 수 
-	private int beginRow; //시작 열
+	private int rowPerPage; 
+	private int beginRow; 
 	public int getRowPerPage() {
 		return rowPerPage;
 	}

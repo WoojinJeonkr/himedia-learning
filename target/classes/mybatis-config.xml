@@ -1,21 +1,22 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="com.hi.mvcProject.MemberVO" alias="MemberVO"></typeAlias>
-		<typeAlias type="com.hi.mvcProject.BoardVO" alias="BoardVO"></typeAlias>
-		<typeAlias type="com.hi.mvcProject.ProductListVO" alias="ProductListVO"></typeAlias>
-		<typeAlias type="com.hi.mvcProject.ServiceCenterVO" alias="ServiceCenterVO"></typeAlias>
-		<typeAlias type="com.hi.mvcProject.ServiceCenterfaqVO" alias="ServiceCenterfaqVO"></typeAlias>
+		<typeAlias type="com.hi.mvcProject.ProductlistVO" alias="productlistVO"/>
+		<typeAlias type="com.hi.mvcProject.BoardVO" alias="boardVO"/>
+		<typeAlias type="com.hi.mvcProject.BookVO" alias="bookVO"/>
+		<typeAlias type="com.hi.mvcProject.Servicecenter2VO" alias="service2VO"/>
+		<typeAlias type="com.hi.mvcProject.ServicecenterfaqVO" alias="faqVO"/>
 	</typeAliases>
 	
 	<mappers>
-		<mapper resource="mapper/member.xml" />
-		<mapper resource="mapper/board.xml" />
-		<mapper resource="mapper/productList.xml" />
-		<mapper resource="mapper/serviceCenter.xml" />
-		<mapper resource="mapper/serviceCenterfaq.xml" />
+		<mapper resource="mapper/productlist.xml"/>
+		<mapper resource="mapper/board.xml"/>
+		<mapper resource="mapper/book.xml"/>
+		<mapper resource="mapper/servicecenter2.xml"/>
+		<mapper resource="mapper/servicecenterfaq.xml"/>
 	</mappers>
 </configuration>
+

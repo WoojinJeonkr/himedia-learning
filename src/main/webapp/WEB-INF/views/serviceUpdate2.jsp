@@ -31,16 +31,18 @@ th, td {
 <body>
 	<div id="total">
 		<div id="top">
-			<jsp:include page="../../bookTop.jsp"></jsp:include>
+			<jsp:include page="../../top.jsp"></jsp:include>
 		</div>
 		<div id="top2">
-			<jsp:include page="../../serviceTop.jsp"></jsp:include>
+			<jsp:include page="../../top2.jsp"></jsp:include>
 		</div>
 		<div id="center">
 			<div class="well"><h3>글쓰기</h3></div>
+			
+
 			<div id="d1">
 				<hr>
-				<form action="serviceUpdate">
+				<form action="serviceUpdate1">
 					<input type="hidden" name="serviceIdx" style="width: 300px;" value="${one.serviceIdx}">
 					<table>
 						<tr>
@@ -48,12 +50,14 @@ th, td {
 							<td class="right"><input type="text" name="serviceTitle"
 								style="width: 300px;" value="${one.serviceTitle}"></td>
 						</tr>
+
 						<tr>
 							<td class="left">내용</td>
 							<td class="right"><input type="text" name="serviceQuestion"
 								style="width: 300px; height: 300px;"
 								value="${one.serviceQuestion}"></td>
 						</tr>
+
 					</table>
 					<button>등록</button>
 				</form>

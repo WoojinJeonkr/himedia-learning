@@ -52,7 +52,7 @@ public class BoardController {
 		if(result == 1) {
 			return "boardUpdate2";
 		} else {
-			return "boardNo";
+			return "no";
 		}
 	}
 	
@@ -61,4 +61,5 @@ public class BoardController {
 		int result = dao.delete(vo);
 		model.addAttribute("result", result);
 	}
+	
 }

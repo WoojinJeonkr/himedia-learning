@@ -7,18 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ProductListDAO {
+public class ProductlistDAO {
 
 	@Autowired
 	SqlSessionTemplate my;
 
-	public ProductListVO one(ProductListVO vo) {
-		System.out.println("ProductListVO vo:"+vo);
+	public ProductlistVO one(ProductlistVO vo) {
+		System.out.println("ProductlistVO vo:"+vo);
 		return my.selectOne("productlist.one", vo);
 	}
 
-	//---------------페이징---------------------
-	public List<ProductListVO> all(ProductPage page) {
+	public List<ProductlistVO> all(ProductPage page) {
 		return my.selectList("productlist.list", page);
 	}
 	
@@ -26,17 +25,16 @@ public class ProductListDAO {
 		return my.selectOne("productlist.count");
 	}
 	
-	//---------------페이징------------------
-	public int insert(ProductListVO vo) {
-		return my.insert("productlist.insert", vo);
+	public int insert(ProductlistVO vo) {
+		return my.insert("productlist.in", vo);
 	}
-	public int update(ProductListVO vo) {
+	public int up(ProductlistVO vo) {
 		System.out.println("DAO vo"+vo);
-		return my.update("productlist.update", vo);
+		return my.update("productlist.up", vo);
 	}
-	public int delete(ProductListVO vo) {
+	public int del(ProductlistVO vo) {
 		System.out.println("DAO del vo"+vo);
-		return my.delete("productlist.delete", vo);
+		return my.delete("productlist.del", vo);
 	}
 	
 }

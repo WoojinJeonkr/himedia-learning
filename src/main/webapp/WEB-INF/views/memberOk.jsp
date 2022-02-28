@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원가입 성공</title>
+<title>Insert title here</title>
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -30,10 +30,10 @@
 	})
 </script>
 </head>
-<%-- <body>
+<body>
 	<div id="total">
 		<div id="top">
-			<jsp:include page="../../bookTop.jsp"></jsp:include>
+			<jsp:include page="../../memberTop.jsp"></jsp:include>
 		</div>
 
 		<div id="center">
@@ -42,5 +42,5 @@
 			</div>
 		</div>
 	</div>
-</body> --%>
+</body>
 </html>

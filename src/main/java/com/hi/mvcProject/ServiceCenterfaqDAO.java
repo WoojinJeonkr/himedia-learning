@@ -7,12 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ServiceCenterfaqDAO {
-	
+public class ServicecenterfaqDAO {
 	@Autowired
 	SqlSessionTemplate my;
 	
-	public List<ServiceCenterfaqVO> all() {
-		return my.selectList("serviceCenterfaq.list");
+	public List<ServicecenterfaqVO> all() {
+		return my.selectList("servicecenterfaq.list");
 	}
+	
+	
 }

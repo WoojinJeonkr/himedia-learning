@@ -35,7 +35,7 @@ $(function () {
 $('#deleteBtn').click(function() {
 	if(confirm("정말로 삭제하시겠습니까?")){
 		$.ajax({
-			url: "productDelete",
+			url: "productDel",
 			data: {
 				p_idx: ${one.p_idx}	
 			},
@@ -56,11 +56,13 @@ $('#deleteBtn').click(function() {
 </script>
 </head>
 <body>
+
+<span style="color: blue; float: right;">${userId}님 로그인되었습니다. 좋은 하루 되세요.</span><br>
 	<div id = "top">
-		<jsp:include page="../../bookTop.jsp"></jsp:include>
+		<jsp:include page="../../top.jsp"></jsp:include>
 	</div>
 	<a href="productList.jsp">
-			<button>리스트 목록으로 </button>
+			리스트 목록으로 
 	</a>
 <table border="1">
 	<tr>
@@ -118,17 +120,19 @@ $('#deleteBtn').click(function() {
       <td>등록일</td>
       <td>${one.p_rgstdate.substring(0,10)}</td> <!-- 이미지가 보이게 -->
    </tr>
+   	<!-- 유저아이디가 admin 관리자인경우 S버튼 활성화 -->
+   
 </table>
 <div id = "total">
-	<% if (session.getAttribute("userId").equals("admin")){ %>
-		<a href="productInsert"><button>생성</button></a>
-		<a href="productUpdate?p_idx=${one.p_idx}"><button id="updateBtn" style="width: 50px;">수정</button></a>
-		<button id="deleteBtn" style="width: 50px;">삭제</button>
-	<%}else {%>
+		<% if(session.getAttribute("userId")== null) {%>
 		<a href="productInsert"><button style="display:none;">생성</button></a>
-		<a href="productUpdate?p_idx=${one.p_idx}"><button style="display:none;">수정</button></a>
+		<a href="productUp?p_idx=${one.p_idx}"><button style="display:none;">수정</button></a>
 		<button id="deleteBtn" style="display:none;">삭제</button>
-	<%}%>
+		<%}else if(session.getAttribute("userId").equals("admin")){ %>
+		<a href="productInsert"><button>생성</button></a>
+		<a href="productUp?p_idx=${one.p_idx}"><button id="updateBtn" style="width: 50px;">수정</button></a>
+		<button id="deleteBtn" style="width: 50px;">삭제</button> 
+		<%}%>
 </div>
 </body>
 </html>
