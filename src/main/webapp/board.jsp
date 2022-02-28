@@ -65,7 +65,11 @@
 			<hr color="red">
 			<!-- 검색어 입력 창 -->
 			<div class="col-xs-2">
+<<<<<<< HEAD
 				<input style="position:absolute; margin-left:940px;" id="search" type="text" placeholder="검색어를 입력해주세요.">
+=======
+				<input style="position:absolute; margin-left:1250px;" id="search" type="text" placeholder="검색어를 입력해주세요.">
+>>>>>>> f055b2daf80a07ab207cc79c1309d0bc4041b43d
 			</div><br><br>
 			<div id="d2"></div>
 		<!-- 관리자인 경우 -->
@@ -76,7 +80,11 @@
 				<button style="width:100px; height:50px; float: right;" class="btn btn-info">글쓰기</button>
 			</a>
 			<div class="col-xs-2">
+<<<<<<< HEAD
 				<input style="position:absolute; margin-left:890px;" id="search" type="text" placeholder="검색어를 입력해주세요.">
+=======
+				<input style="position:absolute; margin-left:1200px;" id="search" type="text" placeholder="검색어를 입력해주세요.">
+>>>>>>> f055b2daf80a07ab207cc79c1309d0bc4041b43d
 			</div><br><br>
 			<div id="d2"></div>
 		<!-- 일반 회원인 경우 -->
@@ -85,7 +93,11 @@
 			<span style="color: blue; float: right;">${userId}님 로그인되었습니다. 좋은 하루 되세요.</span><br>
 			<hr color="blue">
 			<div class="col-xs-2">
+<<<<<<< HEAD
 				<input style="position:absolute; margin-left:940px;" id="search" type="text" placeholder="검색어를 입력해주세요.">
+=======
+				<input style="position:absolute; margin-left:1250px;" id="search" type="text" placeholder="검색어를 입력해주세요.">
+>>>>>>> f055b2daf80a07ab207cc79c1309d0bc4041b43d
 			</div><br><br>
 			<div id="d2"></div>
 		<% } %>

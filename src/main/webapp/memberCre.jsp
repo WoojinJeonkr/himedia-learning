@@ -122,7 +122,11 @@ $(document).ready(function(){
 					</tr>
 				</table>
 			</form>
+<<<<<<< HEAD
 				<button style="width:200px; height:50px; margin-left: 50px;" class="btn btn-success" type="button" id="idCheck">아이디중복확인</button>
+=======
+				<button style="width:200px; height:50px;" class="btn btn-success" type="button" id="idCheck">아이디중복확인</button>
+>>>>>>> f055b2daf80a07ab207cc79c1309d0bc4041b43d
 			<hr>
 			<div id="result"></div>
 			

@@ -7,24 +7,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ServiceCenterDAO {
-	
+public class ServicecenterDAO {
 	@Autowired
 	SqlSessionTemplate my;
 	
-	public int create (ServiceCenterVO vo) {
-		return my.insert("serviceCenter.create",vo);
+	public int create (ServicecenterVO vo) {
+		return my.insert("servicecenter.create",vo);
 	}
-	public ServiceCenterVO readOne (ServiceCenterVO vo) {
-		return my.selectOne("serviceCenter.one",vo);
+	
+	public ServicecenterVO readOne (ServicecenterVO vo) {
+		return my.selectOne("servicecenter.one",vo);
 	}
-	public List<ServiceCenterVO> all() {
-		return my.selectList("serviceCenter.list");
+	
+	public List<ServicecenterVO> all() {
+		return my.selectList("servicecenter.list");
 	}
-	public int update (ServiceCenterVO vo) {
-		return my.update("serviceCenter.update",vo);
+	
+	public int update (ServicecenterVO vo) {
+		return my.insert("servicecenter.up",vo);
 	}
-	public int delete (ServiceCenterVO vo) {
-		return my.delete("serviceCenter.delete",vo);
+	
+	public int delete (ServicecenterVO vo) {
+		return my.insert("servicecenter.del",vo);
 	}
 }

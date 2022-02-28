@@ -47,12 +47,22 @@ $(document).ready(function(){
 					</tr>
 					<tr>
 						<td>
+<<<<<<< HEAD
 							<button  style="width:200px; height:50px;" class="btn btn-danger" type="submit" id="login">로그인하기</button>
+=======
+						<button  style="width:200px; height:50px;" class="btn btn-danger" type="submit" id="login">로그인하기</button>
+>>>>>>> f055b2daf80a07ab207cc79c1309d0bc4041b43d
 						</td>
 					</tr>
 				</table>
 			</form>
+<<<<<<< HEAD
 			<a href="memberCre.jsp"><button  style="width:200px; height:50px; margin-left: 50px;" class="btn btn-danger">회원가입하기</button></a>
+=======
+						<a href="memberCre.jsp"><button  style="width:200px; height:50px;" class="btn btn-danger">회원가입하기</button></a>
+			
+			
+>>>>>>> f055b2daf80a07ab207cc79c1309d0bc4041b43d
 			<% }else{ %>
 			<span style="color:red; font-size: 20px; font-weight: bold;">${userName}님!! 환영합니다. 아이디가 ${userId}로 로그인되었습니다.</span>
 			<a href="logout">

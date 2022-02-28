@@ -1,12 +1,6 @@
 package com.hi.mvcProject;
 
-public class ServiceCenterVO {
-	
-	private int serviceIdx;
-	private String serviceWriter;
-	private String serviceTitle;
-	private String serviceQuestion;
-	private String serviceRgstday;
+public class ServicecenterVO {
 	
 	public int getServiceIdx() {
 		return serviceIdx;
@@ -44,4 +38,11 @@ public class ServiceCenterVO {
 		return "ServiceVO [serviceIdx=" + serviceIdx + ", serviceWriter=" + serviceWriter + ", serviceTitle="
 				+ serviceTitle + ", serviceQuestion=" + serviceQuestion + ", serviceRgstday=" + serviceRgstday + "]";
 	}
+
+	private int serviceIdx;
+	private String serviceWriter;
+	private String serviceTitle;
+	private String serviceQuestion;
+	private String serviceRgstday;
+
 }

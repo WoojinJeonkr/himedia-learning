@@ -17,12 +17,12 @@
 <body>
 <div id="total">
 		<div id="top">
-			<jsp:include page="../../bookTop.jsp"></jsp:include>
+			<jsp:include page="../../top.jsp"></jsp:include>
 		</div>
 		<div id="center">
 			<br>
 			<p>수정에 문제가 있습니다.</p>
-			<br> <a href="bbs.jsp">
+			<br> <a href="board.jsp">
 				<button class="btn btn-info">목록으로</button>
 			</a>
 		</div>

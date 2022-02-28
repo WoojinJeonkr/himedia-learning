@@ -70,12 +70,27 @@
 				</a>
 				<button id="delete" style="width: 200px; height: 50px;"
 					class="btn btn-success">삭제하기</button>
+<<<<<<< HEAD
 			<!-- 일반 회원인 경우 -->
 			<% } else if(session.getAttribute("userId") != null) { %>
 				<span style="color: blue; float: right;">${userId}님 로그인되었습니다. 좋은 하루 되세요.</span><br>
 			<% } %>
 			<hr color=red>
 			<table style="width: 500px; margin: auto; position: absolute;" border=1>
+=======
+				<a href="board.jsp">
+					<button style="width: 100px; height: 50px; font-size: 10px; float:right;" class="btn btn-info">전체 목록으로</button><br>
+				</a>
+			<!-- 일반 회원인 경우 -->
+			<% } else if(session.getAttribute("userId") != null) { %>
+				<span style="color: blue; float: right;">${userId}님 로그인되었습니다. 좋은 하루 되세요.</span><br>
+				<a href="board.jsp">
+					<button style="width: 100px; height: 50px; font-size: 10px; float:right;" class="btn btn-info">전체 목록으로</button><br>
+				</a>
+			<% } %>
+			<hr color=red>
+			<table border=1 class="table table-striped table-bordered" >
+>>>>>>> f055b2daf80a07ab207cc79c1309d0bc4041b43d
 				<tr>
 					<td class="left">번호</td>
 					<td class="right">${one.b_id}</td>

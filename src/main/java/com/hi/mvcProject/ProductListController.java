@@ -59,7 +59,11 @@ public class ProductlistController {
 	
 	@RequestMapping("productIn")
 	public void insert(ProductlistVO vo, Model model)  {
+<<<<<<< HEAD
 		int result = dao.insert(vo); //�꽦怨듯븯硫� 1 �떎�뙣�븯硫�0 
+=======
+		int result = dao.insert(vo); //성공하면 1 실패하면0 
+>>>>>>> f055b2daf80a07ab207cc79c1309d0bc4041b43d
 		//model.addAttribute("result",result);
 		//if(result == 1) {
 		//	return "productIn";
