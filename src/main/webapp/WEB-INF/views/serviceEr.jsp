@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,10 +15,10 @@
 			<jsp:include page="../../top2.jsp"></jsp:include>
 		</div>
 		<div id="center">
-			<h3>����</h3>
+			<h3>에러</h3>
 			<hr>
-				<a href="serviceList"><button>��Ϻ���.</button></a>
-				<a href="serviceWrite.jsp"><button>�۾���.</button></a>
+				<a href="serviceList"><button>목록보기.</button></a>
+				<a href="serviceWrite.jsp"><button>글쓰기.</button></a>
 </div></div>
 </body>
 </html>

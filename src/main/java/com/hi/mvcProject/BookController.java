@@ -9,27 +9,25 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller //스프링 프레임워크에 컨트롤러 역할의 클래스로 등록 
+import com.hi.mvcProject.BookDAO;
+import com.hi.mvcProject.BookVO;
+
+@Controller
 public class BookController {
 
 	@Autowired
-	BookDAO dao; //주소주입!!
-	//회원과 관련된 여러가지 제어를 담당하는 클래스 
-	//회원가입,검색,수정,탈퇴,로그인 기능을 제어함.
-	
+	BookDAO dao;
+
 	@RequestMapping("memberCheck")
 	public String login(BookVO vo, HttpSession session) throws Exception {
 		System.out.println(vo);
 		BookVO vo2 = dao.login(vo);
 		System.out.println(vo2);
-		//vo2가 로그인에 실패한 경우 null
-		//vo2가 로그인에 성공한 경우 주소가 들어있음.
-		if(vo2 != null) { //로그인에 성공했을 때
-			//세션을 잡자!
+		if (vo2 != null) {
 			session.setAttribute("userId", vo2.getId());
 			session.setAttribute("userName", vo2.getName());
 			return "redirect:member.jsp";
-		}else { //로그인에 실패했을 때 
+		} else { // 濡쒓렇�씤�뿉 �떎�뙣�뻽�쓣 �븣
 			return "memberCheck";
 		}
 	}
@@ -38,9 +36,9 @@ public class BookController {
 	public String create(BookVO vo) throws Exception {
 		System.out.println(vo);
 		int result = dao.create(vo);
-		if(result == 1) {
+		if (result == 1) {
 			return "memberOk";
-		}else {                     // int result = dao.idCheck(vo);가 1이면 아이디 중복이고 0이면 중복아님으로 하고싶음. 
+		} else { // int result = dao.idCheck(vo);.
 			return "memberCreate";
 		}
 	}
@@ -50,17 +48,24 @@ public class BookController {
 		session.invalidate();
 		return "redirect:member.jsp";
 	}
-	//아이디중복체크
+
 	@RequestMapping("memberIdCheck")
 	public void idCheck(BookVO vo, Model model) {
 		System.out.println(vo);
-		BookVO  vo2 = dao.idCheck(vo);
-		System.out.println("결과>> " + vo2);
+		BookVO vo2 = dao.idCheck(vo);
+		System.out.println("寃곌낵>> " + vo2);
 		int result = 1;
-		if (vo2 == null ) {
-			result = 0; //쓸 수 있는 id임.
+		if (vo2 == null) {
+			result = 0; // �벝 �닔 �엳�뒗 id�엫.
 		}
 		model.addAttribute("result", result);
 	}
-	
+
+	@RequestMapping("memberDelete")
+	public String delete1(BookVO vo, Model model, HttpSession session) {
+		int result = dao.delete(vo);
+		model.addAttribute("result", result);
+		session.invalidate();
+		return "redirect:member.jsp";
+	}
 }

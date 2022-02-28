@@ -91,15 +91,20 @@ th, td {
 					
 					
 					<a href="serviceList"><button>목록</button></a> 
+					
+					<% if(session.getAttribute("userId") != null){ %>
 							<!--  자기 글일때만  삭제, 수정 버튼 활성화. -->
 					<c:if test="${userName eq one.serviceWriter}">
 						<a href="serviceDelete?serviceIdx=${one.serviceIdx}"><button>삭제</button></a> 
 						<a href="serviceUpdate2?serviceIdx=${one.serviceIdx}"><button>수정</button></a>
 					</c:if>
+					
 					<!-- 유저아이디가 admin..즉 관리자인경우 답변하기 버튼 활성화 -->
-				 <% if (session.getAttribute("userId") == "admin") {    %>
-						<a href="serviceAnswer.jsp"><button>답변하기</button></a></td>
-					<%} %>
+					 <% if (session.getAttribute("userId").equals("admin")) {    %>
+						<a href="serviceAnswer.jsp?serviceIdx=${one.serviceIdx}"><button>답변하기</button></a></td>
+						<%} %>
+						
+						<%} %>
 				</tr>
 				
 		

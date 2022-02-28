@@ -36,6 +36,12 @@ th, td {
 				<form action="serviceWrite">
 				<input type="hidden" name="serviceWriter" style="width:300px;"
 								value="admin" readonly="readonly">
+				<input type="hidden" name="serviceIdOrigin" style="width:300px;"
+								value="<%= request.getParameter("serviceIdx") %>" readonly="readonly">
+				<input type="hidden" name="serviceIdxRe" style="width:300px;"
+								value="1" readonly="readonly">
+								
+				
 					<table>
 						<tr>
 							<td class="left">제목</td>

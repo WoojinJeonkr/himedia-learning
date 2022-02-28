@@ -36,6 +36,7 @@ th, td {
 				<form action="serviceWrite">
 				<input type="hidden" name="serviceWriter" style="width:300px;"
 								value="${userId}" readonly="readonly">
+								
 					<table>
 						<tr>
 							<td class="left">제목</td>
