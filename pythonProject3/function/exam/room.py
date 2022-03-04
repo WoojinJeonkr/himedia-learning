@@ -1,4 +1,3 @@
-
 class TV:
     width = 0
     company = None

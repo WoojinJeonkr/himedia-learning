@@ -1,6 +1,5 @@
-from function.internet.crawl import connect, find
 import function.fun02 as f02
+import function.internet.crawl as web
 
-connect()
-find()
 f02.call1()
+web.connect()
