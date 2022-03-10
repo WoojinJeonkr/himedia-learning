@@ -16,9 +16,9 @@ def show():
     print('나이: ',e2.get())
 
 b1 = Button(window, text='종료', command = window.quit)
-b1.grid(row=3, column=0, sticky= 'w', paddy = 4)
+b1.grid(row=3, column=0, sticky= 'w')
 b2 = Button(window, text='입력 데이터 확인', command = show)
-b2.grid(row=3, column=0, sticky= 'w', paddy = 4)
+b2.grid(row=3, column=0, sticky= 'w')
 
 window.mainloop()
 
