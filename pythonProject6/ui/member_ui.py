@@ -43,7 +43,7 @@ top.pack()
 
 id_label = Label(window, text='아이디 입력')
 id_label.pack()
-id_entry = Entry(window, font=('성실체',20), bg='yellow', fg='red')
+id_entry = Entry(window, font=('성실체',20), bg='yellow', fg='red') # 나눔고딕 성실체(https://clova.ai/handwriting)
 id_entry.pack()
 pw_label = Label(window, text='비밀번호 입력')
 pw_label.pack()
