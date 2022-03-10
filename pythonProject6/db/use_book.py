@@ -4,7 +4,7 @@
 # --> 모듈, 함수(), 모듈.클래스명()
 import sys
 from tkinter import messagebox
-from db.dao import * # db.dao 안의 함수들을 모두 사용
+from db.dao_func import * # db.dao 안의 함수들을 모두 사용
 # from 패키지명, 모듈명 import 함수명, 클래스명, *
 # --> 함수()
 
