@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+=======
+>>>>>>> 4e6491a16081e0faef58ab5d6ddf40f1a98d23a3
   <component name="ChangeListManager">
     <list default="true" id="63cfa696-9075-41ac-8798-96aa9846a302" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +26,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Python.adult_img">
     <configuration name="Detect_Product" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonProject7" />
@@ -66,6 +70,9 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+=======
+  <component name="RunManager">
+>>>>>>> 4e6491a16081e0faef58ab5d6ddf40f1a98d23a3
     <configuration name="debugging" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonProject7" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -87,6 +94,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+<<<<<<< HEAD
     <configuration name="multitag_kakao_vision" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonProject7" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -135,6 +143,10 @@
         <item itemvalue="Python.Detect_Product" />
         <item itemvalue="Python.multitag_kakao_vision2" />
         <item itemvalue="Python.multitag_kakao_vision" />
+=======
+    <recent_temporary>
+      <list>
+>>>>>>> 4e6491a16081e0faef58ab5d6ddf40f1a98d23a3
         <item itemvalue="Python.debugging" />
       </list>
     </recent_temporary>
