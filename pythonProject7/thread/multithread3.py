@@ -56,6 +56,13 @@ if __name__ == '__main__':
     b = Button(window, text='멀티 스레드 시작', command=run_start)
     # ipad: 글자와 버튼 사이 여백, pad: 글자와 프레임 사이의 여백
     b.pack(side=TOP, fill= X, ipadx = 10, ipady = 10, padx= 10, pady= 10)
+<<<<<<< HEAD
+    car_label1 = Label(window, text='appleCar')
+    car_label1.place(x = 10, y = 100) # (10, 100)에 위치
+    car_label2 = Label(window, text='summerCar')
+    car_label2.place(x = 10, y = 150) # (10, 150)에 위치
+    car_label3 = Label(window, text='springCar')
+=======
     car1_img = PhotoImage(file='car1.gif')
     car2_img = PhotoImage(file='car2.gif')
     car3_img = PhotoImage(file='car3.gif')
@@ -64,5 +71,6 @@ if __name__ == '__main__':
     car_label2 = Label(window, image=car2_img)
     car_label2.place(x = 10, y = 150) # (10, 150)에 위치
     car_label3 = Label(window, image=car3_img)
+>>>>>>> 4e6491a16081e0faef58ab5d6ddf40f1a98d23a3
     car_label3.place(x = 10, y = 200) # (10, 200)에 위치
     window.mainloop()

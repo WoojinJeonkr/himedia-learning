@@ -3,33 +3,29 @@ import argparse
 import requests
 from PIL import Image, ImageDraw, ImageFont
 from io import BytesIO
+import glob
+import os
 
 API_URL = 'https://dapi.kakao.com/v2/vision/product/detect'
 MYAPP_KEY = '28431a0d15ca2e8f516c820b8d8082cf'
 
-def detect_product(image_url):
+def detect_product(filename):
     headers = {'Authorization': 'KakaoAK {}'.format(MYAPP_KEY)}
-
     try:
-        data = { 'image_url' : image_url}
-        resp = requests.post(API_URL, headers=headers, data=data)
+        files = { 'image' : open(filename, 'rb')}
+        resp = requests.post(API_URL, headers=headers, files=files)
         resp.raise_for_status()
         return resp.json()
     except Exception as e:
         print(str(e))
         sys.exit(0)
 
-def show_products(image_url, detection_result):
+def show_products(filename, detection_result):
     try:
-        image_resp = requests.get(image_url)
-        image_resp.raise_for_status()
-        file_jpgdata = BytesIO(image_resp.content)
-        image = Image.open(file_jpgdata)
+        image = Image.open(filename)
     except Exception as e:
         print(str(e))
         sys.exit(0)
-
-
     draw = ImageDraw.Draw(image)
     for obj in detection_result['result']['objects']:
         x1 = int(obj['x1']*image.width)
@@ -39,17 +35,12 @@ def show_products(image_url, detection_result):
         draw.rectangle([(x1,y1), (x2, y2)], fill=None, outline=(255,0,0,255))
         draw.text((x1+5,y1+5), obj['class'], (255,0,0))
     del draw
-
     return image
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Detect Products.')
-    parser.add_argument('image_url', type=str, nargs='?',
-        default="http://t1.daumcdn.net/alvolo/_vision/openapi/r2/images/06.jpg",
-        help='image url to show product\'s rect')
-
-    args = parser.parse_args()
-
-    detection_result = detect_product(args.image_url)
-    image = show_products(args.image_url, detection_result)
-    image.show()
+    files=glob.glob('image/couple.jpg')
+    for i in files:
+        head,tail = os.path.split(i)
+        detection_result = detect_product(i)
+        image = show_products(i, detection_result)
+        image.save(head+'/save_'+tail,'JPEG')
