@@ -23,7 +23,7 @@ def callback(url): # 받은 url 사이트로 연결
     webbrowser.open_new(url) # 새로운 창에 url에 넣어 웹브라우저로 띄우기
 
 API_URL = 'https://dapi.kakao.com/v2/vision/product/detect' # Kakao vision api url
-MYAPP_KEY = '28431a0d15ca2e8f516c820b8d8082cf' # 발급받은 Rest API 키
+MYAPP_KEY = '발급받은 Rest API 키' 
 
 def detect_product(filename): # 파일 분석
     headers = {'Authorization': 'KakaoAK {}'.format(MYAPP_KEY)}
