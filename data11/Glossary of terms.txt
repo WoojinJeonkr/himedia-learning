@@ -1,0 +1,15 @@
+1. cross-validation(교차검증)
+
+1) K-fold
+2) 최적의 모델을 찾을 때 사용
+
+2. grid search(그리드 서치)
+
+1) 선정된 모델의 최적의 파라메터를 찾을 때
+
+3. confusion matrix(혼동 행렬)
+
+1) acc의 자세한 내용까지 확인하고 싶을 때,
+   정확하게 얼마나 맞추었는지 맞추지 못했는지 확인
+
+--> cross == grid == matrix: 표로 정리되는 형태
