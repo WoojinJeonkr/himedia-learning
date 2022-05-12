@@ -1,7 +1,5 @@
 package com.hi.mvcProject;
 
-import java.security.Timestamp;
-
 public class ProductlistVO {
 
 	private int p_idx;

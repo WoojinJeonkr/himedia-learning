@@ -53,18 +53,15 @@ th, td {
 <body>
 	<div id="total">
 		<div id="top">
-			<jsp:include page="../../top.jsp"></jsp:include>
-		</div>
-		<div id="top2">
-			<jsp:include page="../../top2.jsp"></jsp:include>
+			<jsp:include page="../../memberTop.jsp"></jsp:include>
 		</div>
 		<div id="center">
 
 			<h3>글 상세 페이지</h3>
 			<hr>
 			<div id="navii">
-				<a href="serviceMain.jsp"><div>FAQ</div></a> <a
-					href="serviceMain.jsp"><div>QnA</div></a>
+				<div><a href="serviceMain.jsp">FAQ</a></div>
+				<div><a href="serviceMain.jsp">QnA</a></div>
 
 			</div>
 			<hr>

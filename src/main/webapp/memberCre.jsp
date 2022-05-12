@@ -87,13 +87,13 @@ $(document).ready(function(){
 					</tr>
 					<tr>
 						<td class="left">패스워드</td>
-						<td class="right"><input  class="form-control input-lg"  type="text" name="pw" id="pw">
+						<td class="right"><input  class="form-control input-lg"  type="password" name="pw" id="pw">
 						<div id="pwc1" ></div>
 						</td>
 					</tr>
 					<tr>
 						<td class="left">패스워드확인</td>
-						<td class="right"><input  class="form-control input-lg"  type="text" name="pw2" id="pw2">
+						<td class="right"><input  class="form-control input-lg"  type="password" name="pw2" id="pw2">
 						<div id="pwc2" ></div>
 						</td>
 					</tr>
@@ -122,11 +122,7 @@ $(document).ready(function(){
 					</tr>
 				</table>
 			</form>
-<<<<<<< HEAD
-				<button style="width:200px; height:50px; margin-left: 50px;" class="btn btn-success" type="button" id="idCheck">아이디중복확인</button>
-=======
 				<button style="width:200px; height:50px;" class="btn btn-success" type="button" id="idCheck">아이디중복확인</button>
->>>>>>> f055b2daf80a07ab207cc79c1309d0bc4041b43d
 			<hr>
 			<div id="result"></div>
 			

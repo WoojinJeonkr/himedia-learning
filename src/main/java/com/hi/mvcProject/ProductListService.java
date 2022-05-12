@@ -29,11 +29,7 @@ public class ProductListService {
 													  //1*rowPerPage
 													  //2*rowPerPage
 		
-<<<<<<< HEAD
 		//dao �샇異� 
-=======
-		//dao 호출 
->>>>>>> f055b2daf80a07ab207cc79c1309d0bc4041b43d
 		List<ProductlistVO> list = productlistDAO.all(page);
 		
 		Map<String,Object> map = new HashMap<String, Object>();

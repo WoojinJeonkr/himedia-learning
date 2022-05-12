@@ -19,9 +19,14 @@
 </head>
 <body>
 	<hr>
-	<form action="memberDelete">
-		아이디 : <input type="text" name="id" value="${id}"><br>
-		<button>회원탈퇴</button>
+	<% if(session.getAttribute("userId") != null) { %>
+	<form action="memberDelete"> <!-- 컨트롤러의 memberDelete 로 간다.-->
+		<input type="hidden" name="id" value="${userId}"><br>
+		<button>정말로 회원탈퇴 하시겠습니까?</button>
 	</form>
+	<%}else{ %>
+		로그인을 먼저 해주세요.
+		<%}%>
+	
 </body>
 </html>

@@ -59,7 +59,7 @@ $('#deleteBtn').click(function() {
 
 <span style="color: blue; float: right;">${userId}님 로그인되었습니다. 좋은 하루 되세요.</span><br>
 	<div id = "top">
-		<jsp:include page="../../top.jsp"></jsp:include>
+		<jsp:include page="../../memberTop.jsp"></jsp:include>
 	</div>
 	<a href="productList.jsp">
 			리스트 목록으로 
@@ -68,7 +68,7 @@ $('#deleteBtn').click(function() {
 	<tr>
    		<td colspan = "2">
    			<button id="add">
-   				<img src="resources/img/defaultbook.jpg" width="100" height = "80"><p>그림 클릭 시 장바구니 담기</p>
+   				<img src="resources/img/defaultbook2.jpg" width="100" height = "80"><p>그림 클릭 시 장바구니 담기</p>
    			</button>
    		</td>
    	</tr>
@@ -124,7 +124,6 @@ $('#deleteBtn').click(function() {
    
 </table>
 <div id = "total">
-<<<<<<< HEAD
 		<% if(session.getAttribute("userId")== null) {%>
 		<a href="productInsert"><button style="display:none;">생성</button></a>
 		<a href="productUp?p_idx=${one.p_idx}"><button style="display:none;">수정</button></a>
@@ -134,11 +133,6 @@ $('#deleteBtn').click(function() {
 		<a href="productUp?p_idx=${one.p_idx}"><button id="updateBtn" style="width: 50px;">수정</button></a>
 		<button id="deleteBtn" style="width: 50px;">삭제</button> 
 		<%}%>
-=======
-<a href="productInsert"><button style="width: 50px;">생성</button></a>
-<a href="productUp?p_idx=${one.p_idx}"><button id="updateBtn" style="width: 50px;">수정</button></a>
-<button id="deleteBtn" style="width: 50px;">삭제</button>
->>>>>>> f055b2daf80a07ab207cc79c1309d0bc4041b43d
 </div>
 </body>
 </html>

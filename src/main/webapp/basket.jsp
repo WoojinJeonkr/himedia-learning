@@ -33,7 +33,7 @@ $('#del').click(function() {
 							location.href = "basket.jsp"
 						}
 					}
-				})
+				});
 			}
 		})
 	</script>
@@ -41,7 +41,7 @@ $('#del').click(function() {
 <body>
 <div id = "total">
 	<div id = "top">
-		<jsp:include page="top.jsp"></jsp:include>
+		<jsp:include page="memberTop.jsp"></jsp:include>
 	</div>
 	<div id = "center">
 		<h3>장바구니 목록</h3>

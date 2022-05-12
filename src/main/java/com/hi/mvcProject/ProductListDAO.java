@@ -17,10 +17,6 @@ public class ProductlistDAO {
 		return my.selectOne("productlist.one", vo);
 	}
 
-<<<<<<< HEAD
-=======
-	//---------------페이징---------------------
->>>>>>> f055b2daf80a07ab207cc79c1309d0bc4041b43d
 	public List<ProductlistVO> all(ProductPage page) {
 		return my.selectList("productlist.list", page);
 	}
@@ -29,10 +25,6 @@ public class ProductlistDAO {
 		return my.selectOne("productlist.count");
 	}
 	
-<<<<<<< HEAD
-=======
-	//---------------페이징------------------
->>>>>>> f055b2daf80a07ab207cc79c1309d0bc4041b43d
 	public int insert(ProductlistVO vo) {
 		return my.insert("productlist.in", vo);
 	}

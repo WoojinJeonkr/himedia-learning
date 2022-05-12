@@ -29,9 +29,9 @@
 	
 </style>
 <body>
- <div id = "top">
-		<jsp:include page="../../top.jsp"></jsp:include>
-</div>
+	<div id = "top">
+		<jsp:include page="../../memberTop.jsp"></jsp:include>
+	</div>
 <table border="1"> 
  <tr>
 	<%

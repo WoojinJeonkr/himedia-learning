@@ -1,12 +1,9 @@
 package com.hi.mvcProject;
-
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 @Controller
 public class BoardController {
 	
@@ -17,9 +14,9 @@ public class BoardController {
 	public void insert(BoardVO vo, Model model) {
 		System.out.println(vo);
 		int result = dao.insert(vo);
-		String text = "게시물 작성 성공";
+		String text = "寃뚯떆臾� �옉�꽦 �꽦怨�";
 		if(result != 1) {
-			text = "게시물 작성 실패";
+			text = "寃뚯떆臾� �옉�꽦 �떎�뙣";
 		}
 		model.addAttribute("result", text);
 	}

@@ -23,10 +23,10 @@ th, td {
 <body>
 <div id="total">
 		<div id="top">
-			<jsp:include page="top.jsp"></jsp:include>
+			<jsp:include page="memberTop.jsp"></jsp:include>
 		</div>
 		<div id="top2">
-			<jsp:include page="top2.jsp"></jsp:include>
+			<jsp:include page="memberTop.jsp"></jsp:include>
 		</div>
 		<div id="center">
 			<div class="well"><h3>답변하기</h3></div>
