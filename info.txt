@@ -1,0 +1,4 @@
+ml 후기 감성 분석 데이터 셋
+
+train_data : train_df
+test_data : review_202205161607.cscv
