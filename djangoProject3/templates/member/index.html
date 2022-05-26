@@ -3,39 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>회원가입</title>
-    <style>
-        *{
-            text-align: center;
-        }
-        body{
-            background: cadetblue;
-        }
-        td{
-            text-align: center;
-        }
-        table{
-            background: snow;
-            margin-left:auto;
-            margin-right:auto;
-        }
-        .c1{
-            background: aliceblue;
-            width: 150px;
-        }
-        .c2{
-            background: aliceblue;
-            width: 200px;
-        }
-        button{
-            border: 1px solid darkcyan;
-            background: rgba(250, 255, 255,0.4);
-            color:darkcyan;
-        }
-    </style>
 </head>
 <body>
 <h3>로그인 id: {{ request.session.logid }}</h3>
 <h3>회원가입 작성</h3>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<p></p>
+<img src="/static/img/goosee.png" width="360" height="200">
+<p></p>
 <table border="1">
     <tr>
         <td class="c1">항목</td>
@@ -45,7 +23,7 @@
         <td class="c1">로그인</td>
         <td width="200">
             <a href="/member/login">
-                <button>로그인 go!</button>
+                <button class="btn btn-danger">로그인 go!</button>
             </a>
         </td>
     </tr>
@@ -53,7 +31,7 @@
         <td class="c1">회원가입</td>
         <td width="200">
             <a href="/member/insert">
-                <button>회원가입 go!</button>
+                <button class="btn btn-danger">회원가입 go!</button>
             </a>
         </td>
     </tr>
@@ -61,7 +39,7 @@
         <td class="c1">회원탈퇴</td>
         <td width="200">
             <a href="/member/delete">
-                <button>회원탈퇴 go!</button>
+                <button class="btn btn-danger">회원탈퇴 go!</button>
             </a>
         </td>
     </tr>
@@ -70,7 +48,7 @@
         <td class="c1">회원정보수정</td>
         <td width="200">
             <a href="/member/up/{{ request.session.logid }}">
-                <button>회원정보수정 go!</button>
+                <button class="btn btn-danger">회원정보수정 go!</button>
             </a>
         </td>
     </tr>
@@ -79,7 +57,7 @@
         <td class="c1">회원검색(개인)</td>
         <td width="200">
             <a href="/member/one">
-                <button>회원검색(개인) go!</button>
+                <button class="btn btn-danger">회원검색(개인) go!</button>
             </a>
         </td>
     </tr>
@@ -87,7 +65,7 @@
         <td class="c1">회원검색(전체)</td>
         <td width="200">
             <a href="/member/all">
-                <button>회원검색(전체) go!</button>
+                <button class="btn btn-danger">회원검색(전체) go!</button>
             </a>
         </td>
     </tr>

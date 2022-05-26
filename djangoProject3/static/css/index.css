@@ -1,0 +1,27 @@
+*{
+    text-align: center;
+}
+body{
+    background: cadetblue;
+}
+td{
+    text-align: center;
+}
+table{
+    background: snow;
+    margin-left:auto;
+    margin-right:auto;
+}
+.c1{
+    background: aliceblue;
+    width: 150px;
+}
+.c2{
+    background: aliceblue;
+    width: 200px;
+}
+button{
+    border: 1px solid darkcyan;
+    background: rgba(250, 255, 255,0.4);
+    color:darkcyan;
+}
