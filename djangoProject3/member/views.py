@@ -29,8 +29,10 @@ def insert2(req):
     one = Test(name=data['name'], tel=data['tel'], addr=data['addr'])
     ##2-2.save()
     one.save()
+    # 저장된 결과를 보여주자
+    result = {'one': one}
     #3. 결과를 알려주자.
-    return render(req, 'member/insert2.html')
+    return render(req, 'member/insert2.html', context=result)
 
 def delete(req):
     return render(req, 'member/delete.html')
