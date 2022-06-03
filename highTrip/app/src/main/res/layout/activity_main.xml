@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/b1"
+        android:layout_width="match_parent"
+        android:layout_height="128sp"
+        android:background="#BBB8B8"
+        android:text="네이버 연결"
+        android:textColor="#0C0C0C"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/b2"
+        android:layout_width="match_parent"
+        android:layout_height="128sp"
+        android:background="#2196F3"
+        android:text="전화걸기"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/b3"
+        android:layout_width="match_parent"
+        android:layout_height="128sp"
+        android:background="#8BC34A"
+        android:text="페이지2"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/b4"
+        android:layout_width="match_parent"
+        android:layout_height="128sp"
+        android:background="#FFEB3B"
+        android:text="끝내기"
+        android:textSize="30sp" />
+
+</LinearLayout>
