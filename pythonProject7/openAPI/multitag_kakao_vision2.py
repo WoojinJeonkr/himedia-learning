@@ -8,7 +8,7 @@ from PIL import Image, ImageDraw, ImageFont
 from io import BytesIO
 
 API_URL = 'https://dapi.kakao.com/v2/vision/multitag/generate'
-MYAPP_key = '28431a0d15ca2e8f516c820b8d8082cf'
+MYAPP_key = 'MYAPP_key'
 
 def multi_tag(image_url):
     header={'Authorization' : 'KakaoAK %s' % MYAPP_key}
