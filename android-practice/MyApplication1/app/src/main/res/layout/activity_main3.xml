@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context=".Main3Activity" >
+
+    <Button
+        android:id="@+id/b11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFEB3B"
+        android:text="나를 눌러봐봐!"
+        android:textColor="#F44336"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="146dp"
+        app:srcCompat="@drawable/img" />
+
+    <EditText
+        android:id="@+id/t11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="input number"
+        android:inputType="number"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/t22"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="input number"
+        android:inputType="number"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/b22"
+            android:layout_width="95sp"
+            android:layout_height="wrap_content"
+            android:background="#FF9800"
+            android:text="plus"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/b33"
+            android:layout_width="95sp"
+            android:layout_height="wrap_content"
+            android:background="#FFC107"
+            android:text="minus"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/b44"
+            android:layout_width="95sp"
+            android:layout_height="wrap_content"
+            android:background="#CDDC39"
+            android:text="multi"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/b55"
+            android:layout_width="95sp"
+            android:layout_height="wrap_content"
+            android:background="#00BCD4"
+            android:text="div"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="결과 보여지는 곳"
+        android:textAlignment="center"
+        android:textColor="#4CAF50"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
