@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*div{
+            height:200px;
+            width:500px;
+            border:1px solid red;
+        }*/
+        div.width{ /*길이 500px에서 변하지 않음*/
+            width:500px;
+            border:1px solid blue;
+        }
+        div.maxwidth{ /* 최대 500px까지 커지고 길이가 줄어들면 같이 줄어듦, 반응형 코딩 시 주로 사용*/
+            width:500px;
+            border:1px solid green;
+        }
+    </style>
+</head>
+<body>
+    <div>높이와 너비를 정의합니다.</div>
+    <div class="width">width 500px</div>
+    <div class="maxwidth">max-width 500px</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function login_submit(){
+            // alert('알림');
+            // alert("알림"); // 작은 따옴표나 큰 따옴표 모두 사용 가능
+            // alert(frm.u_id.value);
+            /*var frm = document.login;
+            alert(frm.u_id.value);*/
+            // alert(document.login.u_id.placeholder);
+            // alert(document.login[0].u_id.placeholder);
+            var frm = document.login;
+            if(frm.u_id.value == ''){
+                // alert('아이디를 입력해주세요.');
+                document.getElementsByTagName('P')[0].innerHTML = "아이디를 입력해주세요."
+                frm.u_id.focus();
+                return;
+            }
+            if(frm.u_pw.value == ''){
+                // alert('패스워드를 입력해주세요.');
+                document.getElementsByTagName('P')[0].innerHTML = "패스워드를 입력해주세요."
+                frm.u_pw.focus();
+                return;
+            }
+             document.getElementsByTagName('h1')[0].innerHTML = "로그인 중..."; // 대부분의 브라우저들이 [0]을 붙여야 동작
+            /*frm.action='/2222';
+            frm.method ='post';*/
+            // frm.submit();            
+            /*
+            1. 자바스크립트 문서는 위에서부터 아래로 순차적으로 실행되는 구조.(절차형 언어, 인터프리터)
+            자바는 컴파일형 언어
+            2. '.'을 이용해서 아래로 값과 속성을 찾아가는 구조.
+            3. 같은 name이 있다면 배열로 처리되서 위에서 아래로 순차적인 배열로 구성됨.
+            4. 자바스크립트 위치는 html이 모두 로딩된 후 사용되는 것이 더욱 정확히 동작함.
+            (html 하단에 위치하는 것이 좋음.)
+            */
+        }
+    </script>
+</head>
+<body>
+    <h1>로그인</h1>
+    <form name="login" action="/1111" method="get">
+        <!-- 아이디: <input type="text" name="u_id"><br/>
+        패스워드: <input type="password" name="u_pw"><br/> -->
+        <input type="text" name="u_id" placeholder="아이디" autofocus><br/>
+        <input type="password" name="u_pw" placeholder="패스워드"><br/>
+        <input type="button" onclick="login_submit()" value="로그인">
+    </form>
+    <p></p>
+    <br/>
+    <!-- <form name="login2" action="/2222" method="post">
+        <input type="text" name="u_id" placeholder="아이디2"><br/>
+        <input type="password" name="u_pw" placeholder="패스워드2"><br/>
+        <input type="button" onclick="login_submit()" value="로그인">
+    </form> -->
+</body>
+</html>

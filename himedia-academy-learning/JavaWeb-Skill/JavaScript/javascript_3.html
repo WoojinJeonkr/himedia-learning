@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입폼 만들기</title>
+    <script>
+        function member_save(){
+            var frm = document.member;
+
+            if(5 <= frm.u_id.value.length && frm.u_id.value.length <= 15){
+                console.log("정상 아이디 길이");
+            } else {
+                // console.log("비정상 아이디 길이("+frm.u_id.value.length+"자)");
+                alert("아이디는 5자에서 15자까지만 입력이 가능합니다.");
+                return;
+            }
+            console.log();
+            // console.log(form.u_interests.length);
+            var inter_chk = true;
+            for(i=0;i<frm.u_interests.length;i++){
+                if(frm.u_interests[i].checked){
+                    inter_chk = false;
+                }
+                // console.log(frm.u_interests[i].checked);
+            }
+            if(inter_chk){
+                alert('관심분야를 하나 이상 선택해주세요');
+                return;
+            }
+            /*var inter_chk = false;
+            for(i=0;i<frm.u_interests.length;i++){
+                if(!frm.u_interests[i].checked){
+                    inter_chk = true;
+                }
+            }
+            if(inter_chk){
+                alert('관심분야를 모두 선택해주세요');
+                return;
+            }*/
+            if(frm.u_gender.value == ''){
+                alert('성별을 선택해주세요');
+                return;
+            }
+            /*if(frm.u_inerests.value == ''){
+                alert('관심분야를 선택해주세요');
+                return;
+            }*/
+            if(frm.u_name.value == ''){
+                alert('이름을 입력해주세요');
+                frm.u_name.focus();
+                return;
+            }
+            if(frm.u_id.value == ''){
+                alert('아이디를 입력해주세요');
+                frm.u_id.focus();
+                return;
+            }
+            if(frm.u_pw.value == ''){
+                alert('비밀번호를 입력해주세요');
+                frm.u_pw.focus();
+                return;
+            }
+            if(frm.u_zipcode.value == ''){
+                alert('우편번호를 입력해주세요');
+                frm.u_zipcode.focus();
+                return;
+            }
+            // || -> or, && -> and
+            if(frm.u_addr1.value == '' || frm.u_addr2.value == ''){
+                alert('주소를 입력해주세요');
+                return;
+            }
+            if(confirm("회원가입하시겠습니까?")){
+                frm.submit();
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="member" action="/1111" method="post">
+        <input type="text" name="u_name" placeholder="이름"><br/>
+        <input type="text" name="u_id" placeholder="아이디"><br/>
+        <input type="text" name="u_pw" placeholder="비밀번호"><br/>
+        <input type="radio" name="u_gender" value="1">남자
+        <input type="radio" name="u_gender" value="2">여자<br/>
+        <input type="text" name="u_zipcode" placeholder="우편번호"><br/>
+        <input type="text" name="u_addr1" placeholder="주소"><br/>
+        <input type="text" name="u_addr2"><br/>
+        관심분야 <input type="checkbox" name="u_interests" value="수영"/>수영
+        <input type="checkbox" name="u_interests" value="야구"/>야구
+        <input type="checkbox" name="u_interests" value="축구"/>축구
+        <input type="checkbox" name="u_interests" value="배구"/>배구<br/>
+        자기소개<br/>
+        <textarea name="u_introduce"></textarea><br/>
+    </form>
+    <input type="button" onclick="member_save()" value="회원가입">
+</body>
+</html>

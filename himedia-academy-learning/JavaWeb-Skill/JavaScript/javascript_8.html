@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>일주일 달력 만들기</title>
+    <!--jQueryCDN-->
+    <script
+        src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous"></script>
+    <!--BootstrapCDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script>
+        let currentDate = new Date();
+        //--- 이번 주 시작 일요일 구하기
+        while(true){
+            if(currentDate.getDay() == 0){
+                break;
+            }
+            currentDate.setDate(currentDate.getDate()-1);
+        }
+
+        //--- 일요일부터 다음주 일요일 전까지 날짜를 구함.
+        let str_html = "";
+        while(true){
+            str_html = str_html+"<td>"+currentDate.getFullYear()
+                +"-" +strPlusZero(currentDate.getMonth()+1)
+                +"-"+strPlusZero(currentDate.getDate())+"</td>";
+            currentDate.setDate(currentDate.getDate()+1);
+            if(currentDate.getDay() == 0){
+                break;
+            }
+        }
+        //--- 일요일부터 다음주 일요일 전까지 날짜를 구함.
+        /* document.getElementById("table_tr").innerHTML = str_html;
+            --> HTML과 javascript는 절차적 언어로 위에서부터 순차적으로 읽어오는데
+             document.getElementById("table_tr")가 어디있는지 몰라 날짜 표시 안 됨.*/
+        /*
+        // jquery
+        $(document).ready(function(){
+            $('#table_tr').html(str_html)
+        });
+        */
+        window.onload() = function(){
+            document.getElementById("table_tr").innerHTML = str_html;
+        }
+        function strPlusZero(strValue){
+            // 형변환 -> 문자열로
+            strValue = strValue + "";
+            if(strValue.length == 1){
+                strValue = "0"+strValue;
+            }
+            return strValue;
+        }
+    </script>
+</head>
+<body>
+    <div class='row justify-content-center'>
+        <div class='col-auto'>
+            <h1 class = 'text-center'>일주일 달력</h1>
+                <table class = 'table table-hover'>
+                    <tr>
+                        <th>일요일</th>
+                        <th>월요일</th>
+                        <th>화요일</th>
+                        <th>수요일</th>
+                        <th>목요일</th>
+                        <th>금요일</th>
+                        <th>토요일</th>
+                    </tr>
+                    <tr id="table_tr">
+                    </tr>
+                </table>
+            </div>
+        </div>
+</body>
+<script>
+    // document.getElementById("table_tr").innerHTML = str_html;
+    // $('#table_tr').html(str_html);
+</script>
+</html>

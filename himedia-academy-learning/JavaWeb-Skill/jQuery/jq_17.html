@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+    crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        var video = document.getElementById("video");
+        $(function(){
+            // 사이즈 변경
+            $('#changeBtn').click(function(){
+                if($('#video').width() == "800"){
+                    $('#video').width("500px");
+                } else {
+                    $('#video').width("800px");
+                }
+            });
+            // 영상 숨김
+            $('#hideBtn').click(function(){
+                $('#video').hide(2000);
+            });
+            // 영상 나타남
+            $('#showBtn').click(function(){
+                $('#video').show(2000);
+            });
+            // 플레이
+            $('#startBtn').click(function(){
+                $('#video').trigger("play");
+                // $('#video')[0].play();
+            });
+            // 멈춤
+            $('#stopBtn').click(function(){
+                $('#video').trigger("pause");
+                // $('#video')[0].pause();
+            });
+            // 소리 조절
+            $('#muteBtn').click(function(){
+                if( $("#video").prop('muted') ) {
+                    $("#video").prop('muted', false);
+                } else {
+                    $("#video").prop('muted', true);
+                }
+            /* 
+            // 소리 끄기
+            $('#muteBtn').click(function(){
+                $("#video").prop('muted', true);
+            };
+            // 소리 켜기
+            $('#muteBtn2').click(function(){
+                $("#video").prop('muted', false);
+            };
+            */
+            });
+        });
+    </script>
+</head>
+<body>
+    <video id="video" style="width:500px" src="/video/ForBiggerBlazes.mp4" controls></video>
+    <br/>
+    <button id="changeBtn">사이즈변경</button>
+    <button id="hideBtn">영상숨김</button>
+    <button id="showBtn">영상나타남</button>
+    <button id="startBtn">플레이</button>
+    <button id="stopBtn">멈춤</button>
+    <button id="muteBtn">소리 조절</button>
+    <!--
+        <button id="muteBtn">소리 끄기</button>
+        <button id="muteBtn2">소리 켜기</button>
+    -->
+</body>
+</html>

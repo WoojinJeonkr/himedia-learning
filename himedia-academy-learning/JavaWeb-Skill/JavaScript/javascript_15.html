@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer</title>
+</head>
+<body>
+    <button onclick = "startInterval()">2초마다 시간갱신</button>
+    <button onclick = "cancelInterval()">중지!</button>
+    <button onclick = "startTimeout()">2초 뒤 시간 표시</button>
+    <p id="date"></p>
+</body>
+<script>
+    var timeoutId;
+    function startInterval(){
+        // setInterval : 반복적으로 함수 실행
+        timeoutId = setInterval(printQurrentDate,2000); // 1s = 1000으로 계산
+    }
+    function cancelInterval(){
+        // clearInterval : 변수로 값을 받아 해당 타이머 중지
+        clearInterval(timeoutId);
+    }
+    function printQurrentDate(){
+       document.getElementById("date").innerHTML += new Date() + "<br>";
+    }
+
+    function startTimeout(){
+        setTimeout(printQurrentDate, 2000);
+    }
+</script>
+</html>

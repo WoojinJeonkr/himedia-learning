@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>text 데이터 불러오기</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+    crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $('#requestBtn').click(function(){
+                // 외부의 text 데이터 불러오기
+                // $("#text").load("http://192.168.0.12:5500/text/text.txt")
+                // 내부의 text 데이터 불러오기
+                // $("#text").load("http://192.168.0.9:5500/text/mytxt.txt")
+                $("#text").load("/text/mytxt.txt")
+            });
+        });
+
+        // text 데이터를 불러오는 경로
+        // 사용자 -> 자바스크립트(XML.HttpRequest) -> 웹서버 -> DB
+        // 사용자 -> 자바스크립트(XML.HttpRequest) <- (JSON) 웹서버 <- DB
+    </script>
+</head>
+<body>
+    <h1>텍스트를 불러옵니다.</h1>
+    <p id="text">이곳에 텍스트를 불러옵니다.</p>
+    <button id="requestBtn">데이터 불러오기!</button>
+</body>
+</html>

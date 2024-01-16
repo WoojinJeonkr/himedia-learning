@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>요소의 길이</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+    crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            let items = $('li');
+            $('button').on('click', function(){
+            // $('#len').html(items.length);
+            $('#len').html("<strong> .html( )의 경우: 요소의 길이는 "+items.length+"입니다</strong>"); // 요소의 길이는 3입니다 라는 문구가 강조되어 출력
+            // $('#len').text("<strong> .text( )의 경우: 요소의 길이는 "+items.length+"입니다</strong>"); // <strong>요소의 길이는 3입니다</strong>
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li>첫번째</li>
+        <li>두번째</li>
+        <li>세번째</li>
+    </ul>
+    <button>요소의 길이는?</button>
+    <p id="len"></p>
+</body>
+</html>

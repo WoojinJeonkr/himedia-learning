@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이론</title>
+    <!--jQuery Migrate : 신버전을 구버전과 호환-->
+    <!--jQuery CDN-->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+    crossorigin="anonymous"></script>
+    <script>
+         //--- 변수 선언: var, let, const(바뀌지 않음, static)
+        //--- $('p') => 선택자
+        //--- .on() => 동작함수
+        //--- $('p').동작1()
+        //--- $('p').동작2()
+        //--- $('p').동작1().동작2()
+
+        $(function(){
+            $('p').on('click',function(){
+                $('p').css('color','red');
+                $('span').css('fontSize','30px');
+        });
+
+        console.log('p length'+$('p').length);
+        console.log('span length'+$('span').length);
+    });
+    </script>
+</head>
+<body>
+    <P>마우스로 글씨를 클릭해보세요.</P>
+    <p>어~ 이것도 바뀌나요?</p>
+    <p>이것도?</p>
+    <span>변경11111</span>
+    <span>변경22222</span>
+</body>
+<script>
+    window.onload = function(){
+        // 자바스크립트 구현
+        console.log("window.onload");
+    }
+    $(document).ready(function(){
+        // jQuery 기능 구현
+        console.log("$(document).ready");
+    });
+    
+    // 최종 형태
+    $(function(){
+        //기능 구현
+        console.log("$(function()");
+    });
+</script>
+</html>

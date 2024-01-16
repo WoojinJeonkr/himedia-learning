@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>오늘 내일 날짜 구하기</title>
+    <script>
+        let currentDate = new Date();
+        document.write("<p>오늘 날짜 "+currentDate.getFullYear()
+            +"-"+(currentDate.getMonth()+1)
+            +"-"+currentDate.getDate()+"["+currentDate.getDay()+"]"+"</p>");
+        currentDate.setDate(currentDate.getDate()+1);
+        document.write("<p>내일 날짜 "+currentDate.getFullYear()
+            +"-"+(currentDate.getMonth()+1)
+            +"-"+currentDate.getDate()+"["+currentDate.getDay()+"]"+"</p>");    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

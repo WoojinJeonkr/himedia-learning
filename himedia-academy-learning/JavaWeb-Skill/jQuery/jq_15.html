@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+    crossorigin="anonymous"></script>
+    <title>Event</title>
+    <script>
+        //--- jquery  초기화
+        $(function(){
+            $("button").on({
+                mouseenter:function(){
+                    $('#text').append("마우스가 버튼 위로 올라갔습니다.<br>");
+                },
+                click:function(){
+                    $('#text').append("마우스가 버튼을 클릭했습니다.<br>");
+                },
+                mouseleave:function(){
+                    $('#text').append("마우스가 버튼을 이탈했습니다.<br>");
+                }
+            });
+            // 체인으로 이벤트를 연결시켜 실행
+            // $("button").click(function(){
+            //     $('#text').append("마우스가 버튼을 클릭했습니다.<br>");
+            // }).mouseenter(function(){
+            //     $('#text').append("마우스가 버튼 위로 올라갔습니다.<br>");
+            // }).mouseleave(function(){
+            //     $('#text').append("마우스가 버튼을 이탈했습니다.<br>");
+            // });
+        });
+    </script>
+</head>
+<body>
+    <button>마우스를 위로 가져가거나 클릭해 보세요!</button>
+    <p id="text"></p>
+</body>
+</html>

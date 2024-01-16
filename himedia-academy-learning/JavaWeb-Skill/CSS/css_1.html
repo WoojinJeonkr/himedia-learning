@@ -1,0 +1,50 @@
+<!--CSS 스타일 적용 방법 1-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>css</title>
+    <style>
+        body{
+            background-color: mistyrose;
+        }
+        h1{
+            font-family: "Times New Roman", Georgia, Serif;
+            /*font-family: font1, font2, font3 -> font1이 없으면 font2, font2도 없으면 font3를 사용하라는 의미*/
+            text-align:center; /*가운데 정렬*/
+        }
+        p{
+            color: peru;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        #heading{
+            color: purple;
+            text-decoration: line-through;
+        }
+        .headings{
+            color:midnightblue;
+            text-decoration: overline;
+        }
+    </style>
+    <!--
+        CSS
+        a { background-color:red;font-size:20px;}
+        a: 선택자, background-color:속성명, red:속성값, ;->선언 구분, font-size:속성명, 20px:속성값, ;->선언 끝
+        속성명 : property
+        속성값 : value
+        
+        선택자 종류
+        html 요소(tag)
+        아이디(id) : 해당 html 페이지에서 유일한 하나
+        클래스(class) : 공통적으로 사용하는 명칭
+    -->
+</head>
+<body>
+    <h1>CSS(Cascading Style Sheets)</h1>
+    <h2 id="heading">ID 스타일 적용</h2>
+    <h2 class="headings">Class 스타일 적용</h2>
+    <p>css 예제</p>
+    <h3 class="headings">Class 스타일 적용</h3>
+</body>
+</html>

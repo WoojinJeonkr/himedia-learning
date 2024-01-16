@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery</title>
+    <!--jQuery CDN-->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+    crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $('p').on('click',function(){
+                $('p').css('color','red');
+        });
+    });
+    </script>
+</head>
+<body>
+    <P>마우스로 글씨를 클릭해보세요.</P>
+    <p>어~ 이것도 바뀌나요?</p>
+    <p>이것도?</p>
+</body>
+</html>

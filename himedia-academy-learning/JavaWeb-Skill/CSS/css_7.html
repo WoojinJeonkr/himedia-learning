@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{color: red;} /*css 특징: 상위의 색을 변경하면 하위에도 모두 적용된다.*/
+        p{color: blue;}
+        h1{text-align: center; text-decoration: overline;}
+        h2{text-align: right; text-decoration: underline;}
+        h3{text-align: left; text-decoration: line-through;}
+        h4{text-transform: uppercase;}
+        h5{text-transform: lowercase;}
+        .nLineheight{
+            line-height: 0.8;
+        }
+        .wLineheight{
+            line-height: 1.8;
+        }
+        .shadowStyle{
+            font-size: 50px;
+            text-shadow: 2px 2px lightslategray
+        }
+    </style>
+</head>
+<body>
+    <h1>제목 글자를 입력해 봅니다.</h1>
+    <h2>제목 글자를 입력해 봅니다.</h2>
+    <h3>제목 글자를 입력해 봅니다.</h3>
+    <h4>I'm a Boy.</h4>
+    <h5>I'm a Boy.</h5>
+    <p>각 내용 단락을 입력해 봅니다.</p>
+    <p class="nLineheight">줄간격이 스타일링 되는 단락입니다.<br/>
+        줄간격이 스타일링 되는 단락입니다.</p>
+    <p>줄간격이 스타일링 되는 단락입니다.<br/>
+        줄간격이 스타일링 되는 단락입니다.</p>
+    <p class="wLineheight">줄간격이 스타일링 되는 단락입니다.<br/>
+        줄간격이 스타일링 되는 단락입니다.</p>
+    <p class="shadowStyle">글자에 그림자 효과를 줍니다.</p>
+</body>
+</html>

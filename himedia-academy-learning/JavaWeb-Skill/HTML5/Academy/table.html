@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+    <style>
+        td{
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+<table style="width:90%;">
+    <caption>동물분류표</caption><!--짧은 설명-->
+    <tr style="background-color: tomato; text-align: center";>
+        <th>조류</th>
+        <th>포유류</th>
+        <th>어류</th>
+    </tr>
+    <tr style="text-align: center";>
+        <td>독수리</td>
+        <td>사자</td>
+        <td>상어</td>
+    </tr>
+    <tr style="text-align: center";>
+        <td>닭</td>
+        <td>호랑이</td>
+        <td>문어</td>
+    </tr>
+    <tr style="text-align: center";>
+        <td>소</td>
+        <td>코끼리</td>
+        <td>홍어</td>
+    </tr>
+    <tr style="text-align: center";>
+        <td>참새</td>
+        <td colspan="2">고래</td><!--열 합치기(셀 병합)-->
+    </tr>
+    <tr style="text-align: center";>
+        <td rowspan="2">공작</td><!--행 합치기(셀 병합)-->
+        <td>돼지</td>
+        <td>농어</td>
+    </tr>
+    <tr style="text-align: center";>
+        <td>진도개</td>
+        <td>망둥어</td>
+    </tr>
+</table>
+</body>
+</html>

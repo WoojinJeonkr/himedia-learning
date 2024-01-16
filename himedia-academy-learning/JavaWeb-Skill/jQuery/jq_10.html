@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+    crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+            $('#getter').click(function(){
+                let size_summary = "가로는 "+$('#box').width()
+                +" 세로는 "+$('#box').height()
+                +" 넓이는 "+($('#box').height()*$('#box').width())
+                +"입니다.";
+                $('#text').html(size_summary);
+
+            });
+            $('#setter').click(function(){
+                let w = $('#box').width();
+                let h = $('#box').height();
+
+                $('#box').width(w/2).height(h/2);
+                let size_summary = "가로는 "+$('#box').width()
+                +" 세로는 "+$('#box').height()
+                +" 넓이는 "+($('#box').height()*$('#box').width())
+                +"로 변경되었습니다.";
+                $('#text').html(size_summary);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>넓이 높이 메소드</h1>
+    <p>버튼을 누르면 div의 크기를 읽고 설정할 수 있음</p>
+    <button id="getter">읽기</button>
+    <button id="setter">셋팅</button>
+    <div id="box" style="width:400px;height:200px;background-color: cadetblue;"></div>
+    <p id="text"></p>
+</body>
+</html>
