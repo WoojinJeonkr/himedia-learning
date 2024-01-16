@@ -1,2 +1,3 @@
 # himedia-learning
-This repository compiles the materials organized from government-supported education.
+
+This repository compiles repositories organized from government-supported education.
